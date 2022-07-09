@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './navbar/navbar.component';
+import { LayoutBaseComponent } from './layout-base/layout-base.component';
 
 
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    LayoutBaseComponent
   ],
   imports: [
     CommonModule
   ],
-  exports:[
-    NavbarComponent
+  exports: [
+    LayoutBaseComponent
   ]
 })
-export class TemplateModule { }
+export class DashboardModule { }

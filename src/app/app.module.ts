@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TemplateModule } from './template/template.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { TemplateModule } from './template/template.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TemplateModule,
+    DashboardModule
 
   ],
   providers: [],
