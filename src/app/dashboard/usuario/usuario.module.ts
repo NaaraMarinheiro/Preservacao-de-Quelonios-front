@@ -8,9 +8,9 @@ import { UsuarioEditarComponent } from './usuario-editar/usuario-editar.componen
 
 @NgModule({
   declarations: [
-    UsuarioListaComponent,
-    UsuarioNovoComponent,
-    UsuarioEditarComponent
+    // UsuarioListaComponent,
+    // UsuarioNovoComponent,
+    // UsuarioEditarComponent
   ],
   imports: [
     CommonModule

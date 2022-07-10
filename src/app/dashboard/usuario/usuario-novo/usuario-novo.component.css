@@ -1,0 +1,32 @@
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.row {
+    background-color: #ffffff;
+    width: 70%;
+    margin-top: 50px;
+    padding: 30px 40px;
+    border-radius: 7px;
+}
+
+.col {
+    padding-top: 20px;
+}
+
+.row .botao {
+    margin-top: 20px;
+    margin-left: 89%;
+}
+
+.form-group {
+    padding-top: 20px;
+}
+
