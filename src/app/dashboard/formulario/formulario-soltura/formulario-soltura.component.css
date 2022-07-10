@@ -1,14 +1,12 @@
-.div-externa{   
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-   } 
-   .titulo{
-    padding-bottom: 10px;
-   }
+.container {
+    background-color: #ffffff;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border-radius: 7px;
+    padding: 20px 25px;
+}
 
-   .row{
+.row {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -18,16 +16,16 @@
     margin: 8px;
     padding: 8px;
 }
-   
-.col{
-    padding-right: 200px;
-    
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    margin: 10px;
 }
 
-.form-group{
-    display: block;      
-    margin: 12px;
-    padding: 5px;
-    margin-left: 80px;
+.container .botao {
+    text-align: end;
+    margin-top: 25px;
 }
-

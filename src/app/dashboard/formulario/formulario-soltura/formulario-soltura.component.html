@@ -1,142 +1,145 @@
-<div class="div-externa">
-    <div class="interna">
+<div class="container">
 
-        <div class="titulo">
-            <h1>Formulário Soltura</h1>
+    <div class="titulo">
+        <h1>Formulário Soltura</h1>
+        <h6>Preenchimento da ficha da etapa de soltura</h6>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col">
+            <label for="inputID">ID Ciclo</label>
+            <input type="text" class="form-control">
+        </div>
+
+        <div class="col ">
+            <label for="inputEstado">Estado</label>
+            <select id="inputEstado" class="form-control">
+                <option selected>Selecione</option>
+                <option>AM</option>
+                <option>PA</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col ">
+            <label for="inputMunicipio">Municipio</label>
+            <select id="inputMunicipio" class="form-control">
+                <option selected>Selecione</option>
+                <option>Apuí</option>
+                <option>Barcelos</option>
+                <option>Barreirinha</option>
+                <option>Borba</option>
+                <option>Careiro Castanho</option>
+                <option>Juruti</option>
+                <option>Nhamundá</option>
+                <option>Novo Airão</option>
+                <option>Oriximiná</option>
+                <option>Parintins</option>
+                <option>Puranga Conquista</option>
+                <option>Terra Santa</option>
+            </select>
+        </div>
+
+        <div class="col ">
+            <label for="inputComunidade">Comunidade</label>
+            <select id="inputComunidade" class="form-control">
+                <option selected>Selecione</option>
+                <option>Comunidade Aliança</option>
+                <option>Comunidade Ascensão</option>
+                <option>Comunidade Barreto</option>
+                <option>Comunidade Bela Vista do Guariba</option>
+                <option>Comunidade Boca dos Currais</option>
+                <option>Comunidade Castanhal'</option>
+                <option>Comunidade Granja Ceres</option>
+                <option>Comunidade Igapó Açu</option>
+                <option>Comunidade Mamori</option>
+                <option>Comunidade Nova Esperança</option>
+                <option>Comunidade Pintado</option>
+                <option>Comunidade Poço Fundo</option>
+                <option>Comunidade Salgado I</option>
+                <option>Comunidade São José</option>
+                <option>Comunidade Tucumanduba</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col">
+            <label for="inputIDViagem">ID Viagem</label>
+            <input type="text" class="form-control">
+        </div>
+
+        <div class="col">
+            <label for="inputData">Data</label>
+            <input type="date" class="form-control">
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <div class="form-group col-md-6">
+            <label for="inputMatricula">Matrícula</label>
+            <input type="text" class="form-control">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputNumeroAnimal">Número do animal</label>
+            <input type="text" class="form-control">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputEspecie">Espécie</label>
+            <input type="text" class="form-control">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputDataNascimento">Data da soltura</label>
+            <input type="date" class="form-control">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputComprimentoCarapaca">Comprimento da carapaça </label>
+            <input type="text" class="form-control">
         </div>
 
 
-        <div class="row">
 
-            <div class="col">
-                <label for="inputID">ID Ciclo</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="col ">
-                <label for="inputEstado">Estado</label>
-                <select id="inputEstado" class="form-control">
-                    <option selected>Selecione</option>
-                    <option>AM</option>
-                    <option>PA</option>
-                </select>
-            </div>
+        <div class="form-group col-md-6">
+            <label for="inputLarguraCarapaca">Largura da carapaça</label>
+            <input type="text" class="form-control">
         </div>
 
-        <div class="row">
-            <div class="col ">
-                <label for="inputMunicipio">Municipio</label>
-                <select id="inputMunicipio" class="form-control">
-                    <option selected>Selecione</option>
-                    <option>Apuí</option>
-                    <option>Barcelos</option>
-                    <option>Barreirinha</option>
-                    <option>Borba</option>
-                    <option>Careiro Castanho</option>
-                    <option>Juruti</option>
-                    <option>Nhamundá</option>
-                    <option>Novo Airão</option>
-                    <option>Oriximiná</option>
-                    <option>Parintins</option>
-                    <option>Puranga Conquista</option>
-                    <option>Terra Santa</option>
-                </select>
-            </div>
 
-            <div class="col ">
-                <label for="inputComunidade">Comunidade</label>
-                <select id="inputComunidade" class="form-control">
-                    <option selected>Selecione</option>
-                    <option>Comunidade Aliança</option>
-                    <option>Comunidade Ascensão</option>
-                    <option>Comunidade Barreto</option>
-                    <option>Comunidade Bela Vista do Guariba</option>
-                    <option>Comunidade Boca dos Currais</option>
-                    <option>Comunidade Castanhal'</option>
-                    <option>Comunidade Granja Ceres</option>
-                    <option>Comunidade Igapó Açu</option>
-                    <option>Comunidade Mamori</option>
-                    <option>Comunidade Nova Esperança</option>
-                    <option>Comunidade Pintado</option>
-                    <option>Comunidade Poço Fundo</option>
-                    <option>Comunidade Salgado I</option>
-                    <option>Comunidade São José</option>
-                    <option>Comunidade Tucumanduba</option>
-                </select>
-            </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputComprimentoPlastrao">Comprimento do plastrão</label>
+            <input type="text" class="form-control">
         </div>
 
-        <div class="row">
-
-            <div class="col">
-                <label for="inputIDViagem">ID Viagem</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="col">
-                <label for="inputData">Data</label>
-                <input type="date" class="form-control">
-            </div>
+        <div class="form-group col-md-6">
+            <label for="inputLarguraPlastrao">Largura plastrão </label>
+            <input type="text" class="form-control">
         </div>
 
-        <div class="form-group">
-
-            <div class="form-group col-md-6">
-                <label for="inputMatricula">Matrícula</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputNumeroAnimal">Número do animal</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputEspecie">Espécie</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputDataNascimento">Data da soltura</label>
-                <input type="date" class="form-control">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputComprimentoCarapaca">Comprimento da carapaça </label>
-                <input type="text" class="form-control">
-            </div>
-
-
-
-            <div class="form-group col-md-6">
-                <label for="inputLarguraCarapaca">Largura da carapaça</label>
-                <input type="text" class="form-control">
-            </div>
-
-
-
-            <div class="form-group col-md-6">
-                <label for="inputComprimentoPlastrao">Comprimento do plastrão</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputLarguraPlastrao">Largura plastrão </label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputPeso">Peso </label>
-                <input type="text" class="form-control">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputAltura">Altura </label>
-                <input type="text" class="form-control">
-            </div>
-
+        <div class="form-group col-md-6">
+            <label for="inputPeso">Peso </label>
+            <input type="text" class="form-control">
         </div>
-        <button type="button" class="btn btn-outline-success">Salvar</button>
+        <div class="form-group col-md-6">
+            <label for="inputAltura">Altura </label>
+            <input type="text" class="form-control">
+        </div>
 
     </div>
+
+
+    <div class="botao">
+        <button type="button" class="btn btn-outline-success">Salvar</button>
+    </div>
+
 
 </div>
