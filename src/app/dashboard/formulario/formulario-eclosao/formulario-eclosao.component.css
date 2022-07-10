@@ -1,0 +1,32 @@
+.div-externa{   
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+   } 
+   .titulo{
+    padding-bottom: 10px;
+   }
+
+   .row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+    padding: 8px;
+}
+   
+.col{
+    padding-right: 200px;
+    
+}
+
+.form-group{
+    display: block;      
+    margin: 12px;
+    padding: 5px;
+    margin-left: 80px;
+}
