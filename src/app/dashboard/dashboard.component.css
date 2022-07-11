@@ -73,6 +73,19 @@
     color: #1F8B24;
 }
 
+.active-style {
+    color: #1F8B24;
+    font-weight: 600;
+    background-color: #e2f8e3;
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    border-radius: 12px 0px 0px 12px;
+}
+
+.active-img {
+    filter: invert(38%) sepia(87%) saturate(430%) hue-rotate(74deg) brightness(93%) contrast(98%);
+}
+
 footer {
     background-color: #2f394e;
     color: white;

@@ -2,20 +2,20 @@
     <div id="sidebar">
         <a href="home"><img src="../../../assets/img/logo-v2-300h.png" height="80" alt="logo"></a>
 
-        <a class="sidebar-item" href="#home">
+        <a class="sidebar-item" routerLink="/home">
             <img class="sidebar-icon" src="../../../assets/img/home.svg">
             Home
         </a>
 
-        <a class="sidebar-item" href="#ciclos">
-            <img class="sidebar-icon" src="../../../assets/img/cicle.svg"> Ciclos </a>
+        <a class="sidebar-item" routerLink="/ciclo" routerLinkActive="active-style" >
+            <img class="sidebar-icon" src="../../../assets/img/cicle.svg" routerLinkActive="active-img"> Ciclos </a>
 
-        <a class="sidebar-item" href="#relatorios">
+        <a class="sidebar-item" routerLink="/relatorio">
             <img class="sidebar-icon" src="../../../assets/img/bar-chart.svg">
             Relatórios
         </a>
 
-        <a class="sidebar-item" href="#usuarios">
+        <a class="sidebar-item" routerLink="/usuario">
             <img class="sidebar-icon" src="../../../assets/img/user.svg">
             Usuários
         </a>
@@ -31,7 +31,7 @@
         </div>
 
         <div id="content">
-            
+            <router-outlet></router-outlet>
         </div>
 
     </div>

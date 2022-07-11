@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutBaseComponent } from './layout-base/layout-base.component';
-
-
+import { DashboardRoutingModule } from './dashboard-routing.module';
+import { DashboardComponent } from './dashboard.component';
+import { RelatorioComponent } from './relatorio/relatorio.component';
+import { CicloRoutingModule } from './ciclo/ciclo-routing.module';
+import { CicloModule } from './ciclo/ciclo.module';
 
 @NgModule({
   declarations: [
-    LayoutBaseComponent
+    DashboardComponent,
+    RelatorioComponent,
+  
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DashboardRoutingModule,
+    CicloRoutingModule,
+    CicloModule
   ],
   exports: [
-    LayoutBaseComponent
+    DashboardComponent
   ]
 })
 export class DashboardModule { }
