@@ -1,0 +1,20 @@
+.container{
+    margin-top: 60px; 
+}
+
+
+.card-header{
+    background-color: #fff;
+}
+.card{
+    padding: 20px 20px;
+    margin-bottom: 30px;
+
+}
+.text-center{
+    color: #000;
+}
+
+ .btn{
+    margin: 5px;
+}

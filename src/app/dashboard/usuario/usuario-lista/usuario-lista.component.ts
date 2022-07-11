@@ -7,6 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioListaComponent implements OnInit {
 
+  public usuarios=[
+    {
+        matricula: "7139",
+        nome:"José da Silva",
+        tipoUsuario:"Voluntário",
+        email:"jose@rmail.com",
+        status:"Ativo",
+        permissao:"Voluntário"
+    },
+    {
+        matricula: "4896",
+        nome:"Amanda Alvez",
+        tipoUsuario:"Voluntário",
+        email:"amanda@rmail.com",
+        status:"Ativo",
+        permissao:"Voluntário"
+    }
+];
+
   constructor() { }
 
   ngOnInit(): void {

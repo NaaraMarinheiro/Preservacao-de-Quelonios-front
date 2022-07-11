@@ -1,0 +1,93 @@
+<div class="container">
+    <!-- card de pesquisar usuario -->
+
+    <div class="col">
+        <div class="col-md-12">
+            <div class="card ">
+                <div class="card-header">
+                    <h3>Pesquisar usuário</h3>
+                    <div class="card-title">
+                        <div class="col-md-4 ">
+                            <label for="inputMatricula">Número da matrícula</label>
+                            <input type="text" class="form-control" id="inputMatricula">
+                        </div>
+                        <button type="button" class="btn btn-outline-success btn-sm " style="float: right;">Pesquisar
+                            usuário</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- card pra listar usuario -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Usuários</h3>
+                        <div class="card-title">
+                            Lista de usuários
+                            <button type="button" class="btn btn-outline-success btn-sm " style="float: right;">Novo
+                                usuário</button>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th class="text-center">
+                                        Matrícula
+                                    </th>
+                                    <th class="text-center">
+                                        Nome
+                                    </th>
+                                    <th class="text-center">
+                                        Tipo de usuário
+                                    </th>
+                                    <th class="text-center">
+                                        Email
+                                    </th>
+                                    <th class="text-center">
+                                        Status
+                                    </th>
+                                    <th class="text-center">
+                                        Permissão
+                                    </th>
+                                    <th class="text-center">
+                                        Ações
+                                    </th>
+                                </thead>
+
+                                <tbody>
+                                    <tr *ngFor="let item of usuarios; index as i;">
+                                        <td class="text-center">
+                                            {{item.matricula}}
+                                        </td>
+                                        <td class="text-center">
+                                            {{item.nome}}
+                                        </td>
+                                        <td class="text-center">
+                                            {{item.tipoUsuario}}
+                                        </td>
+                                        <td class="text-center">
+                                            {{item.email}}
+                                        </td>
+                                        <td class="text-center">
+                                            {{item.status}}
+                                        </td>
+                                        <td class="text-center">
+                                            {{item.permissao}}
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-outline-warning btn-sm">Editar</button>
+                                            <button type="button" class="btn btn-outline-danger btn-sm">Remover</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
