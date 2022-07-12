@@ -5,16 +5,22 @@
         <h6>Preenchimento da ficha da etapa de eclosão</h6>
     </div>
 
-
+    <!-- primeira linha de inputs -->
     <div class="row">
+        <!-- input id ciclo -->
+        <div class="col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputID">ID Ciclo</label>
+            </div>
 
-        <div class="col">
-            <label for="inputID">ID Ciclo</label>
             <input type="text" class="form-control">
         </div>
+        <!-- select estado -->
+        <div class="col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputEstado">Estado</label>
+            </div>
 
-        <div class="col ">
-            <label for="inputEstado">Estado</label>
             <select id="inputEstado" class="form-control">
                 <option selected>Selecione</option>
                 <option>AM</option>
@@ -22,10 +28,14 @@
             </select>
         </div>
     </div>
-
+    <!-- segunda linha de inputs -->
     <div class="row">
-        <div class="col ">
-            <label for="inputMunicipio">Municipio</label>
+        <!-- select municipio -->
+        <div class="col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" id="label-municipio" for="inputMunicipio">Municipio</label>
+            </div>
+
             <select id="inputMunicipio" class="form-control">
                 <option selected>Selecione</option>
                 <option>Apuí</option>
@@ -42,9 +52,12 @@
                 <option>Terra Santa</option>
             </select>
         </div>
+        <!-- select comunidade -->
+        <div class="col-md-4 ">
+            <div class="input-label">
+                <label class="text-nowrap" id="label-comunidade" for="inputComunidade">Comunidade</label>
+            </div>
 
-        <div class="col ">
-            <label for="inputComunidade">Comunidade</label>
             <select id="inputComunidade" class="form-control">
                 <option selected>Selecione</option>
                 <option>Comunidade Aliança</option>
@@ -65,73 +78,99 @@
             </select>
         </div>
     </div>
-
+    <hr>
+    <!-- terceira linha de inputs -->
     <div class="row">
-
-        <div class="col">
-            <label for="inputIDViagem">ID Viagem</label>
+        <!-- input id viagem -->
+        <div class="col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" id="label-viagem" for="inputIDViagem">ID Viagem</label>
+            </div>
             <input type="text" class="form-control">
         </div>
-
-        <div class="col">
-            <label for="inputData">Data</label>
-            <input type="date" class="form-control">
+        <!-- input data -->
+        <div class="col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputData">Data</label>
+            </div>
+            <input id="input-data" type="date" class="form-control">
         </div>
     </div>
+    <hr>
 
+    <!-- grupo de inputs de preenchimento do formulario -->
     <div class="form-group">
 
-        <div class="form-group col-md-6">
-            <label for="inputMatricula">Matrícula do voluntário</label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputMatricula">Matrícula do voluntário</label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="inputNumeroCova">Número da cova</label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputNumeroCova">Número da cova</label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="inputDataNascimento">Data de nascimento</label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputDataNascimento">Data de nascimento</label>
+            </div>
             <input type="date" class="form-control">
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="inputEspecie">Espécie</label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputEspecie">Espécie</label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="inputQntdFilhotesVivos">Quantidade de filhotes vivos</label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputQntdFilhotesVivos">Quantidade de filhotes vivos</label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-
-
-        <div class="form-group col-md-6">
-            <label for="inputQuantidadeOvosInviavel">Quantidade de ovo inviável</label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputQuantidadeOvosInviavel">Quantidade de ovo inviável</label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-
-
-        <div class="form-group col-md-6">
-            <label for="inputQuantidadeOvosInferti">Quantidade de ovo infértil</label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputQuantidadeOvosInferti">Quantidade de ovo infértil</label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="inputQntFilhotesMortosFormiga ">Quantidade de filhotes mortos por formiga </label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputQntFilhotesMortosFormiga ">Quantidade de filhotes mortos
+                    por formiga </label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="inputQntFilhotesMortosBicheira">Quantidade de filhotes mortos por bicheira </label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputQntFilhotesMortosBicheira">Quantidade de filhotes mortos
+                    por bicheira </label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="inputProfundTotal">Quantidade de filhotes mortos por outros motivos </label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputProfundTotal">Quantidade de filhotes mortos por outros
+                    motivos </label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
@@ -139,7 +178,7 @@
     </div>
 
     <div class="botao">
-        <button type="button" class="btn btn-outline-success">Salvar</button>
+        <button type="button" class="btn btn-success">Salvar</button>
     </div>
 
 

@@ -12,7 +12,7 @@ export class UsuarioListaComponent implements OnInit {
         matricula: "7139",
         nome:"José da Silva",
         tipoUsuario:"Voluntário",
-        email:"jose@rmail.com",
+        email:"jose@email.com",
         status:"Ativo",
         permissao:"Voluntário"
     },
@@ -20,7 +20,7 @@ export class UsuarioListaComponent implements OnInit {
         matricula: "4896",
         nome:"Amanda Alvez",
         tipoUsuario:"Voluntário",
-        email:"amanda@rmail.com",
+        email:"amanda@email.com",
         status:"Ativo",
         permissao:"Voluntário"
     }

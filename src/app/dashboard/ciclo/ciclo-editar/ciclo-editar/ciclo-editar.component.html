@@ -1,0 +1,175 @@
+<div class="container">
+
+    <!-- card de pesquisar usuario -->
+    <div class="col">
+        <div class="col-md-12">
+            <div class="card ">
+
+                <!-- primeira linha de inputs -->
+                <div class="row">
+                    <!-- input id ciclo -->
+                    <div class="col-md-4 ">
+                        <div class="input-label">
+                            <label class="text-nowrap" for="inputIdCiclo">Id Ciclo</label>
+                        </div>
+
+                        <input type="text" class="form-control" id="inputIdCiclo">
+                    </div>
+
+                    <!-- input nome -->
+                    <div class="col-md-4 ">
+                        <div class="input-label">
+                            <label class="text-nowrap" for="inputNome">Nome</label>
+                        </div>
+                        <input type="text" class="form-control" id="inputNome">
+                    </div>
+                </div>
+
+                <!-- segunda linha de inputs -->
+                <div class="row">
+                    <!-- select estado -->
+                    <div class="col-md-4 ">
+                        <div class="input-label">
+                            <label class="text-nowrap" for="inputEstado">Estado</label>
+                        </div>
+                        <select id="inputEstado" class="form-control">
+                            <option selected>Selecione</option>
+                            <option>AM</option>
+                            <option>PA</option>
+                        </select>
+
+                    </div>
+
+                    <!-- select Municipio -->
+                    <div class="col-md-4 ">
+                        <div class="input-label">
+                            <label class="text-nowrap" for="inputMunicipio">Município</label>
+                        </div>
+
+                        <select id="inputMunicipio" class="form-control">
+                            <option selected>Selecione</option>
+                            <option>Apuí</option>
+                            <option>Barcelos</option>
+                            <option>Barreirinha</option>
+                            <option>Borba</option>
+                            <option>Careiro Castanho</option>
+                            <option>Juruti</option>
+                            <option>Nhamundá</option>
+                            <option>Novo Airão</option>
+                            <option>Oriximiná</option>
+                            <option>Parintins</option>
+                            <option>Puranga Conquista</option>
+                            <option>Terra Santa</option>
+                        </select>
+                    </div>
+
+                    
+                </div>
+
+                <!-- terceira linha de inputs -->
+                <div class="row">
+                    <!-- select comunidade -->
+                    <div id="div-comunidade" class="col-md-4 ">
+                        <div class="input-label">
+                            <label class="text-nowrap" for="inputComunidade">Comunidade</label>
+                        </div>
+
+                        <select id="inputComunidade" class="form-control">
+                            <option selected>Selecione</option>
+                            <option>Comunidade Aliança</option>
+                            <option>Comunidade Ascensão</option>
+                            <option>Comunidade Barreto</option>
+                            <option>Comunidade Bela Vista do Guariba</option>
+                            <option>Comunidade Boca dos Currais</option>
+                            <option>Comunidade Castanhal'</option>
+                            <option>Comunidade Granja Ceres</option>
+                            <option>Comunidade Igapó Açu</option>
+                            <option>Comunidade Mamori</option>
+                            <option>Comunidade Nova Esperança</option>
+                            <option>Comunidade Pintado</option>
+                            <option>Comunidade Poço Fundo</option>
+                            <option>Comunidade Salgado I</option>
+                            <option>Comunidade São José</option>
+                            <option>Comunidade Tucumanduba</option>
+                        </select>
+                    </div>
+
+                    <!-- botão de pesquisa -->
+                    <div class="botao">
+                        <button type="button" class="btn btn-success btn-sm " style="float: right;">Pesquisar
+                            </button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- card pra listar usuario -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Ciclos</h3>
+                        <div class="card-title">
+                            Lista de ciclos reprodutivos anuais identificados por município e ano.
+                            <button type="button" class="btn btn-success btn-sm " style="float: right;"> + Novo
+                                ciclo</button>
+                        </div>
+                    </div>
+                    <!-- tabela que lista os usuários -->
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th class="text-center">
+                                        ID Ciclo
+                                    </th>
+                                    <th class="text-center">
+                                        Nome
+                                    </th>
+                                    <th class="text-center">
+                                        Estado
+                                    </th>
+                                    <th class="text-center">
+                                        Municipio
+                                    </th>
+                                    <th class="text-center">
+                                        Comunidade
+                                    </th>
+
+                                    <th class="text-center">
+
+                                    </th>
+                                </thead>
+
+                                <tbody>
+                                    <tr *ngFor="let item of ciclos; index as i;">
+                                        <td class="text-center">
+                                            {{item.idCiclo}}
+                                        </td>
+                                        <td class="text-center">
+                                            {{item.nome}}
+                                        </td>
+                                        <td class="text-center">
+                                            {{item.estado}}
+                                        </td>
+                                        <td class="text-center">
+                                            {{item.municipio}}
+                                        </td>
+                                        <td class="text-center">
+                                            {{item.comunidade}}
+                                        </td>                                      
+                                        <!-- botões -->
+                                        <td class="text-center">
+                                         icone de view
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

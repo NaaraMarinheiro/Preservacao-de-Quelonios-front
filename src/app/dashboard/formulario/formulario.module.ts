@@ -8,9 +8,9 @@ import { FormularioSolturaComponent } from './formulario-soltura/formulario-solt
 
 @NgModule({
   declarations: [
-    FormularioColetaComponent,
-    FormularioEclosaoComponent,
-    FormularioSolturaComponent
+    // FormularioColetaComponent,
+    // FormularioEclosaoComponent,
+    // FormularioSolturaComponent,
   ],
   imports: [
     CommonModule

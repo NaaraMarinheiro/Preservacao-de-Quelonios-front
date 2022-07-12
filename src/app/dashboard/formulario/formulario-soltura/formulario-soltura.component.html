@@ -6,15 +6,22 @@
     </div>
 
 
+    <!-- primeira linha de inputs -->
     <div class="row">
+        <!-- input id ciclo -->
+        <div class="col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputID">ID Ciclo</label>
+            </div>
 
-        <div class="col">
-            <label for="inputID">ID Ciclo</label>
             <input type="text" class="form-control">
         </div>
+        <!-- select estado -->
+        <div class="col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputEstado">Estado</label>
+            </div>
 
-        <div class="col ">
-            <label for="inputEstado">Estado</label>
             <select id="inputEstado" class="form-control">
                 <option selected>Selecione</option>
                 <option>AM</option>
@@ -22,10 +29,14 @@
             </select>
         </div>
     </div>
-
+    <!-- segunda linha de inputs -->
     <div class="row">
-        <div class="col ">
-            <label for="inputMunicipio">Municipio</label>
+        <!-- select municipio -->
+        <div class="col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" id="label-municipio" for="inputMunicipio">Municipio</label>
+            </div>
+
             <select id="inputMunicipio" class="form-control">
                 <option selected>Selecione</option>
                 <option>Apuí</option>
@@ -42,9 +53,12 @@
                 <option>Terra Santa</option>
             </select>
         </div>
+        <!-- select comunidade -->
+        <div class="col-md-4 ">
+            <div class="input-label">
+                <label class="text-nowrap" id="label-comunidade" for="inputComunidade">Comunidade</label>
+            </div>
 
-        <div class="col ">
-            <label for="inputComunidade">Comunidade</label>
             <select id="inputComunidade" class="form-control">
                 <option selected>Selecione</option>
                 <option>Comunidade Aliança</option>
@@ -65,72 +79,93 @@
             </select>
         </div>
     </div>
-
+    <hr>
+    <!-- terceira linha de inputs -->
     <div class="row">
-
-        <div class="col">
-            <label for="inputIDViagem">ID Viagem</label>
+        <!-- input id viagem -->
+        <div class="col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" id="label-viagem" for="inputIDViagem">ID Viagem</label>
+            </div>
             <input type="text" class="form-control">
         </div>
-
-        <div class="col">
-            <label for="inputData">Data</label>
-            <input type="date" class="form-control">
+        <!-- input data -->
+        <div class="col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputData">Data</label>
+            </div>
+            <input id="input-data" type="date" class="form-control">
         </div>
     </div>
-
+    <hr>
     <div class="form-group">
 
-        <div class="form-group col-md-6">
-            <label for="inputMatricula">Matrícula</label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputMatricula">Matrícula</label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="inputNumeroAnimal">Número do animal</label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputNumeroAnimal">Número do animal</label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="inputEspecie">Espécie</label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputEspecie">Espécie</label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="inputDataNascimento">Data da soltura</label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputDataNascimento">Data da soltura</label>
+            </div>
             <input type="date" class="form-control">
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="inputComprimentoCarapaca">Comprimento da carapaça </label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputComprimentoCarapaca">Comprimento da carapaça </label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-
-
-        <div class="form-group col-md-6">
-            <label for="inputLarguraCarapaca">Largura da carapaça</label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputLarguraCarapaca">Largura da carapaça</label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-
-
-        <div class="form-group col-md-6">
-            <label for="inputComprimentoPlastrao">Comprimento do plastrão</label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputComprimentoPlastrao">Comprimento do plastrão</label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="inputLarguraPlastrao">Largura plastrão </label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputLarguraPlastrao">Largura plastrão </label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="inputPeso">Peso </label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputPeso">Peso </label>
+            </div>
             <input type="text" class="form-control">
         </div>
-        <div class="form-group col-md-6">
-            <label for="inputAltura">Altura </label>
+        <div class="form-group col-md-4">
+            <div class="input-label">
+                <label class="text-nowrap" for="inputAltura">Altura </label>
+            </div>
             <input type="text" class="form-control">
         </div>
 
@@ -138,7 +173,7 @@
 
 
     <div class="botao">
-        <button type="button" class="btn btn-outline-success">Salvar</button>
+        <button type="button" class="btn btn-success">Salvar</button>
     </div>
 
 

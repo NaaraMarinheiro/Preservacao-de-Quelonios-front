@@ -1,35 +1,47 @@
 <div class="container">
-    <!-- card de pesquisar usuario -->
 
+    <!-- card de pesquisar usuario -->
     <div class="col">
         <div class="col-md-12">
             <div class="card ">
-                <div class="card-header">
-                    <h3>Pesquisar usuário</h3>
-                    <div class="card-title">
 
-                    </div>
-                </div>
-
+                <!-- primeira linha de inputs -->
                 <div class="row">
-                    <div class="col-md-6 ">
-                        <label for="inputMatricula">Número da matrícula</label>
+                    <!-- input matrícula -->
+                    <div class="col-md-4 ">
+                        <div class="input-label">
+                            <label class="text-nowrap" for="inputMatricula">Matrícula</label>
+                        </div>
+
                         <input type="text" class="form-control" id="inputMatricula">
                     </div>
-                    <div class="col-md-6 ">
-                        <label for="inputEmail">Email</label>
+
+                    <!-- input email -->
+                    <div class="col-md-4 ">
+                        <div class="input-label">
+                            <label class="text-nowrap" for="inputEmail">Email</label>
+                        </div>
                         <input type="email" class="form-control" id="inputEmail">
                     </div>
                 </div>
 
+                <!-- segunda linha de inputs -->
                 <div class="row">
-                    <div class="col-md-6 ">
-                        <label for="inputMatricula">Nome completo</label>
+                    <!-- input nome completo -->
+                    <div class="col-md-4 ">
+                        <div class="input-label">
+                            <label class="text-nowrap" for="inputMatricula">Nome completo</label>
+                        </div>
+
                         <input type="text" class="form-control" id="inputMatricula">
                     </div>
 
-                    <div class="col-md-6 ">
-                        <label for="inputTipoUsuario">Tipo de usuário</label>
+                    <!-- select tipo usuario -->
+                    <div class="col-md-4 ">
+                        <div class="input-label">
+                            <label class="text-nowrap" for="inputTipoUsuario">Tipo de usuário</label>
+                        </div>
+
                         <select id="inputTipoUsuario" class="form-control">
                             <option selected>Selecione</option>
                             <option>Voluntário</option>
@@ -37,9 +49,10 @@
                         </select>
                     </div>
 
+                    <!-- botão de pesquisa -->
                     <div class="botao">
-                        <button type="button" class="btn btn-outline-success btn-sm " style="float: right;">Pesquisar
-                            usuário</button>
+                        <button type="button" class="btn btn-success btn-sm " style="float: right;">Pesquisar
+                            </button>
                     </div>
                 </div>
 
@@ -55,11 +68,11 @@
                         <h3>Usuários</h3>
                         <div class="card-title">
                             Lista de usuários
-                            <button type="button" class="btn btn-outline-success btn-sm " style="float: right;">Novo
+                            <button type="button" class="btn btn-success btn-sm " style="float: right;"> + Novo
                                 usuário</button>
                         </div>
                     </div>
-
+                    <!-- tabela que lista os usuários -->
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
@@ -83,7 +96,7 @@
                                         Permissão
                                     </th>
                                     <th class="text-center">
-                                        Ações
+                                       
                                     </th>
                                 </thead>
 
@@ -107,9 +120,10 @@
                                         <td class="text-center">
                                             {{item.permissao}}
                                         </td>
-                                        <td class="text-center">
-                                            <button type="button" class="btn btn-outline-warning btn-sm">Editar</button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm">Remover</button>
+                                        <!-- botões -->
+                                        <td class="text-center">                                           
+                                            <button type="button" class="btn btn-warning btn-sm">Editar</button>
+                                            <button type="button" class="btn btn-danger btn-sm">Remover</button>
                                         </td>
                                     </tr>
                                 </tbody>

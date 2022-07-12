@@ -1,30 +1,38 @@
 <div class="container">
 
-
+    <!-- cabecalho -->
     <div class="row">
         <h1 class="titulo">Novo usuário</h1>
         <h6>Cadastrar um novo usuário no sistema</h6>
 
+        <!-- primeira linha de inputs -->
         <div class="col ">
-            <label for="inputMatricula">Matrícula</label>
+            <div class="input-label">
+                <label class="text-nowrap" for="inputMatricula">Matrícula</label>
+            </div>
             <input type="text" class="form-control" id="inputMatricula">
         </div>
         <div class="col ">
-            <label for="inputEmail">Email</label>
+            <div class="input-label">
+                <label for="inputEmail">Email</label>
+            </div>
             <input type="email" class="form-control" id="inputEmail">
         </div>
-        <div class="col ">
-            <label for="inputSenha">Senha</label>
-            <input type="password" class="form-control" id="inputSenha">
-        </div>
 
+
+        <!-- segunda linha de inputs -->
         <div class="form-group">
-            <label for="inputNome">Nome completo</label>
+            <div class="input-label">
+                <label id="label-nome" class="text-nowrap" for="inputNome">Nome completo</label>
+            </div>
             <input type="text" class="form-control" id="inputNome">
         </div>
 
+        <!-- terceira linha de inputs -->
         <div class="col ">
-            <label for="inputTipoUsuario">Tipo de usuário</label>
+            <div class="input-label">
+                <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario">Tipo de usuário</label>
+            </div>
             <select id="inputTipoUsuario" class="form-control">
                 <option selected>Selecione</option>
                 <option>Voluntário</option>
@@ -33,16 +41,30 @@
         </div>
 
         <div class="col ">
-            <label for="inputStatus">Status</label>
-            <select id="inputStatus" class="form-control">
-                <option selected>Selecione</option>
-                <option>Ativo</option>
-                <option>Inativo</option>
-            </select>
+            <div class="input-label">
+                <label class="text-nowrap" for="inputSenha">Senha</label>
+            </div>
+            <input type="password" class="form-control" id="inputSenha">
+        </div>
+
+
+        <!-- quarta linha de inputs  -->
+        <div class="row">
+
+            <div class="col ">
+                <div class="input-label">
+                    <label class="text-nowrap" for="inputStatus">Status</label>
+                </div>
+                <select id="inputStatus" class="form-control">
+                    <option selected>Selecione</option>
+                    <option>Ativo</option>
+                    <option>Inativo</option>
+                </select>
+            </div>
         </div>
 
         <div class="botao">
-            <button type="button" class="btn btn-outline-success  ">Salvar</button>
+            <button type="button" class="btn btn-success  ">Salvar</button>
         </div>
 
     </div>
