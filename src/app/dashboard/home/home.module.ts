@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeVoluntarioComponent } from './home-voluntario/home-voluntario.component';
-import { HomeCoordenadorComponent } from './home-coordenador/home-coordenador.component';
+import { HomeComponent } from './home.component';
 
 
 
 @NgModule({
   declarations: [
-    HomeVoluntarioComponent,
-    HomeCoordenadorComponent
+    HomeComponent
   ],
   imports: [
     CommonModule
