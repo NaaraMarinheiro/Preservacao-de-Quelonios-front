@@ -1,0 +1,43 @@
+#migalhas {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+
+}
+
+.conteudo {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.card-form {
+    height: 16rem;
+
+}
+
+.img-format {
+    border-radius: 6px;
+    height: 16rem;
+    object-fit: cover;
+    width: 100%;
+}
+
+.button-img-form {
+    position: relative;
+    top: -16rem;
+    left: 0rem;
+    height: 16rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 3rem;
+}
+
+.btn-light {
+    color: #2f394e;
+}
+
+.btn-sucess{
+    color: #63a15f;
+}
