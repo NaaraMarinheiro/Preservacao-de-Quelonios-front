@@ -8,30 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CicloEditarComponent implements OnInit {
 
-  public ciclos=[
-    {
-        idCiclo: "101",
-        nome:"Barreirinha 2022",
-        estado:"AM",
-        municipio:"Barreirinha",
-        comunidade:"Comunidade Nova Esperança"
-        
-    },
-    {
-      idCiclo: "102",
-      nome:"Parintins 2022",
-      estado:"AM",
-      municipio:"Parintins",
-      comunidade:"Comunidade Boca dos Currais"
-    },
-    {
-      idCiclo: "103",
-      nome:"Careiro 2022",
-      estado:"AM",
-      municipio:"Careiro Castanho",
-      comunidade:"Comunidade Mamori"
-    }
-];
+ 
 
   constructor(private route: ActivatedRoute) { }
 
