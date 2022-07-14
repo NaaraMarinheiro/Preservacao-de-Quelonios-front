@@ -8,6 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CicloEditarComponent implements OnInit {
 
+ 
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
