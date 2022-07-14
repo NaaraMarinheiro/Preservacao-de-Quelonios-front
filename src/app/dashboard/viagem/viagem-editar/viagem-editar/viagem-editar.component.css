@@ -17,18 +17,17 @@
     border-radius: 7px;
 }
 
-/* .col {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-} */
+
 #comunidade {
     margin-left: 260px;
 }
 
 #estado{
     margin-left: 120px;
+}
+
+#data{
+    margin-left: 260px;
 }
 
 .col-md-6 {
@@ -39,7 +38,14 @@
     margin-bottom: 20px;
 }
 
+.col-md-2{
+   padding-top: 12px;
+  margin-right: 65px;
+}
+
 
 .row .botao {
+    margin-top: 25px;
     text-align: end;
 }
+

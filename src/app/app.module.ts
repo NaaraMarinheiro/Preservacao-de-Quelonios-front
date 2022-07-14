@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CicloCadastrarComponent } from './dashboard/ciclo/ciclo-cadastrar/ciclo-cadastrar/ciclo-cadastrar.component';
 import { CicloEditarComponent } from './dashboard/ciclo/ciclo-editar/ciclo-editar/ciclo-editar.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+
 import { FormularioColetaComponent } from './dashboard/formulario/formulario-coleta/formulario-coleta.component';
 import { FormularioEclosaoComponent } from './dashboard/formulario/formulario-eclosao/formulario-eclosao.component';
 import { FormularioSolturaComponent } from './dashboard/formulario/formulario-soltura/formulario-soltura.component';
@@ -14,6 +15,7 @@ import { UsuarioEditarComponent } from './dashboard/usuario/usuario-editar/usuar
 import { UsuarioListaComponent } from './dashboard/usuario/usuario-lista/usuario-lista.component';
 import { UsuarioNovoComponent } from './dashboard/usuario/usuario-novo/usuario-novo.component';
 import { ViagemCadastrarComponent } from './dashboard/viagem/viagem-cadastrar/viagem-cadastrar/viagem-cadastrar.component';
+import { ViagemEditarComponent } from './dashboard/viagem/viagem-editar/viagem-editar/viagem-editar.component';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { ViagemCadastrarComponent } from './dashboard/viagem/viagem-cadastrar/vi
     RelatoriosComponent,
     CicloCadastrarComponent,
     CicloEditarComponent,
-    ViagemCadastrarComponent
+    ViagemCadastrarComponent,
+    ViagemEditarComponent
   ],
   imports: [
     BrowserModule,
