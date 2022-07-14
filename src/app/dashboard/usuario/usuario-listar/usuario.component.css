@@ -1,0 +1,63 @@
+.container {
+    margin-top: 60px;
+}
+
+
+.card-header {
+    background-color: #fff;
+}
+
+.card {
+    padding: 20px 20px;
+    margin-bottom: 30px;
+    border: 6px;
+
+}
+
+.text-center {
+    color: #2f394e;
+}
+
+.btn {
+    margin: 5px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-around;
+}
+
+.botao {
+    /* margin-top: 15px; */
+    margin-top: 20px;
+    text-align: end;
+}
+
+.col-md-4 {
+    padding-top: 20px;
+}
+
+#button-editar{
+    background-image: url(../../../../assets/img/edit-file.svg);
+    height: 1.5rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    border: none;
+    background-color: transparent;
+    margin: 0rem 0.7rem; 
+ }
+
+ #button-excluir{
+    background-image: url(../../../../assets/img/delete.svg);
+    height: 1.5rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    border: none;
+    background-color: transparent;
+ }
+
