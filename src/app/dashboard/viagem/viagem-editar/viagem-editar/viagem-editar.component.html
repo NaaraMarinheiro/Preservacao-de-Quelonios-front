@@ -1,5 +1,3 @@
-<p>viagem-editar works!</p>
-
 <div class="container">
 
     <!-- cabecalho -->
@@ -7,11 +5,8 @@
         <h1 class="titulo">Editar Viagem</h1>
         <h6>Editar uma viagem existente no sistema</h6>
 
-
-
         <!-- primeira linha de inputs -->
         <!-- input nome ciclo -->
-
         <div class="col-md-6">
             <label class="text-nowrap" for="inputNome">Nome ciclo</label>
             <input type="text" class="form-control" id="inputNome">
@@ -27,13 +22,10 @@
             </select>
         </div>
 
-
-
         <!-- segunda linha de inputs -->
         <!-- input municipio -->
         <div class="col-md-4">
             <label class="text-nowrap" for="inputMunicipio">Município</label>
-
             <select id="inputMunicipio" class="form-control">
                 <option selected>Selecione</option>
                 <option>Apuí</option>
@@ -50,10 +42,10 @@
                 <option>Terra Santa</option>
             </select>
         </div>
+
         <!-- input comunidade -->
         <div id="comunidade" class="col-md-4">
             <label class="text-nowrap" for="inputComunidade">Comunidade</label>
-
             <select id="inputComunidade" class="form-control">
                 <option selected>Selecione</option>
                 <option>Comunidade Aliança</option>
@@ -74,27 +66,22 @@
             </select>
         </div>
 
-
         <hr>
-
         <!-- terceira linha de inputs -->
-        <!--  input data -->
-
+        <!--  input id viagem -->
         <div id="id-viagem" class="col-md-4">
             <label class="text-nowrap" for="inputIdViagem">ID viagem</label>
-            <input  type="text" class="form-control">
+            <input type="text" class="form-control">
         </div>
 
-        <!-- quarta linha de inputs -->
-        <!-- select coordenador -->
+        <!-- input data-->
         <div id="data" class="col-md-4 ">
             <label class="text-nowrap" for="inputData">Data</label>
             <input id="input-data" type="date" class="form-control">
         </div>
 
-        <!-- quinta linha de inputs -->
-        <!-- select voluntario -->
-
+        <!-- quarta linha de inputs -->
+        <!-- select coordenador -->
         <div>
             <div class="col-md-4 ">
                 <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario">Coordenador</label>
@@ -105,58 +92,59 @@
                 </select>
             </div>
         </div>
-
         
-            <div class="col-md-3 ">
-                <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario">Participantes</label>
-                <select id="inputTipoUsuario" class="form-control">
-                    <option selected>Selecione</option>
-                    <option>Bruna</option>
-                    <option>Márcio</option>
-                    <option>Alberto</option>
-                    <option>Juliana</option>
-                </select>
-            </div>
+        <!-- quinta linha de inputs -->
+        <!-- selct participantes -->
+        <div class="col-md-3 ">
+            <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario">Participantes</label>
+            <select id="inputTipoUsuario" class="form-control">
+                <option selected>Selecione</option>
+                <option>Bruna</option>
+                <option>Márcio</option>
+                <option>Alberto</option>
+                <option>Juliana</option>
+            </select>
+        </div>
 
-            <div class="col-md-3 ">   
-                <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario"> </label>            
-                <select id="inputTipoUsuario" class="form-control">
-                    <option selected>Selecione</option>
-                    <option>Bruna</option>
-                    <option>Márcio</option>
-                    <option>Alberto</option>
-                    <option>Juliana</option>
-                </select>
-            </div>
+        <div class="col-md-3 ">
+            <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario"> </label>
+            <select id="inputTipoUsuario" class="form-control">
+                <option selected>Selecione</option>
+                <option>Bruna</option>
+                <option>Márcio</option>
+                <option>Alberto</option>
+                <option>Juliana</option>
+            </select>
+        </div>
 
-            <div class="col-md-3">        
-                <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario"> </label>        
-                <select id="inputTipoUsuario" class="form-control">
-                    <option selected>Selecione</option>
-                    <option>Bruna</option>
-                    <option>Márcio</option>
-                    <option>Alberto</option>
-                    <option>Juliana</option>
-                </select>
-            </div>
+        <div class="col-md-3">
+            <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario"> </label>
+            <select id="inputTipoUsuario" class="form-control">
+                <option selected>Selecione</option>
+                <option>Bruna</option>
+                <option>Márcio</option>
+                <option>Alberto</option>
+                <option>Juliana</option>
+            </select>
+        </div>
 
-            <div class="col-md-3 ">    
-                <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario"> </label>            
-                <select id="inputTipoUsuario" class="form-control">
-                    <option selected>Selecione</option>
-                    <option>Bruna</option>
-                    <option>Márcio</option>
-                    <option>Alberto</option>
-                    <option>Juliana</option>
-                </select>
-            </div>
-        
+        <div class="col-md-3 ">
+            <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario"> </label>
+            <select id="inputTipoUsuario" class="form-control">
+                <option selected>Selecione</option>
+                <option>Bruna</option>
+                <option>Márcio</option>
+                <option>Alberto</option>
+                <option>Juliana</option>
+            </select>
+        </div>
 
-         <!-- botao -->
-    <div class="botao">
-        <button type="button" class="btn btn-success  ">Salvar</button>
+
+        <!-- botao -->
+        <div class="botao">
+            <button type="button" class="btn btn-success  ">Salvar</button>
+        </div>
     </div>
-    </div>
-   
+
 
 </div>

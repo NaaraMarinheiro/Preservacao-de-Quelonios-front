@@ -21,7 +21,7 @@ export class CicloEditarComponent implements OnInit {
       idCiclo: "102",
       nome:"Parintins 2022",
       estado:"AM",
-      municipio:"Barreirinha",
+      municipio:"Parintins",
       comunidade:"Comunidade Boca dos Currais"
     },
     {

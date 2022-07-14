@@ -14,48 +14,15 @@
     justify-content: space-around;
     margin-top: 20px;
 }
-
-.col-md-4 {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-#label-municipio {
-    padding: unset;
-    margin-right: 10px;
-    margin-left: -75px;
-}
-
-#label-viagem {
-    padding: unset;
-    margin-right: 10px;
-    margin-left: -75px;
-}
-
-#label-comunidade {
-    padding: unset;
-    margin-right: 10px;
-    margin-left: -95px;
-}
-
-
-
 .form-group {
-    margin-left: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 10px;
 }
-
 
 .container .botao {
     text-align: end;
     margin-top: 25px;
-}
-
-.input-label {
-    padding-right: 10px;
-    margin: 12px;
-}
- .text-nowrap{
-    margin-left: -50px;
 }

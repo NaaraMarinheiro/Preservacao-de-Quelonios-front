@@ -8,19 +8,15 @@
                 <!-- primeira linha de inputs -->
                 <div class="row">
                     <!-- input id ciclo -->
-                    <div class="col-md-4 ">
-                        <div class="input-label">
-                            <label class="text-nowrap" for="inputIdCiclo">Id Ciclo</label>
-                        </div>
+                    <div class="col-md-6 ">
+                        <label class="text-nowrap" for="inputIdCiclo">Id Ciclo</label>
 
                         <input type="text" class="form-control" id="inputIdCiclo">
                     </div>
 
                     <!-- input nome -->
-                    <div class="col-md-4 ">
-                        <div class="input-label">
-                            <label class="text-nowrap" for="inputNome">Nome</label>
-                        </div>
+                    <div class="col-md-6 ">
+                        <label class="text-nowrap" for="inputNome">Nome</label>
                         <input type="text" class="form-control" id="inputNome">
                     </div>
                 </div>
@@ -28,24 +24,18 @@
                 <!-- segunda linha de inputs -->
                 <div class="row">
                     <!-- select estado -->
-                    <div class="col-md-4 ">
-                        <div class="input-label">
-                            <label class="text-nowrap" for="inputEstado">Estado</label>
-                        </div>
+                    <div class="col-md-6 ">
+                        <label class="text-nowrap" for="inputEstado">Estado</label>
                         <select id="inputEstado" class="form-control">
                             <option selected>Selecione</option>
                             <option>AM</option>
                             <option>PA</option>
                         </select>
-
                     </div>
 
                     <!-- select Municipio -->
-                    <div class="col-md-4 ">
-                        <div class="input-label">
-                            <label class="text-nowrap" for="inputMunicipio">Município</label>
-                        </div>
-
+                    <div class="col-md-6 ">
+                        <label class="text-nowrap" for="inputMunicipio">Município</label>
                         <select id="inputMunicipio" class="form-control">
                             <option selected>Selecione</option>
                             <option>Apuí</option>
@@ -63,17 +53,14 @@
                         </select>
                     </div>
 
-                    
+
                 </div>
 
                 <!-- terceira linha de inputs -->
                 <div class="row">
                     <!-- select comunidade -->
-                    <div id="div-comunidade" class="col-md-4 ">
-                        <div class="input-label">
-                            <label class="text-nowrap" for="inputComunidade">Comunidade</label>
-                        </div>
-
+                    <div id="div-comunidade" class="col-md-6 ">
+                        <label class="text-nowrap" for="inputComunidade">Comunidade</label>
                         <select id="inputComunidade" class="form-control">
                             <option selected>Selecione</option>
                             <option>Comunidade Aliança</option>
@@ -97,7 +84,7 @@
                     <!-- botão de pesquisa -->
                     <div class="botao">
                         <button type="button" class="btn btn-success btn-sm " style="float: right;">Pesquisar
-                            </button>
+                        </button>
                     </div>
                 </div>
 
@@ -159,10 +146,14 @@
                                         </td>
                                         <td class="text-center">
                                             {{item.comunidade}}
-                                        </td>                                      
+                                        </td>
                                         <!-- botões -->
                                         <td class="text-center">
-                                         icone de view
+                                            <div class="d-flex justify-content-around">
+                                                <button type="button" id="button-visao"></button>
+                                            </div>
+
+
                                         </td>
                                     </tr>
                                 </tbody>

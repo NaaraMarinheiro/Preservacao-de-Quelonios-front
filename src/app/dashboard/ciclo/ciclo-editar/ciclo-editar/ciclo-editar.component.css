@@ -9,6 +9,7 @@
 .card{
     padding: 20px 20px;
     margin-bottom: 30px;
+    border-radius: 6px;
 
 }
 .text-center{
@@ -19,40 +20,19 @@
     margin: 5px;
 }
 
-.row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: space-between;
-    justify-content: space-around;
+.col-md-6 {
+    padding: 10px;
 }
 
 .botao{
     margin-top: 15px;
 }
-
-.col-md-4 {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-}
-.col-md-2 {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.input-inline{
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.input-label{
-    padding-right: 10px;
-    margin: 10px;
-}
-
+#button-visao{
+    background-image: url(../../../../../assets/img/view.svg);
+    height: 1.5rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    border: none;
+    background-color: transparent;
+ }

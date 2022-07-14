@@ -52,7 +52,7 @@
                     <!-- botão de pesquisa -->
                     <div class="botao">
                         <button type="button" class="btn btn-success btn-sm " style="float: right;">Pesquisar
-                            </button>
+                        </button>
                     </div>
                 </div>
 
@@ -96,7 +96,7 @@
                                         Permissão
                                     </th>
                                     <th class="text-center">
-                                       
+
                                     </th>
                                 </thead>
 
@@ -121,9 +121,13 @@
                                             {{item.permissao}}
                                         </td>
                                         <!-- botões -->
-                                        <td class="text-center">                                           
-                                            <button type="button" class="btn btn-warning btn-sm">Editar</button>
-                                            <button type="button" class="btn btn-danger btn-sm">Remover</button>
+                                        <td class="text-center">
+                                            <div class="d-flex justify-content-around">
+                                                <button type="button" id="button-editar"></button>
+                                                <button type="button" id="button-excluir"></button>
+                                            </div>
+
+
                                         </td>
                                     </tr>
                                 </tbody>

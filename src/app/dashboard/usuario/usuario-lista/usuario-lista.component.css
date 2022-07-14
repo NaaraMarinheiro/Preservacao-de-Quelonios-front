@@ -1,21 +1,24 @@
-.container{
-    margin-top: 60px; 
+.container {
+    margin-top: 60px;
 }
 
 
-.card-header{
+.card-header {
     background-color: #fff;
 }
-.card{
+
+.card {
     padding: 20px 20px;
     margin-bottom: 30px;
+    border: 6px;
 
 }
-.text-center{
+
+.text-center {
     color: #2f394e;
 }
 
- .btn{
+.btn {
     margin: 5px;
 }
 
@@ -27,32 +30,34 @@
     justify-content: space-around;
 }
 
-.botao{
-    margin-top: 15px;
+.botao {
+    /* margin-top: 15px; */
+    margin-top: 20px;
+    text-align: end;
 }
 
 .col-md-4 {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-}
-.col-md-2 {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
+    padding-top: 20px;
 }
 
-.input-inline{
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-}
+#button-editar{
+    background-image: url(../../../../assets/img/edit-file.svg);
+    height: 1.5rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    border: none;
+    background-color: transparent;
+    margin: 0rem 0.7rem; 
+ }
 
-.input-label{
-    padding-right: 10px;
-    margin: 10px;
-}
+ #button-excluir{
+    background-image: url(../../../../assets/img/delete.svg);
+    height: 1.5rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    border: none;
+    background-color: transparent;
+ }
 
