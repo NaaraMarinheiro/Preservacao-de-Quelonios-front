@@ -9,11 +9,13 @@ import { UsuarioRoutingModule } from './usuario/usuario-routing.module';
 import { RelatorioModule } from './relatorio/relatorio.module';
 import { RelatorioRoutingModule } from './relatorio/relatorio-routing.module';
 import { HomeComponent } from './home/home.component';
+import { ViagemItemComponent } from './viagem/viagem-item/viagem-item.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    
 
   ],
   imports: [
@@ -25,12 +27,12 @@ import { HomeComponent } from './home/home.component';
     UsuarioRoutingModule,
     RelatorioModule,
     RelatorioRoutingModule,
+  
     
 
   ],
   exports: [
-    DashboardComponent
-    
+    DashboardComponent,
   ]
 })
 export class DashboardModule { }

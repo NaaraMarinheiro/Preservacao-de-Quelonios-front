@@ -4,63 +4,64 @@
     <h3 id="migalhas"> Home/Ciclo/Ciclo Barreirinha 2022/Viagem 101</h3>
 
     <div class="conteudo">
-        <h2>Viagem 101 - 20/02/2022</h2>
+        <h2 class="mb-4">Viagem 101 - 20/02/2022</h2>
 
         <form>
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label id="label-nome" class="text-nowrap" for="inputNome">Nome do Ciclo</label>
+                        <label for="inputNome">Nome do Ciclo</label>
                         <input type="text" class="form-control" id="inputNome">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="email">Estado:</label>
-                        <input type="email" class="form-control" id="email">
+                        <label for="Estado">Estado:</label>
+                        <input type="text" class="form-control" id="Estado">
                     </div>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row mt-2">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="email">Comunidade:</label>
-                        <input type="email" class="form-control" id="email">
+                        <label for="comunidade">Comunidade:</label>
+                        <input type="text" class="form-control" id="comunidade">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="email">Município:</label>
-                        <input type="email" class="form-control" id="email">
+                        <label for="maunicipio">Município:</label>
+                        <input type="text" class="form-control" id="municipio">
                     </div>
                 </div>
             </div>
-            <br><br>
+            <br>
+            <hr>
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="email">Id Viagem:</label>
-                        <input type="email" class="form-control" id="email">
+                        <label for="idviagem">Id Viagem:</label>
+                        <input type="number" class="form-control" id="viagemid">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="email">Coordenador</label>
-                        <input type="email" class="form-control" id="email">
+                        <label for="Coordenador">Coordenador</label>
+                        <input type="text" class="form-control" id="coordenador">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="email">Data</label>
-                        <input type="email" class="form-control" id="email">
+                        <label for="Data">Data</label>
+                        <input type="text" class="form-control" id="dataviagem">
                     </div>
                 </div>
             </div>
         </form>
-
     </div>
 
+    <!-- cards dos formulários -->
     <div class="row">
         <div class="col-md-4 card-form mt-4">
             <img src="../../../../assets/img/foto-coleta-filtro.png" class="img-format">
@@ -89,6 +90,7 @@
             </div>
         </div>
     </div>
+
     <div class="conteudo mt-4 mb-4">
         <h6>Busca por Formulário</h6>
         <br>
@@ -96,14 +98,14 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label id="label-nome" class="text-nowrap" for="inputNome">Tipo de formulário</label>
+                        <label for="inputNome">Tipo de formulário</label>
                         <input type="text" class="form-control" id="inputNome">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="email">Data:</label>
-                        <input type="email" class="form-control" id="email">
+                        <label for="data">Data:</label>
+                        <input type="date" class="form-control" id="email">
                     </div>
                 </div>
                 <div class="col-md-4 d-flex" style="align-items: flex-end;
@@ -112,5 +114,55 @@
                 </div>
             </div>
         </form>
+    </div>
+    <!--Listagem de Formulários -->
+    <div class="conteudo mb-4">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="text-primary">
+                        <th class="text-center">IdCiclo</th>
+                        <th class="text-center">Municipio</th>
+                        <th class="text-center">Comunidade</th>
+                        <th class="text-center">Data</th>
+                        <th class="text-center">formulário</th>
+                        <th class="text-center">Usuário</th>
+                        <th class="text-center"></th>
+
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of formulariosArray">
+                            <td class="text-center">
+                                {{item.IdCiclo}}
+                            </td>
+                            <td class="text-center">
+                                {{item.municipio}}
+                            </td>
+                            <td class="text-center">
+                                {{item.comunidade}}
+                            </td>
+                            <td class="text-center">
+                                {{item.data}}
+                            </td>
+                            <td class="text-center">
+                                {{item.formulario}}
+                            </td>
+                            <td class="text-center">
+                                {{item.usuario}}
+                            </td>
+                            <td>
+                                <div class="d-flex justify-content-around">
+                                    <button type="button" id="button-visao"></button>
+                                    <button type="button" id="button-editar"></button>
+                                    <button type="button" id="button-excluir"></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
     </div>
 </div>

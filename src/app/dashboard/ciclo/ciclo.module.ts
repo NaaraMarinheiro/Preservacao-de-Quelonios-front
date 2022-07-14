@@ -13,12 +13,14 @@ import { CicloComponent } from './ciclo-lista/ciclo.component';
     CicloCadastrarComponent,
     CicloComponent,
     CicloItemComponent,
+    ViagemItemComponent,
   ],
   imports: [
     CommonModule,
     CicloRoutingModule
   ],
   exports: [
+    
   ]
 })
 export class CicloModule { }

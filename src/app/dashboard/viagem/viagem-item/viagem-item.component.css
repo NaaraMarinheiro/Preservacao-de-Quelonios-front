@@ -41,3 +41,38 @@
 .btn-sucess{
     color: #63a15f;
 }
+
+th{
+    font-weight: 500;
+}
+
+#button-visao{
+   background-image: url(../../../../assets/img/view.svg);
+   height: 1.5rem;
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+   width: 1.5rem;
+   border: none;
+   background-color: transparent;
+}
+
+#button-editar{
+    background-image: url(../../../../assets/img/edit.svg);
+    height: 1.5rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    border: none;
+    background-color: transparent;
+    margin: 0rem 0.7rem; 
+ }
+
+ #button-excluir{
+    background-image: url(../../../../assets/img/delete.svg);
+    height: 1.5rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    border: none;
+    background-color: transparent;
+ }
