@@ -1,39 +1,44 @@
 .container{
-    background-color:white;
-    margin-top: 10%;
-    margin-left: 25%;
-    margin-right: 25%;
-    font-family: "Fira Sans", sans-serif;
-    border: 15px;
-    border-color: black;
-    position: relative;
+    background-color:white;    
+    min-height: 575px;
+    min-width: 960px;
+    margin-top:1%;
 }
 
-#bgtracaja{
+/**#bgtracaja{
     background-image: url(../../assets/img/tartarugalogin.png);
     background-repeat: no-repeat;
     width:450px;
     height:480px;
-    margin-left: -20%;
+    margin-left: 10%;
     margin-right: -20%;
     margin-bottom: -64.5%;
     background-position: 60% 65%;
-}
+}**/
 
-p{
+
+.img-format {
+    border-radius: 6px;
+    height: 575px;
+    object-fit: cover;
+    width: 430px;
+    margin-left: -70%;
+    margin-top:-205px;
+}   
+
+h3{
     color:white;
-    font-size:18pt;
-    text-align: right;
-    font-family: "Fira Sans", sans-serif;
-    position: relative;
-    top: 10%;
-    display:flex;
-    margin-right: 5%;
+    margin-top:-140%;
+    margin-left: -40%;
+    margin-right: 60%;
 }
 
 .logo{
-    width: 150px ;
-    height: 40px ;
+    position:absolute;
+    width: 160px;
+    height: 40px;
+    margin-left: -5%;
+    margin-top:8%;
 }
 
 .header{
@@ -46,22 +51,22 @@ p{
     margin-right: 15%;
     }
 
-.titulo{
-    min-height: 10vh;
-    min-width: 10vw;
+.lblLogin{
     display:flex;
     align-items:right;
     justify-content: right;
     margin-left: 36%;
-    margin-right: 36%;
-    font-size: 8pt;
+    margin-right: 37%;
+    font-size: 16pt;
     font-family: "Fira Sans", sans-serif;
+    margin-top: 10%;
 }
 
 .row{
     display:flex;
     align-items:right;
-    justify-content: right;
+    justify-content: right;   
+    margin-top:-40px;
 }
 
 input,label{
@@ -71,36 +76,45 @@ input,label{
     width:300; 
     height:30;
     font-family:"Fira Sans", sans-serif;
+    margin-top:-6%;
+    margin-left:-30%;
 }
 
 .form-control{
     border-color: #F6F6F6;
     background-color: #F6F6F6;
+    margin-left: -30%;
+    margin-right: -30%;
+    margin-top: -4%;
+    margin-bottom: -3%;
 }
-
 
 button{
     border-color: #63A15F;
     background-color: #63A15F;
     color: white;
-    width:300px; 
-    height:30px;
+    width:358px; 
+    height:38px;
     border-radius: 6px 6px 6px 6px;
     font-family:"Fira Sans", sans-serif;
+    margin-left: -29%;
+    margin-bottom: -50%;
 }
 
 .footer{
     min-height: 10vh;
     min-width: 10vw;
-    margin-top: 15%;
     display:flex;
     align-items:right;
     justify-content: right;     
-    font-size: 7pt;
+    font-size: 6pt;
     text-align: center;
+    margin-right: 8%;
+    color:#6B6B6B;
 }
 
 a{
-    margin-right: 20px;
+    margin-right: 2px;
     color: #6B6B6B;
+    margin-top: 7%;
 }
