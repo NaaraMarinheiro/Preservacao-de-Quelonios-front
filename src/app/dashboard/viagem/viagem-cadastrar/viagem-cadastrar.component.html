@@ -1,108 +1,110 @@
 <div class="container">
     <h3 id="migalhas"> Home/Ciclos/Ciclo Barreirinha-2022/NovaViagem</h3>
-    <!-- cabecalho -->
-    <div class="row">
+    <div class="conteudo">
+        <!-- cabecalho -->
+
         <h1 class="titulo">Nova Viagem</h1>
         <h6>Incluir uma viagem no sistema</h6>
 
-
-
         <!-- primeira linha de inputs -->
-        <!-- input nome ciclo -->
-        <div class="col-md-6">
-            <label class="text-nowrap" for="inputNome">Nome ciclo</label>
-            <input type="text" class="form-control" id="inputNome">
-        </div>
+        <div class="row">
+            <!-- input nome ciclo -->
+            <div class="col-md-6 mt-4">
+                <label class="text-nowrap" for="inputNome">Nome ciclo</label>
+                <input type="text" class="form-control" id="inputNome">
+            </div>
 
-        <!-- select estado -->
-        <div id="estado" class="col-md-4 ">
-            <label class="text-nowrap" for="inputEstado">Estado</label>
-            <select id="inputEstado" class="form-control">
-                <option selected>Selecione</option>
-                <option>AM</option>
-                <option>PA</option>
-            </select>
-        </div>
+            <!-- select estado -->
+            <div id="estado" class="col-md-4 ">
+                <label class="text-nowrap" for="inputEstado">Estado</label>
+                <select id="inputEstado" class="form-control">
+                    <option selected>Selecione</option>
+                    <option>AM</option>
+                    <option>PA</option>
+                </select>
+            </div>
 
-        <!-- segunda linha de inputs -->
-        <!-- input municipio -->
-        <div class="col-md-4">
-            <label class="text-nowrap" for="inputMunicipio">Município</label>
-            <select id="inputMunicipio" class="form-control">
-                <option selected>Selecione</option>
-                <option>Apuí</option>
-                <option>Barcelos</option>
-                <option>Barreirinha</option>
-                <option>Borba</option>
-                <option>Careiro Castanho</option>
-                <option>Juruti</option>
-                <option>Nhamundá</option>
-                <option>Novo Airão</option>
-                <option>Oriximiná</option>
-                <option>Parintins</option>
-                <option>Puranga Conquista</option>
-                <option>Terra Santa</option>
-            </select>
-        </div>
-        <!-- input comunidade -->
-        <div id="comunidade" class="col-md-4">
-            <label class="text-nowrap" for="inputComunidade">Comunidade</label>
-            <select id="inputComunidade" class="form-control">
-                <option selected>Selecione</option>
-                <option>Comunidade Aliança</option>
-                <option>Comunidade Ascensão</option>
-                <option>Comunidade Barreto</option>
-                <option>Comunidade Bela Vista do Guariba</option>
-                <option>Comunidade Boca dos Currais</option>
-                <option>Comunidade Castanhal'</option>
-                <option>Comunidade Granja Ceres</option>
-                <option>Comunidade Igapó Açu</option>
-                <option>Comunidade Mamori</option>
-                <option>Comunidade Nova Esperança</option>
-                <option>Comunidade Pintado</option>
-                <option>Comunidade Poço Fundo</option>
-                <option>Comunidade Salgado I</option>
-                <option>Comunidade São José</option>
-                <option>Comunidade Tucumanduba</option>
-            </select>
-        </div>
-
-        <hr>
-        <!-- terceira linha de inputs -->
-        <!--  input data -->
-        <div>
+            <!-- segunda linha de inputs -->
+            <!-- input municipio -->
             <div class="col-md-4">
-                <label class="text-nowrap" for="inputData">Data</label>
-                <input id="input-data" type="date" class="form-control">
-            </div>
-
-            <!-- quarta linha de inputs -->
-            <!-- select coordenador -->
-            <div class="col-md-4 ">
-                <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario">Coordenador</label>
-                <select id="inputTipoUsuario" class="form-control">
+                <label class="text-nowrap" for="inputMunicipio">Município</label>
+                <select id="inputMunicipio" class="form-control">
                     <option selected>Selecione</option>
-                    <option>Paulo</option>
-                    <option>Sandra</option>
+                    <option>Apuí</option>
+                    <option>Barcelos</option>
+                    <option>Barreirinha</option>
+                    <option>Borba</option>
+                    <option>Careiro Castanho</option>
+                    <option>Juruti</option>
+                    <option>Nhamundá</option>
+                    <option>Novo Airão</option>
+                    <option>Oriximiná</option>
+                    <option>Parintins</option>
+                    <option>Puranga Conquista</option>
+                    <option>Terra Santa</option>
+                </select>
+            </div>
+            <!-- input comunidade -->
+            <div id="comunidade" class="col-md-4">
+                <label class="text-nowrap" for="inputComunidade">Comunidade</label>
+                <select id="inputComunidade" class="form-control">
+                    <option selected>Selecione</option>
+                    <option>Comunidade Aliança</option>
+                    <option>Comunidade Ascensão</option>
+                    <option>Comunidade Barreto</option>
+                    <option>Comunidade Bela Vista do Guariba</option>
+                    <option>Comunidade Boca dos Currais</option>
+                    <option>Comunidade Castanhal'</option>
+                    <option>Comunidade Granja Ceres</option>
+                    <option>Comunidade Igapó Açu</option>
+                    <option>Comunidade Mamori</option>
+                    <option>Comunidade Nova Esperança</option>
+                    <option>Comunidade Pintado</option>
+                    <option>Comunidade Poço Fundo</option>
+                    <option>Comunidade Salgado I</option>
+                    <option>Comunidade São José</option>
+                    <option>Comunidade Tucumanduba</option>
                 </select>
             </div>
 
-            <!-- quinta linha de inputs -->
-            <!-- select voluntario -->
-            <div class="col-md-4 ">
-                <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario">Voluntário</label>
-                <select id="inputTipoUsuario" class="form-control">
-                    <option selected>Selecione</option>
-                    <option>Bruna</option>
-                    <option>Márcio</option>
-                    <option>Alberto</option>
-                    <option>Juliana</option>
-                </select>
-            </div>
-        </div>
+            <hr>
+            <!-- terceira linha de inputs -->
+            <!--  input data -->
+            <div>
+                <div class="col-md-4">
+                    <label class="text-nowrap" for="inputData">Data</label>
+                    <input id="input-data" type="date" class="form-control">
+                </div>
 
-        <!-- botao -->
-        <div class="botao">
-            <button type="button" class="btn btn-success  ">Salvar</button>
+                <!-- quarta linha de inputs -->
+                <!-- select coordenador -->
+                <div class="col-md-4 ">
+                    <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario">Coordenador</label>
+                    <select id="inputTipoUsuario" class="form-control">
+                        <option selected>Selecione</option>
+                        <option>Paulo</option>
+                        <option>Sandra</option>
+                    </select>
+                </div>
+
+                <!-- quinta linha de inputs -->
+                <!-- select voluntario -->
+                <div class="col-md-4 ">
+                    <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario">Voluntário</label>
+                    <select id="inputTipoUsuario" class="form-control">
+                        <option selected>Selecione</option>
+                        <option>Bruna</option>
+                        <option>Márcio</option>
+                        <option>Alberto</option>
+                        <option>Juliana</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- botao -->
+            <div class="botao">
+                <button type="button" class="btn btn-success  ">Salvar</button>
+            </div>
         </div>
     </div>
+</div>

@@ -9,7 +9,6 @@
 #migalhas {
     padding-top: 1.5rem;
     padding-bottom: 1rem;
-
 }
 .conteudo {
     background-color: white;
@@ -39,4 +38,8 @@
 .container .botao {
     text-align: center;
     margin-top: 25px;
+}
+
+hr {
+    margin: 2rem;
 }

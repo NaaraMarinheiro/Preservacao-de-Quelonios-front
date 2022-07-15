@@ -1,12 +1,12 @@
 <div class="container">
 
     <h3 id="migalhas"> Home/Ciclos </h3>
-    
-    <!-- card de pesquisar usuario -->
-    <div class="col">
-        <div class="col-md-12">
-            <div class="card ">
 
+    <div class="conteudo">
+
+        <!-- card de pesquisar usuario -->
+        <div class="row">
+            <div class="col-md-12">
                 <!-- primeira linha de inputs -->
                 <div class="row">
                     <!-- input id ciclo -->
@@ -84,89 +84,88 @@
                     </div>
 
                     <!-- botão de pesquisa -->
-                    <div class ="botao">
-                        <button type="button" class="btn btn-success btn-sm" id="botao-pesquisar">Pesquisar
+                    <div class="botao">
+                        <button type="button" class="btn btn-success" id="botao-pesquisar">Pesquisar
                         </button>
                     </div>
                 </div>
-
-
             </div>
-        </div>
 
-        <!-- card pra listar usuario -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Ciclos</h3>
-                        <div class="card-title">
-                            Lista de ciclos reprodutivos anuais identificados por município e ano.
-                            <button type="button" class="btn btn-success btn-sm " style="float: right;" routerLink="cadastrar" routerLinkActive="active-style"> + Novo
-                                ciclo</button>
-                        </div>
+            <!-- card pra listar usuario -->
+            <div class="conteudo mb-4">
+                <div class="col-md-12">
+                    <h3>Ciclos</h3>
+                    <div class="card-title">
+                        Lista de ciclos reprodutivos anuais identificados por município e ano.
+                        <button type="button" class="btn btn-success" style="float: right;" routerLink="cadastrar"
+                            routerLinkActive="active-style"> + Novo
+                            ciclo</button>
                     </div>
+
                     <!-- tabela que lista os usuários -->
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class=" text-primary">
-                                    <th class="text-center">
-                                        ID Ciclo
-                                    </th>
-                                    <th class="text-center">
-                                        Nome
-                                    </th>
-                                    <th class="text-center">
-                                        Estado
-                                    </th>
-                                    <th class="text-center">
-                                        Municipio
-                                    </th>
-                                    <th class="text-center">
-                                        Comunidade
-                                    </th>
-
-                                    <th class="text-center">
-
-                                    </th>
-                                </thead>
-
-                                <tbody>
-                                    <tr *ngFor="let item of ciclos; index as i;">
-                                        <td class="text-center">
-                                            {{item.idCiclo}}
-                                        </td>
-                                        <td class="text-center">
-                                            {{item.nome}}
-                                        </td>
-                                        <td class="text-center">
-                                            {{item.estado}}
-                                        </td>
-                                        <td class="text-center">
-                                            {{item.municipio}}
-                                        </td>
-                                        <td class="text-center">
-                                            {{item.comunidade}}
-                                        </td>
-                                        <!-- botões -->
-                                        <td class="text-center">
-                                            <div class="d-flex justify-content-around">
-                                                <button type="button" id="button-visao" routerLink="001" routerLinkActive="active-style"></button>
-                                            </div>
 
 
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <th class="text-center">
+                                    ID Ciclo
+                                </th>
+                                <th class="text-center">
+                                    Nome
+                                </th>
+                                <th class="text-center">
+                                    Estado
+                                </th>
+                                <th class="text-center">
+                                    Municipio
+                                </th>
+                                <th class="text-center">
+                                    Comunidade
+                                </th>
+
+                                <th class="text-center">
+
+                                </th>
+                            </thead>
+
+                            <tbody>
+                                <tr *ngFor="let item of ciclos; index as i;">
+                                    <td class="text-center">
+                                        {{item.idCiclo}}
+                                    </td>
+                                    <td class="text-center">
+                                        {{item.nome}}
+                                    </td>
+                                    <td class="text-center">
+                                        {{item.estado}}
+                                    </td>
+                                    <td class="text-center">
+                                        {{item.municipio}}
+                                    </td>
+                                    <td class="text-center">
+                                        {{item.comunidade}}
+                                    </td>
+                                    <!-- botões -->
+                                    <td class="text-center">
+                                        <div class="d-flex justify-content-around">
+                                            <button type="button" id="button-visao" routerLink="001"
+                                                routerLinkActive="active-style"></button>
+                                        </div>
+
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+
                 </div>
+
             </div>
         </div>
     </div>
-
+</div>
 
 <!-- <a routerLink="cadastrar" routerLinkActive="active-style"> Cadastrar </a> -->
 <!-- <br>

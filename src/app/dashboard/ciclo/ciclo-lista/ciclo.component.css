@@ -1,45 +1,39 @@
-.container{
-    margin-top: 60px; 
+#migalhas {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+.conteudo {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    /* margin-top: 1.5rem; */
 }
 
-
-.card-header{
-    background-color: #fff;
-}
-.card{
+.col-md-12{
     border: none;
     padding: 20px 20px;
     margin-bottom: 30px;
     border-radius: 6px;
+    background-color: #fff;
+} 
 
-}
 .text-center{
     color: #2f394e;
 }
 
-.btn{
-    margin: 5px;
-  
-}
 
-#botao-pesquisar {
+ #botao-pesquisar {
     display: flex;
-    padding: 4px 15px;
     justify-content: flex-end;
     margin-right: 20px; 
-}
+} 
 
 .botao {
     display: flex;
-    padding: 4px 15px;
     justify-content: flex-end;
     margin-right: 20px; 
 }
 
-
-.col-md-6 {
-    padding: 10px;
-}
 
 .botao{
     margin-top: 15px;
