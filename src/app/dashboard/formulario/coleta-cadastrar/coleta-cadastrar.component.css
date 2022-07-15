@@ -1,9 +1,22 @@
 .container {
-    background-color: #ffffff;
+     /* background-color: #ffffff;
     margin-top: 60px;
     margin-bottom: 60px;
     border-radius: 6px;
-    padding: 20px 25px;
+    padding: 20px 25px; */
+}
+
+#migalhas {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+
+}
+.conteudo {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    /* margin-top: 1.5rem; */
 }
 
 .row {
