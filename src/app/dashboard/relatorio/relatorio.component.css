@@ -1,7 +1,7 @@
 #migalhas {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    margin-left: 21%;
+    margin-left: 5%;
     font-size: 19px;
     font-family: "Fira Sans", sans-serif;
 }
@@ -10,7 +10,7 @@
     background-color: white;
     padding: 1rem;
     border-radius: 6px;
-    margin-left: 20%;
+    margin-left: 5%;
     font-size: 14px;
     font-family: "Fira Sans", sans-serif;
 }
@@ -21,7 +21,7 @@
     float: left;
     padding: 15px;
     margin: 2% 0 2% 1%;
-    margin-left: -2%;
+    margin-left: 5%;
 }
 
 .img-format {
@@ -36,7 +36,7 @@
 
 .button-img-form {
     position: relative;
-    top: -16rem;
+    margin-top: -14rem;
     left: 0rem;
     height: 16rem;
     display: flex;
