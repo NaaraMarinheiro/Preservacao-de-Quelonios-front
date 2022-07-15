@@ -1,0 +1,60 @@
+#migalhas {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-left: 21%;
+    font-size: 19px;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.conteudo {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-left: 20%;
+    font-size: 14px;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.card-form {
+    width: 280px;
+    height: 360px;
+    float: left;
+    padding: 15px;
+    margin: 2% 0 2% 1%;
+    margin-left: -2%;
+}
+
+.img-format {
+    border-radius: 6px;
+    height: 16rem;
+    object-fit: cover;
+    width: 100%;
+}
+.img-format{
+    margin: 2% 2% 2% 2%;
+}
+
+.button-img-form {
+    position: relative;
+    top: -16rem;
+    left: 0rem;
+    height: 16rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 3rem;
+}
+
+button{
+    margin-top: -90%;
+    margin-left: 33%;
+    color:white;
+    background-color: #1F8B24;
+    font-size: 14px;
+    font-family: "Fira Sans", sans-serif;
+    border: none;
+    border-radius: 6px, 6px, 6px, 6px;
+    height: 30px;  
+    
+}
