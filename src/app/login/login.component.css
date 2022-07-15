@@ -6,22 +6,29 @@
     font-family: "Fira Sans", sans-serif;
     border: 15px;
     border-color: black;
+    position: relative;
 }
 
 #bgtracaja{
     background-image: url(../../assets/img/tartarugalogin.png);
     background-repeat: no-repeat;
-    width:400px;
-    height:400px;
+    width:450px;
+    height:480px;
     margin-left: -20%;
     margin-right: -20%;
-    margin-bottom: -60%;
+    margin-bottom: -64.5%;
+    background-position: 60% 65%;
 }
 
 p{
     color:white;
     font-size:18pt;
+    text-align: right;
     font-family: "Fira Sans", sans-serif;
+    position: relative;
+    top: 10%;
+    display:flex;
+    margin-right: 5%;
 }
 
 .logo{
