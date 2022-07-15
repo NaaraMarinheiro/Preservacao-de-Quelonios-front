@@ -1,0 +1,106 @@
+.container{
+    background-color:white;
+    margin-top: 10%;
+    margin-left: 25%;
+    margin-right: 25%;
+    font-family: "Fira Sans", sans-serif;
+    border: 15px;
+    border-color: black;
+    position: relative;
+}
+
+#bgtracaja{
+    background-image: url(../../assets/img/tartarugalogin.png);
+    background-repeat: no-repeat;
+    width:450px;
+    height:480px;
+    margin-left: -20%;
+    margin-right: -20%;
+    margin-bottom: -64.5%;
+    background-position: 60% 65%;
+}
+
+p{
+    color:white;
+    font-size:18pt;
+    text-align: right;
+    font-family: "Fira Sans", sans-serif;
+    position: relative;
+    top: 10%;
+    display:flex;
+    margin-right: 5%;
+}
+
+.logo{
+    width: 150px ;
+    height: 40px ;
+}
+
+.header{
+    min-height: 10vh;
+    min-width: 10vw;
+    display:flex;
+    align-items:right;
+    justify-content: right;
+    margin-left: 15%;
+    margin-right: 15%;
+    }
+
+.titulo{
+    min-height: 10vh;
+    min-width: 10vw;
+    display:flex;
+    align-items:right;
+    justify-content: right;
+    margin-left: 36%;
+    margin-right: 36%;
+    font-size: 8pt;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.row{
+    display:flex;
+    align-items:right;
+    justify-content: right;
+}
+
+input,label{
+    margin-bottom: 15px;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: none;
+    width:300; 
+    height:30;
+    font-family:"Fira Sans", sans-serif;
+}
+
+.form-control{
+    border-color: #F6F6F6;
+    background-color: #F6F6F6;
+}
+
+
+button{
+    border-color: #63A15F;
+    background-color: #63A15F;
+    color: white;
+    width:300px; 
+    height:30px;
+    border-radius: 6px 6px 6px 6px;
+    font-family:"Fira Sans", sans-serif;
+}
+
+.footer{
+    min-height: 10vh;
+    min-width: 10vw;
+    margin-top: 15%;
+    display:flex;
+    align-items:right;
+    justify-content: right;     
+    font-size: 7pt;
+    text-align: center;
+}
+
+a{
+    margin-right: 20px;
+    color: #6B6B6B;
+}

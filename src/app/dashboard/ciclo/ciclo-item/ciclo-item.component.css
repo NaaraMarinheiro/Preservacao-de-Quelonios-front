@@ -1,0 +1,347 @@
+#migalhas {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+
+}
+.card-form {
+    height: 16rem;
+
+}
+
+.img-format {
+    border-radius: 6px;
+    height: 16rem;
+    object-fit: cover;
+    width: 100%;
+}
+.botao {
+    /* margin-top: 15px; */
+    margin-top: 10px;
+    text-align: end;
+}
+.div-minhas-viagens {
+    background: rgba(255, 255, 255, 1);
+    opacity: 1;
+    border-radius: 5px;
+    border: 1px solid rgba(243, 241, 241, 1);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding: 20px;
+    margin: 20px 20px 0px 0px
+}
+
+.div-tabela-minhas-viagens {
+    display: table;
+    width: 100%;
+    border-spacing: 5px;
+    margin-top: 20px;
+    margin-right: 0px;
+}
+
+.canto-colorido-verde {
+    width: 6px;
+    height: 100%;
+    background: rgba(35, 106, 38, 1);
+    opacity: 1;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    float:left;
+    justify-content: stretch
+}
+
+.canto-colorido-rosa {
+    width: 6px;
+    height: 100%;
+    background: rgba(230, 143, 123, 1);
+    opacity: 1;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    float:left;
+    justify-content: stretch
+}
+.canto-colorido-cinza {
+    width: 6px;
+    height: 100%;
+    background: rgba(144, 144, 144, 1);
+    opacity: 1;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    float:left;
+    justify-content: stretch
+}
+
+
+.div-dados-viagem {
+    width: 30%;
+    height: 100%;
+    background: rgba(243, 243, 243, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+   
+}
+
+.subtitulo-dados-viagem {
+    color: rgba(47, 57, 78, 1);
+    font-family: Fira Sans;
+    font-weight: Medium;
+    font-size: 22px;
+    opacity: 1;
+    text-align: left;
+  padding: 10px
+}
+
+.status-em-atualizacao {
+    width: fit-content;
+    color: rgba(34, 106, 37, 1);
+    background-color: rgba(226, 248, 227, 1);
+    font-family: Fira Sans;
+    font-weight: Regular;
+    font-size: 16px;
+    opacity: 1;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+.status-agendada {
+    width: fit-content;
+    color:  rgba(230, 143, 123, 1);
+    background-color: rgba(253, 245, 241, 1);
+    font-family: Fira Sans;
+    font-weight: Regular;
+    font-size: 16px;
+    opacity: 1;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.status-finalizada {
+    width: fit-content;
+    color:  rgba(144, 144, 144, 1);
+    background-color:  rgba(230, 230, 230, 1);
+    font-family: Fira Sans;
+    font-weight: Regular;
+    font-size: 16px;
+    opacity: 1;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.icone {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+
+.label-comunidade {
+    height: 20px;
+    vertical-align: middle;
+    color: rgba(47, 57, 78, 1);
+    font-family: Fira Sans;
+    font-weight: Regular;
+    font-size: 16px;
+    opacity: 1;
+    text-align: left;
+}
+
+.item-id-viagem {
+    padding-bottom: 10px;
+}
+
+.div-dados-id-viagem {
+    height: 100%;
+    background: rgba(243, 243, 243, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.div-botoes-viagem {
+    width: 70%;
+    height: 100%;
+    background: rgba(243, 243, 243, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+
+
+.div-viagem {
+    display: flex;
+    flex-direction: row;
+}
+
+.texto-dados-viagem {
+    color: rgba(47, 57, 78, 1);
+    font-family: Fira Sans;
+    font-weight: Regular;
+    font-size: 16px;
+    opacity: 1;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.botao-formulario {
+    width: 115px;
+    height: 32px;
+    background: rgba(99, 161, 95, 1);
+    opacity: 1;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    text-align: center;
+    opacity: 1;
+    border-style: hidden;
+    margin: 10px;
+    float: right;
+}
+
+.span-formulario {
+    color: rgba(255, 255, 255, 1);
+    font-family: Fira Sans;
+    font-weight: Regular;
+    font-size: 14px;
+    opacity: 1;
+    justify-content: center;
+    vertical-align: bottom;
+}
+
+.div-espaco-botoes {
+    height: 100%;
+}
+
+.div-botoes-conteudo {
+    height: 100%;
+    padding: 10px;
+}
+
+.flex-center {
+    color: #000000;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.flex-center-bottom {
+    color: #000000;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: center;
+}
+
+.flex-item-center {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: center;
+}
+
+.flex-item-bottom {
+    border: solid 2px #4675AA;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: flex-end;
+}
+
+/*.botao-acoes {
+    border-style: hidden;
+}*/
+
+#button-visao{
+    background-image: url(../../../../assets/img/view.svg);
+    height: 1.5rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    border: none;
+    background-color: transparent;
+}
+ 
+#button-editar{
+    background-image: url(../../../../assets/img/edit.svg);
+    height: 1.5rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    border: none;
+    background-color: transparent;
+    margin: 0rem 0.7rem; 
+}
+ 
+#button-excluir{
+    background-image: url(../../../../assets/img/delete.svg);
+    height: 1.5rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    border: none;
+    background-color: transparent;
+}
+
+.button-nova-viagem {
+    float: right;
+    width: 115px;
+    margin-right: 20px;
+    height: 32px;
+    background: rgba(99, 161, 95, 1);
+    opacity: 1;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    text-align: center;
+    opacity: 1;
+    border-style: hidden;
+    margin: 10px;
+}
+
+.div-dados-busca {
+    background: rgba(255, 255, 255, 1);
+    opacity: 1;
+    border-radius: 5px;
+    border: 1px solid rgba(243, 241, 241, 1);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding: 20px;
+    margin: 20px 20px 0px 0px
+}
+
+#inputMunicipio {
+    width:50%;
+}
+
+.divisor {
+    padding: 5px;
+    margin-top: auto;
+    background: rgba(255, 255, 255, 1)
+}
+
+
+.coluna-dados-busca {
+    height: 30px
+}
+
+.container-label {    
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
