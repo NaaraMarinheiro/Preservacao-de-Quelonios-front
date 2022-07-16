@@ -14,7 +14,6 @@
     font-size: 14px;
     font-family: "Fira Sans", sans-serif;
 }
-
 .card-form {
     width: 280px;
     height: 360px;
@@ -36,7 +35,8 @@
 
 .button-img-form {
     position: relative;
-    margin-top: -14rem;
+    margin-top:-14rem;
+    margin-left:1%;
     left: 0rem;
     height: 16rem;
     display: flex;
@@ -47,14 +47,15 @@
 }
 
 button{
-    margin-top: -90%;
-    margin-left: 33%;
+    margin-top: -10%;
+    margin-left: 30%;
     color:white;
-    background-color: #1F8B24;
+    background-color: #63a15f;
     font-size: 14px;
     font-family: "Fira Sans", sans-serif;
     border: none;
     border-radius: 6px, 6px, 6px, 6px;
     height: 30px;  
+    display:flex;  
     
 }
