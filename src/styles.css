@@ -31,6 +31,10 @@ body {
     background-color: #F1F2F0 !important;
 }
 
+html, body{
+    height: 100%;
+}
+
 /*body, input[type="text"], button {
     color: #333;
 }
