@@ -1,57 +1,65 @@
 <div class="container">
 
-    <!-- cabecalho -->
-    <div class="row">
-        <h1 class="titulo">Novo usuário</h1>
-        <h6>Cadastrar um novo usuário no sistema</h6>
+    <h3 id="migalhas"> Home/Usuarios/Novo Usuário</h3>
 
-       <!-- primeira linha de inputs -->
-        <!-- input matricula -->
-        <div class="col ">
-            <label for="inputMatricula">Matrícula</label>
-            <input type="text" class="form-control" id="inputMatricula">
-        </div>
-        <!-- input email -->
-        <div class="col ">
-            <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" id="inputEmail">
-        </div>
-        <!-- input senha -->
-        <div class="col ">
-            <label for="inputSenha">Senha</label>
-            <input type="password" class="form-control" id="inputSenha">
-        </div>
-
-        <!-- segunda linha de inputs -->
-        <!-- input nome completo -->
-        <div class="form-group">
-            <label for="inputNome">Nome completo</label>
-            <input type="text" class="form-control" id="inputNome">
-        </div>
-
-          <!-- terceira linha de inputs -->
-        <!-- input tipo usuario -->
-        <div class="col ">
-            <label for="inputTipoUsuario">Tipo de Usuario</label>
-            <select id="inputTipoUsuario" class="form-control">
-                <option selected>Selecione</option>
-                <option>Voluntário</option>
-                <option>Coordenador</option>
-            </select>
-        </div>
-        <!--    input status -->
-        <div class="col ">
-            <label for="inputStatus">Status</label>
-            <select id="inputStatus" class="form-control">
-                <option selected>Selecione</option>
-                <option>Ativo</option>
-                <option>Inativo</option>
-            </select>
-        </div>
-
-        <!-- botao -->
-        <div class="botao">
-            <button type="button" class="btn btn-success  ">Salvar</button>
-        </div>
+    <div class="conteudo">
+        <h2>Novo Usuário</h2>
+        <h6>Incluir um novo usuário no sistema</h6>
+        <br>
+        <form>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="inputMatricula">Matrícula</label>
+                        <input type="text" class="form-control" id="inputMatricula">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="inputSenha">Senha</label>
+                        <input type="password" class="form-control" id="inputSenha">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="inputNome">Nome completo</label>
+                            <input type="text" class="form-control" id="inputNome">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="inputTipoUsuario">Tipo de Usuario</label>
+                            <select id="inputTipoUsuario" class="form-control">
+                                <option selected>Selecione</option>
+                                <option>Voluntário</option>
+                                <option>Coordenador</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="inputStatus">Status</label>
+                            <select id="inputStatus" class="form-control">
+                                <option selected>Selecione</option>
+                                <option>Ativo</option>
+                                <option>Inativo</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="botao">
+                    <button type="button" class="btn btn-success  ">Salvar</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

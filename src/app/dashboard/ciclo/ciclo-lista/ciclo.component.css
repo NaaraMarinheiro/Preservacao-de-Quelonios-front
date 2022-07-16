@@ -6,10 +6,11 @@
     padding: 1rem;
     border-radius: 6px;
     margin-bottom: 1.5rem;
+    background-color: white;
     /* margin-top: 1.5rem; */
 }
 
-.col-md-12{
+.conteudo-tabela{
     border: none;
     padding: 20px 20px;
     margin-bottom: 30px;
@@ -25,19 +26,12 @@
  #botao-pesquisar {
     display: flex;
     justify-content: flex-end;
-    margin-right: 20px; 
 } 
 
 .botao {
     display: flex;
     justify-content: flex-end;
-    margin-right: 20px; 
-}
-
-
-.botao{
     margin-top: 15px;
-    
 }
 
 #button-visao{
@@ -48,4 +42,10 @@
     width: 1.5rem;
     border: none;
     background-color: transparent;
+ }
+
+ .tabela-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
  }

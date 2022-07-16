@@ -9,29 +9,11 @@
     padding: 1rem;
     border-radius: 6px;
     margin-bottom: 1.5rem;
-    /* margin-top: 1.5rem; */
 }
 
-.row {
-    /* background-color: #ffffff; */
-    /* width: 70%; */
+
+.botao {
+    margin-top: 1rem;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 30px 40px;
-    border-radius: 7px;
-}
-
-.row .botao {
-    margin-top: 25px;
-    text-align: end;
-}
-
-.col-md-4{
-    margin-top: 1.5rem;
-}
-
-hr {
-    margin: 2rem;
+    justify-content: flex-end;
 }
