@@ -1,75 +1,81 @@
 <div class="container">
     <h3 id="migalhas"> Home/Ciclos/Cadastrar</h3>
-    <!-- cabecalho -->
-    <div class="row">
-        <h1 class="titulo">Novo ciclo</h1>
+
+    <div class="conteudo">
+        <h2 class="titulo">Novo ciclo</h2>
         <h6>Inserir um novo ciclo reprodutivo no sistema</h6>
+        <br>
 
-        <!-- primeira linha de inputs -->
-        <!-- input nome -->
-        <div class="form-group">
-            <label id="label-nome" class="text-nowrap" for="inputNome">Nome </label>
-            <input type="text" class="form-control" id="inputNome">
-        </div>
+        <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="inputNome">Nome do Ciclo</label>
+                        <input type="text" class="form-control" id="inputNome">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-nowrap" for="inputEstado">Estado</label>
+                        <select id="inputEstado" class="form-control">
+                            <option selected>Selecione</option>
+                            <option>AM</option>
+                            <option>PA</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-nowrap" for="inputMunicipio">Município</label>
+                        <select id="inputMunicipio" class="form-control">
+                            <option selected>Selecione</option>
+                            <option>Apuí</option>
+                            <option>Barcelos</option>
+                            <option>Barreirinha</option>
+                            <option>Borba</option>
+                            <option>Careiro Castanho</option>
+                            <option>Juruti</option>
+                            <option>Nhamundá</option>
+                            <option>Novo Airão</option>
+                            <option>Oriximiná</option>
+                            <option>Parintins</option>
+                            <option>Puranga Conquista</option>
+                            <option>Terra Santa</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-nowrap" for="inputComunidade">Comunidade</label>
+                        <select id="inputComunidade" class="form-control">
+                            <option selected>Selecione</option>
+                            <option>Comunidade Aliança</option>
+                            <option>Comunidade Ascensão</option>
+                            <option>Comunidade Barreto</option>
+                            <option>Comunidade Bela Vista do Guariba</option>
+                            <option>Comunidade Boca dos Currais</option>
+                            <option>Comunidade Castanhal'</option>
+                            <option>Comunidade Granja Ceres</option>
+                            <option>Comunidade Igapó Açu</option>
+                            <option>Comunidade Mamori</option>
+                            <option>Comunidade Nova Esperança</option>
+                            <option>Comunidade Pintado</option>
+                            <option>Comunidade Poço Fundo</option>
+                            <option>Comunidade Salgado I</option>
+                            <option>Comunidade São José</option>
+                            <option>Comunidade Tucumanduba</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-        <!-- segunda linha de inputs -->
-        <!-- input estado -->
-        <div class="col-md-6  ">
-            <label class="text-nowrap" for="inputEstado">Estado</label>
-            <select id="inputEstado" class="form-control">
-                <option selected>Selecione</option>
-                <option>AM</option>
-                <option>PA</option>
-            </select>
-        </div>
-
-        <!-- input municipio -->
-        <div class="col-md-6 ">
-            <label class="text-nowrap" for="inputMunicipio">Município</label>
-            <select id="inputMunicipio" class="form-control">
-                <option selected>Selecione</option>
-                <option>Apuí</option>
-                <option>Barcelos</option>
-                <option>Barreirinha</option>
-                <option>Borba</option>
-                <option>Careiro Castanho</option>
-                <option>Juruti</option>
-                <option>Nhamundá</option>
-                <option>Novo Airão</option>
-                <option>Oriximiná</option>
-                <option>Parintins</option>
-                <option>Puranga Conquista</option>
-                <option>Terra Santa</option>
-            </select>
-        </div>
-
-        <!-- terceira linha de inputs  -->
-        <!-- input comunidade -->
-        <div id="div-comunidade" class="col-md-6 ">
-            <label class="text-nowrap" for="inputComunidade">Comunidade</label>
-            <select id="inputComunidade" class="form-control">
-                <option selected>Selecione</option>
-                <option>Comunidade Aliança</option>
-                <option>Comunidade Ascensão</option>
-                <option>Comunidade Barreto</option>
-                <option>Comunidade Bela Vista do Guariba</option>
-                <option>Comunidade Boca dos Currais</option>
-                <option>Comunidade Castanhal'</option>
-                <option>Comunidade Granja Ceres</option>
-                <option>Comunidade Igapó Açu</option>
-                <option>Comunidade Mamori</option>
-                <option>Comunidade Nova Esperança</option>
-                <option>Comunidade Pintado</option>
-                <option>Comunidade Poço Fundo</option>
-                <option>Comunidade Salgado I</option>
-                <option>Comunidade São José</option>
-                <option>Comunidade Tucumanduba</option>
-            </select>
-        </div>
-
-        <!-- botao -->
-        <div class="botao">
-            <button type="button" class="btn btn-success  ">Salvar</button>
-        </div>
+                <!-- botao -->
+                <div class="botao">
+                    <button type="button" class="btn btn-success  ">Salvar</button>
+                </div>
+          
+        </form>
     </div>
 </div>

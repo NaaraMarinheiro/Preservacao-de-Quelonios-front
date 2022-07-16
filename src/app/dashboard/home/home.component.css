@@ -1,19 +1,27 @@
-.div-principal {
-    padding: 1.8rem 3.7rem 1.2rem 3.7rem;
+#titulo-home{
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
 }
 
 .div-modificacoes {
     background: rgba(255, 255, 255, 1);
     opacity: 1;
-    border-radius: 5px;
-    border: 1px solid rgba(243, 241, 241, 1);
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid rgba(243, 241, 241, 1);    
     overflow: hidden;
-    padding: 1.2rem 1.2rem 0rem 1.2rem;
-    margin: 1.8rem 1.2rem 0rem 0rem;
+    padding: 1.2rem 1.2rem 0rem 1.2rem;    
+    /* margin: 1.8rem 1.2rem 0rem 0rem; */
+}
+
+.div-grafico {
+    background: rgba(255, 255, 255, 1);
+    opacity: 1;
+    border: 1px solid rgba(243, 241, 241, 1);
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 1.2rem;
+    margin-left: 1rem;
+    /* margin: 1.8rem 0rem 0rem 0rem; */
 }
 
 .div-tabela-modificacoes {
@@ -71,19 +79,7 @@
     margin: 0.3rem 0rem  0.3rem 0rem;
 }
 
-.div-grafico {
-    background: rgba(255, 255, 255, 1);
-    opacity: 1;
-    border: 1px solid rgba(243, 241, 241, 1);
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border-radius: 5px;
-    overflow: hidden;
-    padding: 1.2rem;
-    margin: 1.8rem 0rem 0rem 0rem;
-}
+
 
 .img-grafico {
     padding: 1.5rem 0rem 1.5rem 0rem;
@@ -261,21 +257,15 @@
     text-align: left;
     padding-left: 10px;
 }
+.div-botao-formulario{
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem;
+}
 
-.botao-formulario {
-    width: 115px;
-    height: 32px;
-    background: rgba(99, 161, 95, 1);
-    opacity: 1;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+.btn {  
+    background: #198754;   
     text-align: center;
-    opacity: 1;
-    border-style: hidden;
-    margin: 10px;
-    float: right;
 }
 
 .span-formulario {
@@ -330,9 +320,9 @@
     align-self: flex-end;
 }
 
-/*.botao-acoes {
+.botao-acoes {
     border-style: hidden;
-}*/
+}
 
 #button-visao{
     background-image: url(../../../assets/img/view.svg);
@@ -364,9 +354,6 @@
      border: none;
      background-color: transparent;
   }
-
-
-
 
 .divisor{
     padding: 5px;

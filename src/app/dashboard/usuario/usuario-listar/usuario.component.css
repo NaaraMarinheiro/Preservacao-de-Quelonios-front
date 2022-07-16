@@ -1,44 +1,45 @@
-.container {
-    margin-top: 60px;
+#migalhas {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+.conteudo {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    background-color: white;
+    /* margin-top: 1.5rem; */
 }
 
-
-.card-header {
-    background-color: #fff;
-}
-
-.card {
+.conteudo-tabela{
+    border: none;
     padding: 20px 20px;
     margin-bottom: 30px;
-    border: 6px;
+    border-radius: 6px;
+    background-color: #fff;
+} 
 
-}
-
-.text-center {
+.text-center{
     color: #2f394e;
 }
 
-.btn {
-    margin: 5px;
-}
 
-.row {
+ #botao-pesquisar {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: space-between;
-    justify-content: space-around;
-}
+    justify-content: flex-end;
+} 
 
 .botao {
-    /* margin-top: 15px; */
-    margin-top: 20px;
-    text-align: end;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
 }
 
-.col-md-4 {
-    padding-top: 20px;
-}
+
+.tabela-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
 
 #button-editar{
     background-image: url(../../../../assets/img/edit-file.svg);

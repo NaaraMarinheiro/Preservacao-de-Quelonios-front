@@ -1,58 +1,81 @@
-
 <div class="container">
 
-    <div class="row">
-        <h3 id="migalhas" class="ps-0"> Home/Ciclo/Ciclo Barreirinha 2022</h3>
+    <h3 id="migalhas" class="ps-0"> Home/Ciclo/Ciclo Barreirinha 2022</h3>
 
-        <div class="div-dados-busca">
-            <form>
-                <div class="row">
+    <div class="conteudo">
 
-                    <div class="col-md-1 container-label">
+        <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
                         <label for="inputIdCiclo">Id Ciclo</label>
-                    </div>
-                    <div class="col-md-3">
                         <input type="text" class="form-control" id="inputIdCiclo">
-                    </div>
-
-                    <div class="col-md-1 container-label">
-                        <label for="Estado">Estado</label>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" id="Estado">
                     </div>
                 </div>
 
-                <div class="row mt-2">
-                    <div class="col-md-1 container-label">
-                        <label for="inputComunidade">Comunidade</label>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Estado">Estado</label>
+                        <input type="text" class="form-control" id="Estado">
                     </div>
-                    <div class="col-md-3">
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="inputComunidade">Comunidade</label>
                         <select id="inputComunidade" class="form-select">
                             <option selected>Selecione</option>
-                            <option>...</option>
-                            <option>...</option>
+                            <option>Comunidade Aliança</option>
+                            <option>Comunidade Ascensão</option>
+                            <option>Comunidade Barreto</option>
+                            <option>Comunidade Bela Vista do Guariba</option>
+                            <option>Comunidade Boca dos Currais</option>
+                            <option>Comunidade Castanhal'</option>
+                            <option>Comunidade Granja Ceres</option>
+                            <option>Comunidade Igapó Açu</option>
+                            <option>Comunidade Mamori</option>
+                            <option>Comunidade Nova Esperança</option>
+                            <option>Comunidade Pintado</option>
+                            <option>Comunidade Poço Fundo</option>
+                            <option>Comunidade Salgado I</option>
+                            <option>Comunidade São José</option>
+                            <option>Comunidade Tucumanduba</option>
                         </select>
                     </div>
-                    <div class="col-md-1 container-label">
-                        <label for="inputMunicipio">Município</label>
-                    </div>
-                    <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="inputMunicipio">Municipio</label>
                         <select id="inputMunicipio" class="form-select">
                             <option selected>Selecione</option>
-                            <option>...</option>
-                            <option>...</option>
+                            <option>Apuí</option>
+                            <option>Barcelos</option>
+                            <option>Barreirinha</option>
+                            <option>Borba</option>
+                            <option>Careiro Castanho</option>
+                            <option>Juruti</option>
+                            <option>Nhamundá</option>
+                            <option>Novo Airão</option>
+                            <option>Oriximiná</option>
+                            <option>Parintins</option>
+                            <option>Puranga Conquista</option>
+                            <option>Terra Santa</option>
                         </select>
                     </div>
                 </div>
                 <div class="botao">
-                    <button type="button" class="btn btn-success btn-sm button-nova-viagem" routerLink="viagem/cadastrar" routerLinkActive="active-style">+ Nova Viagem
+                    <button type="button" class="btn btn-success" routerLink="viagem/cadastrar"
+                        routerLinkActive="active-style">+ Nova Viagem
                     </button>
                 </div>
-            </form>
-        </div>
+            </div>            
+        </form>
     </div>
-    <div class="row">
+ 
+
+    <div class="mb-4">
         <div class="div-minhas-viagens col-md-12">
             <h3>Minhas viagens</h3>
 
@@ -90,7 +113,8 @@
                         </div>
                         <div class="div-botoes-viagem">
                             <div class="div-botao-formulario">
-                                <button type="button" class="botao-formulario" routerLink="viagem/022" routerLinkActive="active-style"><span class="span-formulario">+
+                                <button type="button" class="btn btn-success" routerLink="viagem/022"
+                                    routerLinkActive="active-style"><span class="span-formulario">+
                                         Formulário</span></button>
                             </div>
                             <div class="flex-center div-espaco-botoes"></div>
@@ -98,8 +122,10 @@
                                 <div class="flex-item-center">
                                     <td>
                                         <div class="d-flex justify-content-around">
-                                            <button type="button" id="button-visao" routerLink="viagem/022" routerLinkActive="active-style"></button>
-                                            <button type="button" id="button-editar" routerLink="viagem/022/editar" routerLinkActive="active-style"></button>
+                                            <button type="button" id="button-visao" routerLink="viagem/022"
+                                                routerLinkActive="active-style"></button>
+                                            <button type="button" id="button-editar" routerLink="viagem/022/editar"
+                                                routerLinkActive="active-style"></button>
                                             <button type="button" id="button-excluir"></button>
                                         </div>
                                     </td>
@@ -143,7 +169,8 @@
                         </div>
                         <div class="div-botoes-viagem">
                             <div class="div-botao-formulario">
-                                <button type="button" class="botao-formulario" routerLink="viagem/022" routerLinkActive="active-style"><span class="span-formulario">+
+                                <button type="button" class="btn btn-success" routerLink="viagem/022"
+                                    routerLinkActive="active-style"><span class="span-formulario">+
                                         Formulário</span></button>
                             </div>
                             <div class="flex-center div-espaco-botoes"></div>
@@ -151,8 +178,10 @@
                                 <div class="flex-item-center">
                                     <td>
                                         <div class="d-flex justify-content-around">
-                                            <button type="button" id="button-visao" routerLink="viagem/022" routerLinkActive="active-style"></button>
-                                            <button type="button" id="button-editar" routerLink="viagem/022/editar" routerLinkActive="active-style"></button>
+                                            <button type="button" id="button-visao" routerLink="viagem/022"
+                                                routerLinkActive="active-style"></button>
+                                            <button type="button" id="button-editar" routerLink="viagem/022/editar"
+                                                routerLinkActive="active-style"></button>
                                             <button type="button" id="button-excluir"></button>
                                         </div>
                                     </td>
@@ -194,7 +223,8 @@
                         </div>
                         <div class="div-botoes-viagem">
                             <div class="div-botao-formulario">
-                                <button type="button" class="botao-formulario" routerLink="viagem/022" routerLinkActive="active-style"><span class="span-formulario">+
+                                <button type="button" class="btn btn-success" routerLink="viagem/022"
+                                    routerLinkActive="active-style"><span class="span-formulario">+
                                         Formulário</span></button>
                             </div>
                             <div class="flex-center div-espaco-botoes"></div>
@@ -202,8 +232,10 @@
                                 <div class="flex-item-center">
                                     <td>
                                         <div class="d-flex justify-content-around">
-                                            <button type="button" id="button-visao" routerLink="viagem/022" routerLinkActive="active-style"></button>
-                                            <button type="button" id="button-editar" routerLink="viagem/022/editar" routerLinkActive="active-style"></button>
+                                            <button type="button" id="button-visao" routerLink="viagem/022"
+                                                routerLinkActive="active-style"></button>
+                                            <button type="button" id="button-editar" routerLink="viagem/022/editar"
+                                                routerLinkActive="active-style"></button>
                                             <button type="button" id="button-excluir"></button>
                                         </div>
                                     </td>
