@@ -3,22 +3,37 @@
     padding-bottom: 1rem;
 
 }
+
+.conteudo {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.div-botao-formulario {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem;
+}
+
 .card-form {
     height: 16rem;
 
 }
 
-.img-format {
+/* .img-format {
     border-radius: 6px;
     height: 16rem;
     object-fit: cover;
     width: 100%;
-}
+} */
 .botao {
-    /* margin-top: 15px; */
-    margin-top: 10px;
-    text-align: end;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+
 }
+
 .div-minhas-viagens {
     background: rgba(255, 255, 255, 1);
     opacity: 1;
@@ -47,7 +62,7 @@
     opacity: 1;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    float:left;
+    float: left;
     justify-content: stretch
 }
 
@@ -58,9 +73,10 @@
     opacity: 1;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    float:left;
+    float: left;
     justify-content: stretch
 }
+
 .canto-colorido-cinza {
     width: 6px;
     height: 100%;
@@ -68,7 +84,7 @@
     opacity: 1;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    float:left;
+    float: left;
     justify-content: stretch
 }
 
@@ -82,7 +98,7 @@
     justify-content: stretch;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
-   
+
 }
 
 .subtitulo-dados-viagem {
@@ -92,7 +108,7 @@
     font-size: 22px;
     opacity: 1;
     text-align: left;
-  padding: 10px
+    padding: 10px
 }
 
 .status-em-atualizacao {
@@ -107,9 +123,10 @@
     padding: 5px;
     margin: 10px;
 }
+
 .status-agendada {
     width: fit-content;
-    color:  rgba(230, 143, 123, 1);
+    color: rgba(230, 143, 123, 1);
     background-color: rgba(253, 245, 241, 1);
     font-family: Fira Sans;
     font-weight: Regular;
@@ -122,8 +139,8 @@
 
 .status-finalizada {
     width: fit-content;
-    color:  rgba(144, 144, 144, 1);
-    background-color:  rgba(230, 230, 230, 1);
+    color: rgba(144, 144, 144, 1);
+    background-color: rgba(230, 230, 230, 1);
     font-family: Fira Sans;
     font-weight: Regular;
     font-size: 16px;
@@ -192,7 +209,7 @@
     padding-left: 10px;
 }
 
-.botao-formulario {
+/* .botao-formulario {
     width: 115px;
     height: 32px;
     background: rgba(99, 161, 95, 1);
@@ -206,7 +223,7 @@
     border-style: hidden;
     margin: 10px;
     float: right;
-}
+} */
 
 .span-formulario {
     color: rgba(255, 255, 255, 1);
@@ -260,11 +277,11 @@
     align-self: flex-end;
 }
 
-/*.botao-acoes {
+.botao-acoes {
     border-style: hidden;
-}*/
+}
 
-#button-visao{
+#button-visao {
     background-image: url(../../../../assets/img/view.svg);
     height: 1.5rem;
     background-size: 100% 100%;
@@ -273,8 +290,8 @@
     border: none;
     background-color: transparent;
 }
- 
-#button-editar{
+
+#button-editar {
     background-image: url(../../../../assets/img/edit.svg);
     height: 1.5rem;
     background-size: 100% 100%;
@@ -282,10 +299,10 @@
     width: 1.5rem;
     border: none;
     background-color: transparent;
-    margin: 0rem 0.7rem; 
+    margin: 0rem 0.7rem;
 }
- 
-#button-excluir{
+
+#button-excluir {
     background-image: url(../../../../assets/img/delete.svg);
     height: 1.5rem;
     background-size: 100% 100%;
@@ -295,7 +312,7 @@
     background-color: transparent;
 }
 
-.button-nova-viagem {
+/* .button-nova-viagem {
     float: right;
     width: 115px;
     margin-right: 20px;
@@ -310,9 +327,10 @@
     opacity: 1;
     border-style: hidden;
     margin: 10px;
-}
+} */
 
-.div-dados-busca {
+
+/* .div-dados-busca {
     background: rgba(255, 255, 255, 1);
     opacity: 1;
     border-radius: 5px;
@@ -323,11 +341,11 @@
     border-bottom-right-radius: 6px;
     padding: 20px;
     margin: 20px 20px 0px 0px
-}
-
+} */
+/* 
 #inputMunicipio {
     width:50%;
-}
+} */
 
 .divisor {
     padding: 5px;
@@ -340,8 +358,8 @@
     height: 30px
 }
 
-.container-label {    
+/* .container-label {    
     display: flex;
     align-items: center;
     margin-right: 20px;
-}
+} */

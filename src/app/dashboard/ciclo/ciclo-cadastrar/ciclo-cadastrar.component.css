@@ -1,29 +1,19 @@
-.container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 50px;
+
+#migalhas {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
 }
 
-.row {
-    background-color: #ffffff;
-    /* width: 90%; */
-    padding: 30px 40px;
+.conteudo {
+    background-color: white;
+    padding: 1rem;
     border-radius: 6px;
+    margin-bottom: 1.5rem;
 }
 
-.form-group {
-    padding: 10px;
-}
 
-.col-md-6 {
-    padding: 10px;
-}
-
-.row .botao {
-    margin-top: 20px;
-    text-align: end;
+.botao {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
 }

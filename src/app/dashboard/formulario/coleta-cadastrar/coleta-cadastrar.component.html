@@ -1,164 +1,165 @@
 <div class="container">
-    <!-- cabeçalho do furmulario -->
-    <div class="titulo">
-        <h1>Formulário Coleta</h1>
-        <h6>Preenchimento da ficha da etapa de coleta</h6>
-    </div>
+    <h3 id="migalhas"> Home/Ciclos/Ciclo Barreirinha-2022/Viagem101/FormularioColeta</h3>
+    <div class="conteudo">
+        <!-- cabeçalho do furmulario -->
+        <div class="titulo">
+            <h1>Formulário Coleta</h1>
+            <h6>Preenchimento das informações de coleta</h6>
+        </div>
 
-    <!-- primeira linha de inputs -->
-    <div class="row">
-        <!-- input id ciclo -->
-        <div class="col-md-4">
+        <!-- primeira linha de inputs -->
+        <div class="row">
+            <!-- input id ciclo -->
+            <div class="col-md-4">
                 <label class="text-nowrap" for="inputID">ID Ciclo</label>
 
-            <input type="text" class="form-control">
-        </div>
-        <!-- select estado -->
-        <div class="col-md-4">
+                <input type="text" class="form-control">
+            </div>
+            <!-- select estado -->
+            <div class="col-md-4">
                 <label class="text-nowrap" for="inputEstado">Estado</label>
 
-            <select id="inputEstado" class="form-control">
-                <option selected>Selecione</option>
-                <option>AM</option>
-                <option>PA</option>
-            </select>
+                <select id="inputEstado" class="form-control">
+                    <option selected>Selecione</option>
+                    <option>AM</option>
+                    <option>PA</option>
+                </select>
+            </div>
         </div>
-    </div>
-    <!-- segunda linha de inputs -->
-    <div class="row">
-        <!-- select municipio -->
-        <div class="col-md-4">
-                <label class="text-nowrap" id="label-municipio" for="inputMunicipio">Municipio</label>
-
-            <select id="inputMunicipio" class="form-control">
-                <option selected>Selecione</option>
-                <option>Apuí</option>
-                <option>Barcelos</option>
-                <option>Barreirinha</option>
-                <option>Borba</option>
-                <option>Careiro Castanho</option>
-                <option>Juruti</option>
-                <option>Nhamundá</option>
-                <option>Novo Airão</option>
-                <option>Oriximiná</option>
-                <option>Parintins</option>
-                <option>Puranga Conquista</option>
-                <option>Terra Santa</option>
-            </select>
-        </div>
-        <!-- select comunidade -->
-        <div class="col-md-4 ">
+        <!-- segunda linha de inputs -->
+        <div class="row">
+            <!-- select municipio -->
+            <div class="col-md-4">
+                <label class="text-nowrap" id="label-municipio" for="inputMunicipio">Município</label>
+                <select id="inputMunicipio" class="form-control">
+                    <option selected>Selecione</option>
+                    <option>Apuí</option>
+                    <option>Barcelos</option>
+                    <option>Barreirinha</option>
+                    <option>Borba</option>
+                    <option>Careiro Castanho</option>
+                    <option>Juruti</option>
+                    <option>Nhamundá</option>
+                    <option>Novo Airão</option>
+                    <option>Oriximiná</option>
+                    <option>Parintins</option>
+                    <option>Puranga Conquista</option>
+                    <option>Terra Santa</option>
+                </select>
+            </div>
+            <!-- select comunidade -->
+            <div class="col-md-4 ">
                 <label class="text-nowrap" id="label-comunidade" for="inputComunidade">Comunidade</label>
 
-            <select id="inputComunidade" class="form-control">
-                <option selected>Selecione</option>
-                <option>Comunidade Aliança</option>
-                <option>Comunidade Ascensão</option>
-                <option>Comunidade Barreto</option>
-                <option>Comunidade Bela Vista do Guariba</option>
-                <option>Comunidade Boca dos Currais</option>
-                <option>Comunidade Castanhal'</option>
-                <option>Comunidade Granja Ceres</option>
-                <option>Comunidade Igapó Açu</option>
-                <option>Comunidade Mamori</option>
-                <option>Comunidade Nova Esperança</option>
-                <option>Comunidade Pintado</option>
-                <option>Comunidade Poço Fundo</option>
-                <option>Comunidade Salgado I</option>
-                <option>Comunidade São José</option>
-                <option>Comunidade Tucumanduba</option>
-            </select>
+                <select id="inputComunidade" class="form-control">
+                    <option selected>Selecione</option>
+                    <option>Comunidade Aliança</option>
+                    <option>Comunidade Ascensão</option>
+                    <option>Comunidade Barreto</option>
+                    <option>Comunidade Bela Vista do Guariba</option>
+                    <option>Comunidade Boca dos Currais</option>
+                    <option>Comunidade Castanhal'</option>
+                    <option>Comunidade Granja Ceres</option>
+                    <option>Comunidade Igapó Açu</option>
+                    <option>Comunidade Mamori</option>
+                    <option>Comunidade Nova Esperança</option>
+                    <option>Comunidade Pintado</option>
+                    <option>Comunidade Poço Fundo</option>
+                    <option>Comunidade Salgado I</option>
+                    <option>Comunidade São José</option>
+                    <option>Comunidade Tucumanduba</option>
+                </select>
+            </div>
         </div>
-    </div>
-    <hr>
-    <!-- terceira linha de inputs -->
-    <div class="row">
-        <!-- input id viagem -->
-        <div class="col-md-4">
+        <hr>
+        <!-- terceira linha de inputs -->
+        <div class="row">
+            <!-- input id viagem -->
+            <div class="col-md-4">
                 <label class="text-nowrap" id="label-viagem" for="inputIDViagem">ID Viagem</label>
-            <input type="text" class="form-control">
-        </div>
-        <!-- input data -->
-        <div class="col-md-4">
+                <input type="text" class="form-control">
+            </div>
+            <!-- input data -->
+            <div class="col-md-4">
                 <label class="text-nowrap" for="inputData">Data</label>
-            <input id="input-data" type="date" class="form-control">
+                <input id="input-data" type="date" class="form-control">
+            </div>
+        </div>
+        <hr>
+
+        <!-- grupo de inputs de preenchimento do formulario -->
+        <div class="form-group">
+
+            <div class="form-group col-md-4">
+                <label class="text-nowrap" for="inputMatricula">Matrícula do voluntário</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label class="text-nowrap" for="inputDataColeta">Data Coleta</label>
+                <input type="date" class="form-control">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label class="text-nowrap" for="inputNomePraia">Nome de praia ou tabuleiro</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label class="text-nowrap" for="inputNumeroCOva">Número da cova</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label class="text-nowrap" for="inputQuantidadeOvos">Quantidade de ovos</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label class="text-nowrap" class="text-nowrap" for="inputEspecie">Espécie</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label class="text-nowrap" class="text-nowrap" for="inputDistanciaAgua">Distância da água</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label class="text-nowrap" for="inputDistanciaVegetacao">Distância da vegetação</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label class="text-nowrap" for="inputProfundPrimeiroOvo">Profundidade do primeiro ovo </label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label class="text-nowrap" for="inputProfundTotal">Profundidade total </label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label class="text-nowrap" for="inputLarguraNinho">Largura do ninho</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label class="text-nowrap" for="inputLarguraPata">Largura das patas</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label class="text-nowrap" for="inputLarguraEntrePatas">Largura entre as patas</label>
+                <input type="text" class="form-control">
+            </div>
+
+        </div>
+
+        <div class="botao">
+            <button type="button" class="btn btn-success">Salvar</button>
         </div>
     </div>
-    <hr>
-
-    <!-- grupo de inputs de preenchimento do formulario -->
-    <div class="form-group">
-
-        <div class="form-group col-md-4">
-            <label class="text-nowrap" for="inputMatricula">Matrícula do voluntário</label>
-            <input type="text" class="form-control">
-        </div>
-
-        <div class="form-group col-md-4">
-            <label class="text-nowrap" for="inputDataColeta">Data Coleta</label>
-            <input type="date" class="form-control">
-        </div>
-
-        <div class="form-group col-md-4">
-            <label class="text-nowrap" for="inputNomePraia">Nome de praia ou tabuleiro</label>
-            <input type="text" class="form-control">
-        </div>
-
-        <div class="form-group col-md-4">
-            <label class="text-nowrap" for="inputNumeroCOva">Número da cova</label>
-            <input type="text" class="form-control">
-        </div>
-
-        <div class="form-group col-md-4">
-            <label class="text-nowrap" for="inputQuantidadeOvos">Quantidade de ovos</label>
-            <input type="text" class="form-control">
-        </div>
-
-        <div class="form-group col-md-4">
-            <label class="text-nowrap" class="text-nowrap" for="inputEspecie">Espécie</label>
-            <input type="text" class="form-control">
-        </div>
-
-        <div class="form-group col-md-4">
-            <label class="text-nowrap" class="text-nowrap" for="inputDistanciaAgua">Distância da água</label>
-            <input type="text" class="form-control">
-        </div>
-
-        <div class="form-group col-md-4">
-            <label class="text-nowrap" for="inputDistanciaVegetacao">Distância da vegetação</label>
-            <input type="text" class="form-control">
-        </div>
-
-        <div class="form-group col-md-4">
-            <label class="text-nowrap" for="inputProfundPrimeiroOvo">Profundidade do primeiro ovo </label>
-            <input type="text" class="form-control">
-        </div>
-
-        <div class="form-group col-md-4">
-            <label class="text-nowrap" for="inputProfundTotal">Profundidade total </label>
-            <input type="text" class="form-control">
-        </div>
-
-        <div class="form-group col-md-4">
-            <label class="text-nowrap" for="inputLarguraNinho">Largura do ninho</label>
-            <input type="text" class="form-control">
-        </div>
-
-        <div class="form-group col-md-4">
-            <label class="text-nowrap" for="inputLarguraPata">Largura das patas</label>
-            <input type="text" class="form-control">
-        </div>
-
-        <div class="form-group col-md-4">
-            <label class="text-nowrap" for="inputLarguraEntrePatas">Largura entre as patas</label>
-            <input type="text" class="form-control">
-        </div>
-
-    </div>
-
-    <div class="botao">
-        <button type="button" class="btn btn-success">Salvar</button>
-    </div>
-
 
 </div>

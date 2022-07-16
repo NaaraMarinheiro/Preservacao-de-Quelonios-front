@@ -1,146 +1,135 @@
 <div class="container">
-
+    <h3 id="migalhas"> Home/Usuarios</h3>
     <!-- card de pesquisar usuario -->
-    <div class="col">
-        <div class="col-md-12">
-            <div class="card ">
+    <div class="conteudo">
 
+        <div class="row">
+            <div class="">
                 <!-- primeira linha de inputs -->
                 <div class="row">
-                    <!-- input matrícula -->
-                    <div class="col-md-4 ">
-                        <div class="input-label">
-                            <label class="text-nowrap" for="inputMatricula">Matrícula</label>
-                        </div>
-
+                    <!-- input id ciclo -->
+                    <div class="col-md-6 ">
+                        <label class="text-nowrap" for="inputMatricula">Matrícula</label>
                         <input type="text" class="form-control" id="inputMatricula">
                     </div>
 
-                    <!-- input email -->
-                    <div class="col-md-4 ">
-                        <div class="input-label">
-                            <label class="text-nowrap" for="inputEmail">Email</label>
-                        </div>
+                    <!-- input nome -->
+                    <div class="col-md-6 ">
+                        <label class="text-nowrap" for="inputEmail">Email</label>
                         <input type="email" class="form-control" id="inputEmail">
                     </div>
                 </div>
 
                 <!-- segunda linha de inputs -->
-                <div class="row">
-                    <!-- input nome completo -->
-                    <div class="col-md-4 ">
-                        <div class="input-label">
-                            <label class="text-nowrap" for="inputMatricula">Nome completo</label>
-                        </div>
-
-                        <input type="text" class="form-control" id="inputMatricula">
+                <div class="row mt-2">
+                    <!-- select estado -->
+                    <div class="col-md-6 ">
+                        <label class="text-nowrap" for="inputNomeCompleto">Nome completo</label>
+                        <input type="text" class="form-control" id="inputNomeCompleto">
                     </div>
 
-                    <!-- select tipo usuario -->
-                    <div class="col-md-4 ">
-                        <div class="input-label">
-                            <label class="text-nowrap" for="inputTipoUsuario">Tipo de usuário</label>
-                        </div>
-
+                    <!-- select Municipio -->
+                    <div class="col-md-6 ">
+                        <label class="text-nowrap" for="inputTipoUsuario">Tipo de usuário</label>
                         <select id="inputTipoUsuario" class="form-control">
                             <option selected>Selecione</option>
                             <option>Voluntário</option>
                             <option>Coordenador</option>
                         </select>
                     </div>
-
-                    <!-- botão de pesquisa -->
-                    <div class="botao">
-                        <button type="button" class="btn btn-success btn-sm " style="float: right;">Pesquisar
-                        </button>
-                    </div>
                 </div>
-
-
             </div>
-        </div>
 
-        <!-- card pra listar usuario -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Usuários</h3>
-                        <div class="card-title">
-                            Lista de usuários
-                            <button type="button" class="btn btn-success btn-sm " style="float: right;" routerLink="cadastrar" routerLinkActive="active-style"> + Novo
-                                usuário</button>
-                        </div>
-                    </div>
-                    <!-- tabela que lista os usuários -->
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class=" text-primary">
-                                    <th class="text-center">
-                                        Matrícula
-                                    </th>
-                                    <th class="text-center">
-                                        Nome
-                                    </th>
-                                    <th class="text-center">
-                                        Tipo de usuário
-                                    </th>
-                                    <th class="text-center">
-                                        Email
-                                    </th>
-                                    <th class="text-center">
-                                        Status
-                                    </th>
-                                    <th class="text-center">
-                                        Permissão
-                                    </th>
-                                    <th class="text-center">
-
-                                    </th>
-                                </thead>
-
-                                <tbody>
-                                    <tr *ngFor="let item of usuarios; index as i;">
-                                        <td class="text-center">
-                                            {{item.matricula}}
-                                        </td>
-                                        <td class="text-center">
-                                            {{item.nome}}
-                                        </td>
-                                        <td class="text-center">
-                                            {{item.tipoUsuario}}
-                                        </td>
-                                        <td class="text-center">
-                                            {{item.email}}
-                                        </td>
-                                        <td class="text-center">
-                                            {{item.status}}
-                                        </td>
-                                        <td class="text-center">
-                                            {{item.permissao}}
-                                        </td>
-                                        <!-- botões -->
-                                        <td class="text-center">
-                                            <div class="d-flex justify-content-around">
-                                                <button type="button" id="button-editar" routerLink="editar" routerLinkActive="active-style"  >
-                                                </button>
-
-
-                                                <button type="button" id="button-excluir"></button>
-
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+            <div class="row mt-2">
+                <div class="botao">
+                    <button type="button" class="btn btn-success" id="botao-pesquisar">Pesquisar
+                    </button>
                 </div>
+
             </div>
         </div>
     </div>
 
-<!-- <a routerLink="cadastrar" routerLinkActive="active-style"> Cadastrar </a>
-<br>
-<a routerLink="editar" routerLinkActive="active-style"> Editar </a> -->
+
+
+
+
+    <!-- DIVISÃO AQUIIIIII   -->
+    <div class="conteudo">
+        <div class="row">
+            <div class="">
+                <h3>Usuários</h3>
+                <div class="tabela-titulo">
+                    Lista de usuários
+                    <button type="button" class="btn btn-success " routerLink="cadastrar"
+                        routerLinkActive="active-style"> + Novo
+                        usuário</button>
+                </div>
+
+                <!-- tabela que lista os usuários -->
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <th class="text-center">
+                                Matrícula
+                            </th>
+                            <th class="text-center">
+                                Nome
+                            </th>
+                            <th class="text-center">
+                                Tipo de usuário
+                            </th>
+                            <th class="text-center">
+                                Email
+                            </th>
+                            <th class="text-center">
+                                Status
+                            </th>
+                            <th class="text-center">
+                                Permissão
+                            </th>
+                            <th class="text-center">
+
+                            </th>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let item of usuarios; index as i;">
+                                <td class="text-center">
+                                    {{item.matricula}}
+                                </td>
+                                <td class="text-center">
+                                    {{item.nome}}
+                                </td>
+                                <td class="text-center">
+                                    {{item.tipoUsuario}}
+                                </td>
+                                <td class="text-center">
+                                    {{item.email}}
+                                </td>
+                                <td class="text-center">
+                                    {{item.status}}
+                                </td>
+                                <td class="text-center">
+                                    {{item.permissao}}
+                                </td>
+                                <!-- botões -->
+                                <td class="text-center">
+                                    <div class="d-flex justify-content-around">
+                                        <button type="button" id="button-editar" routerLink="editar"
+                                            routerLinkActive="active-style">
+                                        </button>
+
+
+                                        <button type="button" id="button-excluir"></button>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

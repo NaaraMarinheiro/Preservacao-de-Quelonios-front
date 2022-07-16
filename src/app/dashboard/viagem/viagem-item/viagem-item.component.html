@@ -1,6 +1,5 @@
 <div class="container">
 
-
     <h3 id="migalhas"> Home/Ciclo/Ciclo Barreirinha 2022/Viagem 101</h3>
 
     <div class="conteudo">
@@ -16,7 +15,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="Estado">Estado:</label>
+                        <label for="Estado">Estado</label>
                         <input type="text" class="form-control" id="Estado">
                     </div>
                 </div>
@@ -25,13 +24,13 @@
             <div class="row mt-2">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="comunidade">Comunidade:</label>
+                        <label for="comunidade">Município</label>
                         <input type="text" class="form-control" id="comunidade">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="maunicipio">Município:</label>
+                        <label for="maunicipio">Comunidade</label>
                         <input type="text" class="form-control" id="municipio">
                     </div>
                 </div>
@@ -41,7 +40,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="idviagem">Id Viagem:</label>
+                        <label for="idviagem">Id Viagem</label>
                         <input type="number" class="form-control" id="viagemid">
                     </div>
                 </div>
@@ -68,7 +67,7 @@
 
             <div class="button-img-form">
                 <h3 style="color:white">Formulário Coleta</h3>
-                <button type="button" class="btn btn-light">Adicionar</button>
+                <button type="button" class="btn btn-light" routerLink="coleta/cadastrar" routerLinkActive="active-style">Adicionar</button>
             </div>
         </div>
 
@@ -77,7 +76,7 @@
 
             <div class="button-img-form">
                 <h3 style="color:white">Formulário Eclosão</h3>
-                <button type="button" class="btn btn-light">Adicionar</button>
+                <button type="button" class="btn btn-light" routerLink="eclosao/cadastrar" routerLinkActive="active-style">Adicionar</button>
             </div>
         </div>
 
@@ -86,7 +85,7 @@
 
             <div class="button-img-form">
                 <h3 style="color:white">Formulário Soltura</h3>
-                <button type="button" class="btn btn-light">Adicionar</button>
+                <button type="button" class="btn btn-light" routerLink="soltura/cadastrar" routerLinkActive="active-style">Adicionar</button>
             </div>
         </div>
     </div>
@@ -98,20 +97,26 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="inputNome">Tipo de formulário</label>
-                        <input type="text" class="form-control" id="inputNome">
+                        <label for="formulario">Tipo de formulário</label>
+                        <input type="text" class="form-control" id="formulario">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="data">Data:</label>
-                        <input type="date" class="form-control" id="email">
+                        <label for="data">Data</label>
+                        <input type="date" class="form-control" id="data">
                     </div>
                 </div>
-                <div class="col-md-4 d-flex" style="align-items: flex-end;
-                justify-content: flex-end">
-                    <button type="button" class="btn btn-success mt-4">Pesquisar</button>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="usuario">Participante</label>
+                        <input type="text" class="form-control" id="usuario">
+                    </div>
                 </div>
+            </div>
+            <div class="col-md-12 d-flex" style="align-items: flex-end;
+            justify-content: flex-end">
+                <button type="button" class="btn btn-success mt-4">Pesquisar</button>
             </div>
         </form>
     </div>
