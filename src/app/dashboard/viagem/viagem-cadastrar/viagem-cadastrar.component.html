@@ -6,18 +6,18 @@
         <h2 class="titulo">Nova Viagem</h2>
         <h6>Incluir uma viagem no sistema</h6>
         <br>
-        <form>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()"> 
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="inputNome">Nome do Ciclo</label>
-                        <input type="text" class="form-control" id="inputNome">
+                        <input type="text" class="form-control" id="inputNome" formControlName="nomeciclo">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="text-nowrap" for="inputEstado">Estado</label>
-                        <select id="inputEstado" class="form-control">
+                        <select id="inputEstado" class="form-control" formControlName="estado">
                             <option selected>Selecione</option>
                             <option>AM</option>
                             <option>PA</option>
@@ -29,7 +29,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="text-nowrap" for="inputMunicipio">Município</label>
-                        <select id="inputMunicipio" class="form-control">
+                        <select id="inputMunicipio" class="form-control" formControlName="municipio">
                             <option selected>Selecione</option>
                             <option>Apuí</option>
                             <option>Barcelos</option>
@@ -49,7 +49,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="text-nowrap" for="inputComunidade">Comunidade</label>
-                        <select id="inputComunidade" class="form-control">
+                        <select id="inputComunidade" class="form-control" formControlName="comunidade">
                             <option selected>Selecione</option>
                             <option>Comunidade Aliança</option>
                             <option>Comunidade Ascensão</option>
@@ -76,34 +76,39 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="text-nowrap" for="inputData">Data</label>
-                        <input id="input-data" type="date" class="form-control">
+                        <input id="input-data" type="date" class="form-control" formControlName="data">
+                        <span 
+                        *ngIf="!signupForm?.get('data')?.valid && signupForm?.get('data')?.touched "
+                        class="help-block">O campo data é obrigatório!</span>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario">Coordenador</label>
-                        <select id="inputTipoUsuario" class="form-control">
-                            <option selected>Selecione</option>
+                        <label id="label-tipo-usuario" class="text-nowrap" for="selectCoordenador">Coordenador</label>
+                        <select id="selectCoordenador" formControlName="coordenador" class="form-control">                            
+                            <option selected value="">Selecione</option>
                             <option>Paulo</option>
                             <option>Sandra</option>
                         </select>
+                        <span *ngIf="!signupForm?.get('coordenador')?.valid && signupForm?.get('coordenador')?.touched " class="help-block">O campo coordenador é obrigatório!</span>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario">Voluntário</label>
-                        <select id="inputTipoUsuario" class="form-control">
-                            <option selected>Selecione</option>
+                        <select id="inputTipoUsuario" class="form-control" formControlName="voluntario">
+                            <option selected value="">Selecione</option>
                             <option>Bruna</option>
                             <option>Márcio</option>
                             <option>Alberto</option>
                             <option>Juliana</option>
                         </select>
+                        <span *ngIf="!signupForm?.get('voluntario')?.valid && signupForm?.get('voluntario')?.touched" class="help-block">O campo voluntário é obrigatório!</span>
                     </div>
                 </div>
             </div>
             <div class="botao">
-                <button type="button" class="btn btn-success  ">Salvar</button>
+                <button type="submit" class="btn btn-success  ">Salvar</button>
             </div>
         </form>
     </div>

@@ -17,3 +17,7 @@
     display: flex;
     justify-content: flex-end;
 }
+
+input.ng-pristine.ng-ivalid.ng-touched{
+    border:  2px solid red;
+}
