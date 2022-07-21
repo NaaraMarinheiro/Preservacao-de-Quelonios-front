@@ -6,31 +6,49 @@
         <h6>Inserir um novo ciclo reprodutivo no sistema</h6>
         <br>
 
-        <form>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="inputNome">Nome do Ciclo</label>
-                        <input type="text" class="form-control" id="inputNome">
+                        <input 
+                            type="text"
+                            class="form-control"
+                            id="inputNome"
+                            name="nomeCiclo"
+                            formControlName="nomeCiclo"
+                        >
+                        <span *ngIf="!formulario?.get('nomeCiclo')?.valid && formulario?.get('nomeCiclo')?.touched" class="help-block"> Campo nome obrigatório</span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="text-nowrap" for="inputEstado">Estado</label>
-                        <select id="inputEstado" class="form-control">
-                            <option selected>Selecione</option>
+                        <select 
+                            class="form-select"
+                            id="inputEstado"                            
+                            name="uf"
+                            formControlName="uf"
+                            >
+                            <option selected disabled>Selecione</option>
                             <option>AM</option>
                             <option>PA</option>
-                        </select>
+                        </select>  
+                        <span *ngIf="!formulario?.get('uf')?.valid && formulario?.get('uf')?.touched" class="help-block"> Seleção do estado obrigatória</span>               
                     </div>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label class="text-nowrap" for="inputMunicipio">Município</label>
-                        <select id="inputMunicipio" class="form-control">
-                            <option selected>Selecione</option>
+                        <label  for="inputMunicipio">Município</label>
+                        <select 
+                            class="form-select"
+                            id="inputMunicipio"                          
+                            name="municipio"
+                            formControlName="municipio"
+                        >
+                            <option selected disabled>Selecione</option>
                             <option>Apuí</option>
                             <option>Barcelos</option>
                             <option>Barreirinha</option>
@@ -44,13 +62,19 @@
                             <option>Puranga Conquista</option>
                             <option>Terra Santa</option>
                         </select>
+                        <span *ngIf="!formulario?.get('municipio')?.valid && formulario?.get('municipio')?.touched" class="help-block"> Seleção do município obrigatória</span>  
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label class="text-nowrap" for="inputComunidade">Comunidade</label>
-                        <select id="inputComunidade" class="form-control">
-                            <option selected>Selecione</option>
+                        <label for="inputComunidade">Comunidade</label>
+                        <select
+                            class="form-select"
+                            id="inputComunidade"                             
+                            name="comunidade"
+                            formControlName="comunidade"
+                        >
+                            <option selected disabled>Selecione</option>
                             <option>Comunidade Aliança</option>
                             <option>Comunidade Ascensão</option>
                             <option>Comunidade Barreto</option>
@@ -67,15 +91,15 @@
                             <option>Comunidade São José</option>
                             <option>Comunidade Tucumanduba</option>
                         </select>
+                        <span *ngIf="!formulario?.get('comunidade')?.valid && formulario?.get('comunidade')?.touched" class="help-block"> Seleção da comunidade obrigatória</span>  
                     </div>
                 </div>
             </div>
 
                 <!-- botao -->
                 <div class="botao">
-                    <button type="button" class="btn btn-success  ">Salvar</button>
-                </div>
-          
+                    <button type="submit" class="btn btn-success"> Salvar </button>
+                </div>          
         </form>
     </div>
 </div>
