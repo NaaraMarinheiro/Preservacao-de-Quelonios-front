@@ -4,6 +4,7 @@ import { UsuarioEditarComponent } from './usuario-editar/usuario-editar.componen
 import { UsuarioComponent } from './usuario-listar/usuario.component';
 import { UsuarioCadastrarComponent } from './usuario-cadastrar/usuario-cadastrar.component';
 import { UsuarioRoutingModule } from './usuario-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { UsuarioRoutingModule } from './usuario-routing.module';
   ],
   imports: [
     CommonModule,
-    UsuarioRoutingModule
+    UsuarioRoutingModule,
+    ReactiveFormsModule  
   ]
 })
 export class UsuarioModule { }

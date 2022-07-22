@@ -10,6 +10,7 @@ import { RelatorioModule } from './relatorio/relatorio.module';
 import { RelatorioRoutingModule } from './relatorio/relatorio-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ViagemItemComponent } from './viagem/viagem-item/viagem-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ViagemItemComponent } from './viagem/viagem-item/viagem-item.component'
   ],
   exports: [
     DashboardComponent,
+    ReactiveFormsModule 
   ]
 })
 export class DashboardModule { }
