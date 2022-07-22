@@ -9,14 +9,24 @@ import { UsuarioRoutingModule } from './usuario/usuario-routing.module';
 import { RelatorioModule } from './relatorio/relatorio.module';
 import { RelatorioRoutingModule } from './relatorio/relatorio-routing.module';
 import { HomeComponent } from './home/home.component';
-import { ViagemItemComponent } from './viagem/viagem-item/viagem-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ColetaCadastrarComponent } from './formulario/coleta-cadastrar/coleta-cadastrar.component';
+import { ColetaEditarComponent } from './formulario/coleta-editar/coleta-editar.component';
+import { EclosaoCadastrarComponent } from './formulario/eclosao-cadastrar/eclosao-cadastrar.component';
+import { EclosaoEditarComponent } from './formulario/eclosao-editar/eclosao-editar.component';
+import { SolturaCadastrarComponent } from './formulario/soltura-cadastrar/soltura-cadastrar.component';
+import { SolturaEditarComponent } from './formulario/soltura-editar/soltura-editar.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     HomeComponent,
-    
-
+    ColetaCadastrarComponent,
+    ColetaEditarComponent,
+    EclosaoCadastrarComponent,
+    EclosaoEditarComponent,
+    SolturaCadastrarComponent,
+    SolturaEditarComponent
   ],
   imports: [
     CommonModule,
@@ -27,9 +37,7 @@ import { ViagemItemComponent } from './viagem/viagem-item/viagem-item.component'
     UsuarioRoutingModule,
     RelatorioModule,
     RelatorioRoutingModule,
-  
-    
-
+    ReactiveFormsModule
   ],
   exports: [
     DashboardComponent,

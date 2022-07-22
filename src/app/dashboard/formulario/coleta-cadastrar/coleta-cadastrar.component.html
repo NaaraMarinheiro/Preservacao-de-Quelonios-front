@@ -6,160 +6,240 @@
             <h1>Formulário Coleta</h1>
             <h6>Preenchimento das informações de coleta</h6>
         </div>
+        <form [formGroup]="coletaForm" (ngSubmit)= "onSubmit()">
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="text-nowrap" for="inputID">ID Ciclo</label>
+                    <input type="text" class="form-control">
+                </div>
 
-        <!-- primeira linha de inputs -->
-        <div class="row">
-            <!-- input id ciclo -->
-            <div class="col-md-4">
-                <label class="text-nowrap" for="inputID">ID Ciclo</label>
+                <div class="col-md-4">
+                    <label class="text-nowrap" for="inputEstado">Estado</label>
 
-                <input type="text" class="form-control">
+                    <select id="inputEstado" class="form-control">
+                        <option selected>Selecione</option>
+                        <option>AM</option>
+                        <option>PA</option>
+                    </select>
+                </div>
+
             </div>
-            <!-- select estado -->
-            <div class="col-md-4">
-                <label class="text-nowrap" for="inputEstado">Estado</label>
-
-                <select id="inputEstado" class="form-control">
-                    <option selected>Selecione</option>
-                    <option>AM</option>
-                    <option>PA</option>
-                </select>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="text-nowrap" id="label-municipio" for="inputMunicipio">Município</label>
+                    <select id="inputMunicipio" class="form-control">
+                        <option selected>Selecione</option>
+                        <option>Apuí</option>
+                        <option>Barcelos</option>
+                        <option>Barreirinha</option>
+                        <option>Borba</option>
+                        <option>Careiro Castanho</option>
+                        <option>Juruti</option>
+                        <option>Nhamundá</option>
+                        <option>Novo Airão</option>
+                        <option>Oriximiná</option>
+                        <option>Parintins</option>
+                        <option>Puranga Conquista</option>
+                        <option>Terra Santa</option>
+                    </select>
+                </div>
+                <div class="col-md-4 ">
+                    <label class="text-nowrap" id="label-comunidade" for="inputComunidade">Comunidade</label>
+                    <select id="inputComunidade" class="form-control">
+                        <option selected>Selecione</option>
+                        <option>Comunidade Aliança</option>
+                        <option>Comunidade Ascensão</option>
+                        <option>Comunidade Barreto</option>
+                        <option>Comunidade Bela Vista do Guariba</option>
+                        <option>Comunidade Boca dos Currais</option>
+                        <option>Comunidade Castanhal'</option>
+                        <option>Comunidade Granja Ceres</option>
+                        <option>Comunidade Igapó Açu</option>
+                        <option>Comunidade Mamori</option>
+                        <option>Comunidade Nova Esperança</option>
+                        <option>Comunidade Pintado</option>
+                        <option>Comunidade Poço Fundo</option>
+                        <option>Comunidade Salgado I</option>
+                        <option>Comunidade São José</option>
+                        <option>Comunidade Tucumanduba</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <!-- segunda linha de inputs -->
-        <div class="row">
-            <!-- select municipio -->
-            <div class="col-md-4">
-                <label class="text-nowrap" id="label-municipio" for="inputMunicipio">Município</label>
-                <select id="inputMunicipio" class="form-control">
-                    <option selected>Selecione</option>
-                    <option>Apuí</option>
-                    <option>Barcelos</option>
-                    <option>Barreirinha</option>
-                    <option>Borba</option>
-                    <option>Careiro Castanho</option>
-                    <option>Juruti</option>
-                    <option>Nhamundá</option>
-                    <option>Novo Airão</option>
-                    <option>Oriximiná</option>
-                    <option>Parintins</option>
-                    <option>Puranga Conquista</option>
-                    <option>Terra Santa</option>
-                </select>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="text-nowrap" id="label-viagem" for="inputIDViagem">ID Viagem</label>
+                    <input id= "idViagem" type="text" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label class="text-nowrap" for="inputData">Data</label>
+                    <input id="input-data" type="date" class="form-control">
+                </div>
             </div>
-            <!-- select comunidade -->
-            <div class="col-md-4 ">
-                <label class="text-nowrap" id="label-comunidade" for="inputComunidade">Comunidade</label>
+            <hr>
+            <div class="form-group">
 
-                <select id="inputComunidade" class="form-control">
-                    <option selected>Selecione</option>
-                    <option>Comunidade Aliança</option>
-                    <option>Comunidade Ascensão</option>
-                    <option>Comunidade Barreto</option>
-                    <option>Comunidade Bela Vista do Guariba</option>
-                    <option>Comunidade Boca dos Currais</option>
-                    <option>Comunidade Castanhal'</option>
-                    <option>Comunidade Granja Ceres</option>
-                    <option>Comunidade Igapó Açu</option>
-                    <option>Comunidade Mamori</option>
-                    <option>Comunidade Nova Esperança</option>
-                    <option>Comunidade Pintado</option>
-                    <option>Comunidade Poço Fundo</option>
-                    <option>Comunidade Salgado I</option>
-                    <option>Comunidade São José</option>
-                    <option>Comunidade Tucumanduba</option>
-                </select>
+                <div class="form-group col-md-4">
+                    <label class="text-nowrap" for="inputMatricula">Matrícula do voluntário</label>
+                    <input 
+                    type="text" 
+                    id= "voluntario" 
+                    formControlName="voluntario" 
+                    class="form-control">
+                    <span 
+                    *ngIf="!coletaForm.get('voluntario')?.valid && coletaForm.get('voluntario')?.touched"
+                    class= "help-block"> Campo Obrigatório </span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="text-nowrap" for="inputDataColeta">Data Coleta</label>
+                    <input 
+                    type="date" 
+                    id= "dataColeta" 
+                    formControlName="dataColeta"
+                    class="form-control">
+                    <span 
+                    *ngIf="!coletaForm.get('dataColeta')?.valid && coletaForm.get('dataColeta')?.touched"
+                    class= "help-block"> Campo Obrigatório </span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="text-nowrap" for="inputNomePraia">Nome de praia ou tabuleiro</label>
+                    <input 
+                    type="text" 
+                    id= "nomePraiaTabuleiro" 
+                    formControlName="nomePraiaTabuleiro"
+                    class="form-control">
+                    <span 
+                    *ngIf="!coletaForm.get('nomePraiaTabuleiro')?.valid && coletaForm.get('nomePraiaTabuleiro')?.touched"
+                    class= "help-block"> Campo Obrigatório </span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="text-nowrap" for="inputNumeroCOva">Número da cova</label>
+                    <input 
+                    type="text" 
+                    id= "numeroCova" 
+                    formControlName="numeroCova"
+                    class="form-control">
+                    <span 
+                    *ngIf="!coletaForm.get('numeroCova')?.valid && coletaForm.get('numeroCova')?.touched"
+                    class= "help-block"> Campo Obrigatório </span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="text-nowrap" for="inputQuantidadeOvos">Quantidade de ovos</label>
+                    <input 
+                    type="text" 
+                    id= "quantidadeOvos" 
+                    formControlName="quantidadeOvos"
+                    class="form-control">
+                    <span 
+                    *ngIf="!coletaForm.get('quantidadeOvos')?.valid && coletaForm.get('quantidadeOvos')?.touched"
+                    class= "help-block"> Campo Obrigatório </span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="text-nowrap" class="text-nowrap" for="inputEspecie">Espécie</label>
+                    <input 
+                    type="text" 
+                    id= "especie" 
+                    formControlName="especie"
+                    class="form-control">
+                    <span 
+                    *ngIf="!coletaForm.get('especie')?.valid && coletaForm.get('especie')?.touched"
+                    class= "help-block"> Campo Obrigatório </span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="text-nowrap" class="text-nowrap" for="inputDistanciaAgua">Distância da água</label>
+                    <input 
+                    type="text" 
+                    id= "distanciaAgua" 
+                    formControlName="distanciaAgua"
+                    class="form-control">
+                    <span 
+                    *ngIf="!coletaForm.get('distanciaAgua')?.valid && coletaForm.get('distanciaAgua')?.touched"
+                    class= "help-block"> Campo Obrigatório </span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="text-nowrap" for="inputDistanciaVegetacao">Distância da vegetação</label>
+                    <input 
+                    type="text" 
+                    id= "distanciaVegetacao" 
+                    formControlName="distanciaVegetacao"
+                    class="form-control">
+                    <span 
+                    *ngIf="!coletaForm.get('distanciaVegetacao')?.valid && coletaForm.get('distanciaVegetacao')?.touched"
+                    class= "help-block"> Campo Obrigatório </span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="text-nowrap" for="inputProfundPrimeiroOvo">Profundidade do primeiro ovo </label>
+                    <input 
+                    type="text" 
+                    id= "profundidadePrimeiroOvo" 
+                    formControlName="profundidadePrimeiroOvo"
+                    class="form-control">
+                    <span 
+                    *ngIf="!coletaForm.get('profundidadePrimeiroOvo')?.valid && coletaForm.get('profundidadePrimeiroOvo')?.touched"
+                    class= "help-block"> Campo Obrigatório </span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="text-nowrap" for="inputProfundTotal">Profundidade total </label>
+                    <input 
+                    type="text" 
+                    id= "profundidadeTotal" 
+                    formControlName="profundidadeTotal"
+                    class="form-control">
+                    <span 
+                    *ngIf="!coletaForm.get('profundidadeTotal')?.valid && coletaForm.get('profundidadeTotal')?.touched"
+                    class= "help-block"> Campo Obrigatório </span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="text-nowrap" for="inputLarguraNinho">Largura do ninho</label>
+                    <input 
+                    type="text" 
+                    id= "larguraNinho" 
+                    formControlName="larguraNinho"
+                    class="form-control">
+                    <span 
+                    *ngIf="!coletaForm.get('larguraNinho')?.valid && coletaForm.get('larguraNinho')?.touched"
+                    class= "help-block"> Campo Obrigatório </span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="text-nowrap" for="inputLarguraPata">Largura das patas</label>
+                    <input 
+                    type="text" 
+                    id="larguraPata" 
+                    formControlName="larguraPata"
+                    class="form-control">
+                    <span 
+                    *ngIf="!coletaForm.get('larguraPata')?.valid && coletaForm.get('larguraPata')?.touched"
+                    class= "help-block"> Campo Obrigatório </span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="text-nowrap" for="inputLarguraEntrePatas">Largura entre as patas</label>
+                    <input 
+                    type="text" 
+                    id= "larguraEntrePatas" 
+                    formControlName="larguraEntrePatas"
+                    class="form-control">
+                    <span 
+                    *ngIf="!coletaForm.get('larguraEntrePatas')?.valid && coletaForm.get('larguraEntrePatas')?.touched"
+                    class= "help-block"> Campo Obrigatório </span>
+                </div>
+
             </div>
-        </div>
-        <hr>
-        <!-- terceira linha de inputs -->
-        <div class="row">
-            <!-- input id viagem -->
-            <div class="col-md-4">
-                <label class="text-nowrap" id="label-viagem" for="inputIDViagem">ID Viagem</label>
-                <input type="text" class="form-control">
+
+            <div class="botao">
+                <button type="submit" class="btn btn-success">Salvar</button>
             </div>
-            <!-- input data -->
-            <div class="col-md-4">
-                <label class="text-nowrap" for="inputData">Data</label>
-                <input id="input-data" type="date" class="form-control">
-            </div>
-        </div>
-        <hr>
-
-        <!-- grupo de inputs de preenchimento do formulario -->
-        <div class="form-group">
-
-            <div class="form-group col-md-4">
-                <label class="text-nowrap" for="inputMatricula">Matrícula do voluntário</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label class="text-nowrap" for="inputDataColeta">Data Coleta</label>
-                <input type="date" class="form-control">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label class="text-nowrap" for="inputNomePraia">Nome de praia ou tabuleiro</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label class="text-nowrap" for="inputNumeroCOva">Número da cova</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label class="text-nowrap" for="inputQuantidadeOvos">Quantidade de ovos</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label class="text-nowrap" class="text-nowrap" for="inputEspecie">Espécie</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label class="text-nowrap" class="text-nowrap" for="inputDistanciaAgua">Distância da água</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label class="text-nowrap" for="inputDistanciaVegetacao">Distância da vegetação</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label class="text-nowrap" for="inputProfundPrimeiroOvo">Profundidade do primeiro ovo </label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label class="text-nowrap" for="inputProfundTotal">Profundidade total </label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label class="text-nowrap" for="inputLarguraNinho">Largura do ninho</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label class="text-nowrap" for="inputLarguraPata">Largura das patas</label>
-                <input type="text" class="form-control">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label class="text-nowrap" for="inputLarguraEntrePatas">Largura entre as patas</label>
-                <input type="text" class="form-control">
-            </div>
-
-        </div>
-
-        <div class="botao">
-            <button type="button" class="btn btn-success">Salvar</button>
-        </div>
+        </form>
     </div>
-
 </div>
