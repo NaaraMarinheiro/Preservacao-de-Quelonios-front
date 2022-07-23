@@ -19,8 +19,8 @@ import { ViagemEditarComponent } from './viagem/viagem-editar/viagem-editar.comp
     DashboardComponent,
     HomeComponent,
     ViagemCadastrarComponent,
-    ViagemEditarComponent
- 
+    ViagemEditarComponent,
+
    
 
   ],

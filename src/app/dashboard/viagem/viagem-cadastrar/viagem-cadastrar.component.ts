@@ -26,8 +26,17 @@ export class ViagemCadastrarComponent implements OnInit {
    }
 
    onSubmit(){
-    console.log("Aqui")
-    console.log(this.signupForm);
+    if (this.signupForm.valid) {
+      // criar a requisição http aqui
+      console.log(this.signupForm);
+      this.signupForm.reset();
 
-   }
+    } else {
+      console.log('formulário inválido')
+      Object.keys(this.signupForm.controls).forEach(campo => {
+        const controle =this.signupForm.get(campo);
+        controle?.markAsTouched();
+      })
+    }
+  }
 }
