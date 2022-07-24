@@ -5,7 +5,7 @@ import { CicloCadastrarComponent } from './ciclo-cadastrar/ciclo-cadastrar.compo
 import { CicloRoutingModule } from './ciclo-routing.module';
 import { CicloItemComponent } from './ciclo-item/ciclo-item.component';
 import { ViagemItemComponent } from '../viagem/viagem-item/viagem-item.component';
-import { CicloComponent } from './ciclo-lista/ciclo.component';
+import { CicloComponent } from './ciclo-lista/ciclo.component'; 
 
 @NgModule({
   declarations: [
