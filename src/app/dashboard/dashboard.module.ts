@@ -15,8 +15,6 @@ import { ViagemItemComponent } from './viagem/viagem-item/viagem-item.component'
   declarations: [
     DashboardComponent,
     HomeComponent,
-    
-
   ],
   imports: [
     CommonModule,
@@ -27,9 +25,6 @@ import { ViagemItemComponent } from './viagem/viagem-item/viagem-item.component'
     UsuarioRoutingModule,
     RelatorioModule,
     RelatorioRoutingModule,
-  
-    
-
   ],
   exports: [
     DashboardComponent,
