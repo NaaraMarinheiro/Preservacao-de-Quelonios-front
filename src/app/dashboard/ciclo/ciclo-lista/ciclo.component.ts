@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CicloService } from '../services/ciclo.service';
 import { Ciclo } from './ciclo';
+import axios from "../../../utils/axios"
 
 @Component({
   selector: 'app-ciclo',
@@ -10,7 +11,7 @@ import { Ciclo } from './ciclo';
 export class CicloComponent implements OnInit {
 
     ciclos!: Ciclo[];
-
+  
     constructor(  private service:CicloService) { }
 
     ngOnInit(): void {
