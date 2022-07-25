@@ -9,13 +9,16 @@ import { UsuarioRoutingModule } from './usuario/usuario-routing.module';
 import { RelatorioModule } from './relatorio/relatorio.module';
 import { RelatorioRoutingModule } from './relatorio/relatorio-routing.module';
 import { HomeComponent } from './home/home.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { ColetaCadastrarComponent } from './formulario/coleta-cadastrar/coleta-cadastrar.component';
 import { ColetaEditarComponent } from './formulario/coleta-editar/coleta-editar.component';
 import { EclosaoCadastrarComponent } from './formulario/eclosao-cadastrar/eclosao-cadastrar.component';
 import { EclosaoEditarComponent } from './formulario/eclosao-editar/eclosao-editar.component';
 import { SolturaCadastrarComponent } from './formulario/soltura-cadastrar/soltura-cadastrar.component';
 import { SolturaEditarComponent } from './formulario/soltura-editar/soltura-editar.component';
+import { ViagemCadastrarComponent } from './viagem/viagem-cadastrar/viagem-cadastrar.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ViagemEditarComponent } from './viagem/viagem-editar/viagem-editar.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,12 @@ import { SolturaEditarComponent } from './formulario/soltura-editar/soltura-edit
     EclosaoCadastrarComponent,
     EclosaoEditarComponent,
     SolturaCadastrarComponent,
-    SolturaEditarComponent
+    SolturaEditarComponent,
+    ViagemCadastrarComponent,
+    ViagemEditarComponent,
+
+   
+
   ],
   imports: [
     CommonModule,
