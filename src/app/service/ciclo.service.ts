@@ -6,23 +6,16 @@ import axios from "../utils/axios"
 })
 export class CicloService {
 
-  urlCiclos = "http://localhost:8080/api/ciclo.json"
-  urlCiclo = "http://localhost:8080/api/ciclo"
+  private urlCiclo = "http://localhost:8080/api/ciclo"
 
 
-  constructor() { }
+  constructor() { }   
 
-   
-
-  listAll(): Promise<void> {
-    return axios.get(this.urlCiclos).then(res => {
-      console.log(res);
-
-    }).catch((error) => {
-      console.log(error);
-    })
-
+  async listAll() {
+    let result = await axios.get(this.urlCiclo);
+    return result.data;
   }
+
 
   listByID() { }
 

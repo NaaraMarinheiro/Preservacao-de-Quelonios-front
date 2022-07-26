@@ -5,11 +5,16 @@ let router: any = Router;
 
 // Do something before request is sent
 axios.interceptors.request.use((config) => {
-  let usuarioAtual = localStorage.getItem("usuarioAtual") || "";
-  if (JSON.parse(usuarioAtual)) {
-    if(config && config.headers) config.headers['Authorization'] = JSON.parse(usuarioAtual).accessToken
+  if (config.url && config.url.includes("/auth/signin"))
+    return config
+  else {
+    let usuarioAtual = localStorage.getItem("usuarioAtual") || "";
+    if (JSON.parse(usuarioAtual)) {
+      let tokenAtual = JSON.parse(usuarioAtual).token;
+      if (config && config.headers) config.headers['Authorization'] = "Bearer " + tokenAtual;
+    }
+    return config;
   }
-  return config;
 }, function (error) {
   // Do something with request error
   return Promise.reject(error);

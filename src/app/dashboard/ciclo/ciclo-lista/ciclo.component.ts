@@ -10,12 +10,13 @@ import { CicloService } from 'src/app/service/ciclo.service';
 })
 export class CicloComponent implements OnInit {
 
-  // ciclos!: Ciclo[];
+  // precisa tipar com ainterface, no lugar de any
+  public meuArrayDeCiclos:any;
 
   constructor(private service: CicloService) { }
 
-  ngOnInit(): void {
-    this.service.listAll();
+  async ngOnInit() {
+   this.meuArrayDeCiclos= await this.service.listAll();
 
   }
 
@@ -23,16 +24,16 @@ export class CicloComponent implements OnInit {
 
 
 
-  public ciclos = [
-    {
-      idCiclo: "101",
-      nomeCiclo: "Barreirinha 2022",
-      uf: "AM",
-      municipio: "Barreirinha",
-      comunidade: "Comunidade Nova Esperança"
-    }
+  // public ciclos = [
+  //   {
+  //     idCiclo: "101",
+  //     nomeCiclo: "Barreirinha 2022",
+  //     uf: "AM",
+  //     municipio: "Barreirinha",
+  //     comunidade: "Comunidade Nova Esperança"
+  //   }
 
-  ];
+  // ];
 
 
 

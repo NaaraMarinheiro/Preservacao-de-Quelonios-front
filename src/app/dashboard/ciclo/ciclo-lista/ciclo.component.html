@@ -84,7 +84,7 @@
                                 Estado
                             </th>
                             <th class="text-center">
-                                Municipio
+                                Município
                             </th>
                             <th class="text-center">
                                 Comunidade
@@ -96,7 +96,7 @@
                         </thead>
 
                         <tbody>
-                            <tr *ngFor="let item of ciclos; index as i;">
+                            <tr *ngFor="let item of meuArrayDeCiclos; index as i;">
                                 <td class="text-center">
                                     {{item.idCiclo}}
                                 </td>
@@ -106,17 +106,19 @@
                                 <td class="text-center">
                                     {{item.uf}}
                                 </td>
+                                <!-- modificar quando configurar a interface -->
                                 <td class="text-center">
-                                    {{item.municipio}}
+                                    {{item.municipio.nomeMunicipio}}
                                 </td>
                                 <td class="text-center">
-                                    {{item.comunidade}}
+                                    {{item.comunidade.nomeComunidade}}
                                 </td>
                                 <!-- botões -->
                                 <td class="text-center">
                                     <div class="d-flex justify-content-around">
                                         <button type="button" id="button-visao" routerLink="001"
-                                            routerLinkActive="active-style"></button>
+                                            routerLinkActive="active-style">
+                                    </button>
                                     </div>
                                 </td>
                             </tr>
