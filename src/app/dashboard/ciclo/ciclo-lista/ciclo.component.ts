@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CicloService } from '../services/ciclo.service';
-import { Ciclo } from './ciclo';
+import { Ciclo } from '../ciclo-interface';
 import axios from "../../../utils/axios"
+import { CicloService } from 'src/app/service/ciclo.service';
 
 @Component({
   selector: 'app-ciclo',
@@ -10,37 +10,29 @@ import axios from "../../../utils/axios"
 })
 export class CicloComponent implements OnInit {
 
-    ciclos!: Ciclo[];
-  
-    constructor(  private service:CicloService) { }
+  // ciclos!: Ciclo[];
 
-    ngOnInit(): void {
+  constructor(private service: CicloService) { }
 
+  ngOnInit(): void {
+    this.service.listAll();
+
+  }
+
+
+
+
+
+  public ciclos = [
+    {
+      idCiclo: "101",
+      nomeCiclo: "Barreirinha 2022",
+      uf: "AM",
+      municipio: "Barreirinha",
+      comunidade: "Comunidade Nova Esperança"
     }
-  //   public ciclos=[
-  //     {
-  //         idCiclo: "101",
-  //         nome:"Barreirinha 2022",
-  //         estado:"AM",
-  //         municipio:"Barreirinha",
-  //         comunidade:"Comunidade Nova Esperança"
 
-  //     },
-  //     {
-  //       idCiclo: "102",
-  //       nome:"Parintins 2022",
-  //       estado:"AM",
-  //       municipio:"Parintins",
-  //       comunidade:"Comunidade Boca dos Currais"
-  //     },
-  //     {
-  //       idCiclo: "103",
-  //       nome:"Careiro 2022",
-  //       estado:"AM",
-  //       municipio:"Careiro Castanho",
-  //       comunidade:"Comunidade Mamori"
-  //     }
-  // ];
+  ];
 
 
 
