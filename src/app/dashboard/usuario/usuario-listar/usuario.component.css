@@ -62,3 +62,15 @@
     background-color: transparent;
  }
 
+input.ng-invalid.ng-touched {
+    border: 1px solid red
+ }
+
+select.ng-invalid.ng-touched {
+    border: 1px solid red
+ }
+
+span {
+    color:red
+ }
+

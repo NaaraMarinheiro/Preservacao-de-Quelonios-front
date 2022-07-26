@@ -3,6 +3,7 @@
     <!-- card de pesquisar usuario -->
     <div class="conteudo">
 
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="">
                 <!-- primeira linha de inputs -->
@@ -10,13 +11,15 @@
                     <!-- input id ciclo -->
                     <div class="col-md-6 ">
                         <label class="text-nowrap" for="inputMatricula">Matrícula</label>
-                        <input type="text" class="form-control" id="inputMatricula">
+                        <input type="text" formControlName="matricula" class="form-control" id="inputMatricula">
+                        <span *ngIf="!signupForm?.get('matricula')?.valid && signupForm?.get('matricula')?.touched " class="help-block">O campo matrícula é obrigatório</span>
                     </div>
 
                     <!-- input nome -->
                     <div class="col-md-6 ">
                         <label class="text-nowrap" for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail">
+                        <input type="email" formControlName="email" class="form-control" id="inputEmail">
+                        <span *ngIf="!signupForm?.get('email')?.valid && signupForm?.get('email')?.touched " class="help-block">O campo email é obrigatório</span>
                     </div>
                 </div>
 
@@ -24,30 +27,33 @@
                 <div class="row mt-2">
                     <!-- select estado -->
                     <div class="col-md-6 ">
-                        <label class="text-nowrap" for="inputNomeCompleto">Nome completo</label>
-                        <input type="text" class="form-control" id="inputNomeCompleto">
+                        <label class="text-nowrap" for="inputNomeCompleto">Nome Completo</label>
+                        <input type="text" formControlName="nome" class="form-control" id="inputNomeCompleto">
+                        <span *ngIf="!signupForm?.get('nome')?.valid && signupForm?.get('nome')?.touched " class="help-block">O campo nome completo é obrigatório</span>
                     </div>
 
                     <!-- select Municipio -->
                     <div class="col-md-6 ">
-                        <label class="text-nowrap" for="inputTipoUsuario">Tipo de usuário</label>
-                        <select id="inputTipoUsuario" class="form-control">
+                        <label class="text-nowrap" for="inputTipoUsuario">Tipo de Usuário</label>
+                        <select id="inputTipoUsuario" formControlName="tipoUsuario" class="form-control">
                             <option selected>Selecione</option>
                             <option>Voluntário</option>
                             <option>Coordenador</option>
                         </select>
+                        <span *ngIf="!signupForm?.get('tipoUsuario')?.valid && signupForm?.get('tipoUsuario')?.touched " class="help-block">Seleção tipo de usuário é obrigatória</span>
                     </div>
                 </div>
             </div>
 
             <div class="row mt-2">
                 <div class="botao">
-                    <button type="button" class="btn btn-success" id="botao-pesquisar">Pesquisar
+                    <button type="submit" class="btn btn-success" id="botao-pesquisar">Pesquisar
                     </button>
                 </div>
 
             </div>
         </div>
+    </form>
     </div>
 
 

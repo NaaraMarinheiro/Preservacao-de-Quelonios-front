@@ -6,41 +6,46 @@
         <h2>Editar usuário</h2>
         <h6>Alterar dados de um usuário no sistema</h6>
         <br>
-        <form>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="inputMatricula">Matrícula</label>
-                        <input type="text" class="form-control" id="inputMatricula">
+                        <input type="text" formControlName="matricula" class="form-control" id="inputMatricula">
+                        <span *ngIf="!signupForm?.get('matricula')?.valid && signupForm?.get('matricula')?.touched " class="help-block">O campo matrícula é obrigatório</span>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail">
+                        <input type="email" formControlName="email" class="form-control" id="inputEmail">
+                        <span *ngIf="!signupForm?.get('email')?.valid && signupForm?.get('email')?.touched " class="help-block">O campo email é obrigatório</span>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="inputSenha">Senha</label>
-                        <input type="password" class="form-control" id="inputSenha">
+                        <input type="password" formControlName="senha" class="form-control" id="inputSenha">
+                        <span *ngIf="!signupForm?.get('senha')?.valid && signupForm?.get('senha')?.touched " class="help-block">O campo senha é obrigatório</span>
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="inputNome">Nome completo</label>
-                            <input type="text" class="form-control" id="inputNome">
+                            <label for="inputNome">Nome Completo</label>
+                            <input type="text" formControlName="nome" class="form-control" id="inputNome">
+                            <span *ngIf="!signupForm?.get('nome')?.valid && signupForm?.get('nome')?.touched " class="help-block">O campo nome completo é obrigatório</span>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="inputTipoUsuario">Tipo de Usuario</label>
-                            <select id="inputTipoUsuario" class="form-control">
+                            <label for="inputTipoUsuario">Tipo de Usuário</label>
+                            <select id="inputTipoUsuario" formControlName="tipoUsuario" class="form-control">
                                 <option selected>Selecione</option>
                                 <option>Voluntário</option>
                                 <option>Coordenador</option>
                             </select>
+                            <span *ngIf="!signupForm?.get('tipoUsuario')?.valid && signupForm?.get('tipoUsuario')?.touched " class="help-block">Seleção tipo de usuário é obrigatória</span>
                         </div>
                     </div>
                 </div>
@@ -48,18 +53,18 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="inputStatus">Status</label>
-                            <select id="inputStatus" class="form-control">
+                            <select id="inputStatus" formControlName="status" class="form-control">
                                 <option selected>Selecione</option>
                                 <option>Ativo</option>
                                 <option>Inativo</option>
                             </select>
+                            <span *ngIf="!signupForm?.get('status')?.valid && signupForm?.get('status')?.touched " class="help-block">Seleção de status é obrigatório</span>
                         </div>
                     </div>
                 </div>
                 <div class="botao">
-                    <button type="button" class="btn btn-success  ">Salvar</button>
+                    <button type="submit" class="btn btn-success  ">Salvar</button>
                 </div>
             </div>
         </form>
     </div>
-</div>
