@@ -25,9 +25,20 @@ export class UsuarioEditarComponent implements OnInit {
     return this.signupForm.controls;
    }
 
-  onSubmit(){
+   onSubmit(){
+    if (this.signupForm.valid){
     console.log(this.signupForm);
-
+    this.signupForm.reset();
+  
+    }else{
+      console.log('formulário inválido')
+      Object.keys(this.signupForm.controls).forEach(campo =>{
+        const controle =this.signupForm.get(campo);
+          controle?.markAsTouched();
+      })
+      
+    }
+  
    }
   }
 
