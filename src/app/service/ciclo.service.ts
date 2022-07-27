@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Ciclo } from '../dashboard/ciclo/ciclo-interface';
 import axios from "../utils/axios"
 
 @Injectable({
@@ -16,10 +17,19 @@ export class CicloService {
     return result.data;
   }
 
+ async insert(ciclos:Ciclo) {
 
-  listByID() { }
+  let body = JSON.stringify(ciclos);
+  let headers:any = new Headers({ 'Content-Type' : 'application/json'});
 
-  insert() { }
+  let result = await axios.post(this.urlCiclo, body, {headers});
+  return result;  
+
+  }
+
+
+
+  listByID() { } 
 
   update() { }
 

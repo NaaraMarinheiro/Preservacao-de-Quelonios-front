@@ -17,6 +17,7 @@
                             id="inputNome"
                             name="nomeCiclo"
                             formControlName="nomeCiclo"
+                            [(ngModel)]="documento.nomeCiclo"
                         >
                         <span *ngIf="!formulario?.get('nomeCiclo')?.valid && formulario?.get('nomeCiclo')?.touched" class="help-block"> Campo nome obrigatório</span>
                     </div>
@@ -29,6 +30,7 @@
                             id="inputEstado"                            
                             name="uf"
                             formControlName="uf"
+                            [(ngModel)]="documento.uf"
                             >
                             <option selected disabled>Selecione</option>
                             <option>AM</option>
@@ -47,6 +49,7 @@
                             id="inputMunicipio"                          
                             name="municipio"
                             formControlName="municipio"
+                            [(ngModel)]="documento.municipio.nomeMunicipio"
                         >
                             <option selected disabled>Selecione</option>
                             <option>Apuí</option>
@@ -73,6 +76,7 @@
                             id="inputComunidade"                             
                             name="comunidade"
                             formControlName="comunidade"
+                            [(ngModel)]="documento.comunidade.nomeComunidade"
                         >
                             <option selected disabled>Selecione</option>
                             <option>Comunidade Aliança</option>
@@ -80,7 +84,7 @@
                             <option>Comunidade Barreto</option>
                             <option>Comunidade Bela Vista do Guariba</option>
                             <option>Comunidade Boca dos Currais</option>
-                            <option>Comunidade Castanhal'</option>
+                            <option>Comunidade Castanhal</option>
                             <option>Comunidade Granja Ceres</option>
                             <option>Comunidade Igapó Açu</option>
                             <option>Comunidade Mamori</option>

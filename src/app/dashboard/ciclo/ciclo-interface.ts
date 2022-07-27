@@ -1,5 +1,5 @@
 export interface Ciclo {
-    idCiclo: number;
+    idCiclo?: number;
     nomeCiclo: string;
     uf: string;
     municipio:{nomeMunicipio:string};
