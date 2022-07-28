@@ -12,17 +12,24 @@ export class CicloService {
 
   constructor() { }   
 
+// Requisição GET 
   async listAll() {
     let result = await axios.get(this.urlCiclo);
     return result.data;
   }
 
+  // Requisição POST
  async insert(ciclos:Ciclo) {
 
   let body = JSON.stringify(ciclos);
-  let headers:any = new Headers({ 'Content-Type' : 'application/json'});
+  /* let headers:any = new Headers(
+    {'Accept': 'application/json',
+     'Content-Type': 'application/json'}
+  );
+ */
 
-  let result = await axios.post(this.urlCiclo, body, {headers});
+  let result = await axios.post(this.urlCiclo,body,{headers: {'content-type':'application/json'}});
+  console.log(result);
   return result;  
 
   }

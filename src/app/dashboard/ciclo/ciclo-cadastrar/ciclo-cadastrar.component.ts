@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { CicloService } from 'src/app/service/ciclo.service';
+import { ComunidadeService } from 'src/app/service/comunidade.service';
+import { MunicipioService } from 'src/app/service/municipio.service';
 import { Ciclo } from '../ciclo-interface';
 
 @Component({
@@ -16,18 +18,26 @@ export class CicloCadastrarComponent implements OnInit {
     nomeCiclo: '',
     uf: '',
     municipio: {
-      nomeMunicipio: ''
+      idMunicipio: ''
     },
     comunidade: {
-      nomeComunidade: ' '
+      idComunidade: ' '
     }
   }
 
+  // variavel que guarda os municipios
+  public arrayMunicipios:any;
+  public arrayComunidades:any;
+
   constructor(private formBuilder: FormBuilder,
-              private service: CicloService) { }
+              private service: CicloService,
+              private municipioService:MunicipioService,
+              private comunidadeService:ComunidadeService) { }
 
   ngOnInit(): void {
     this.configurarFormulario();
+    this.selecionarMunicipio();
+    this. selecionarComunidade();
   }
 
   configurarFormulario() {
@@ -56,5 +66,19 @@ export class CicloCadastrarComponent implements OnInit {
       })
     }
   }
+
+
+  async selecionarMunicipio(){
+    this.arrayMunicipios = await this.municipioService.listAll();
+
+  }
+
+
+  async selecionarComunidade(){
+    this.arrayComunidades = await this.comunidadeService.listAll();
+
+  }
+
+
 
 }

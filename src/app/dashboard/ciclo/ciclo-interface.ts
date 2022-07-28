@@ -2,7 +2,7 @@ export interface Ciclo {
     idCiclo?: number;
     nomeCiclo: string;
     uf: string;
-    municipio:{nomeMunicipio:string};
-    comunidade:{nomeComunidade:string};
+    municipio:{idMunicipio:string};
+    comunidade:{idComunidade:string};
     
 }
