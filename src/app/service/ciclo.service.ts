@@ -22,24 +22,9 @@ export class CicloService {
  async insert(ciclos:Ciclo) {
 
   let body = JSON.stringify(ciclos);
-  /* let headers:any = new Headers(
-    {'Accept': 'application/json',
-     'Content-Type': 'application/json'}
-  );
- */
-
   let result = await axios.post(this.urlCiclo,body,{headers: {'content-type':'application/json'}});
   console.log(result);
   return result;  
 
   }
-
-
-
-  listByID() { } 
-
-  update() { }
-
-  del() { }
-
 }
