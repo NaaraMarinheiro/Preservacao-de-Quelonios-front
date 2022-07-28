@@ -3,6 +3,7 @@ import { Ciclo } from '../ciclo-interface';
 import axios from "../../../utils/axios"
 import { CicloService } from 'src/app/service/ciclo.service';
 
+
 @Component({
   selector: 'app-ciclo',
   templateUrl: './ciclo.component.html',

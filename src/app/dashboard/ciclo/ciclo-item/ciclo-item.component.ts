@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CicloItemComponent implements OnInit {
 
+
+
   constructor() { }
 
   ngOnInit(): void {

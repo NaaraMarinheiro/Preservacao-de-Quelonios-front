@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RelatorioService } from 'src/app/service/relatorio.service';
 
 @Component({
   selector: 'app-relatorio',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RelatorioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: RelatorioService) { }
 
   ngOnInit(): void {
+   this.gerarRelatorioColeta();
+  }
+
+  gerarRelatorioColeta(){
+    this.service.listAll();   
+
   }
 
 }

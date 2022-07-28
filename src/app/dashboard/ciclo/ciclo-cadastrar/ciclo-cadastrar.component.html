@@ -17,6 +17,7 @@
                             id="inputNome"
                             name="nomeCiclo"
                             formControlName="nomeCiclo"
+                            [(ngModel)]="documento.nomeCiclo"
                         >
                         <span *ngIf="!formulario?.get('nomeCiclo')?.valid && formulario?.get('nomeCiclo')?.touched" class="help-block"> Campo nome obrigatório</span>
                     </div>
@@ -29,6 +30,7 @@
                             id="inputEstado"                            
                             name="uf"
                             formControlName="uf"
+                            [(ngModel)]="documento.uf"
                             >
                             <option selected disabled>Selecione</option>
                             <option>AM</option>
@@ -40,27 +42,18 @@
             </div>
             <div class="row mt-2">
                 <div class="col-md-6">
-                    <div class="form-group">
+                    <div class="form-group" >
                         <label  for="inputMunicipio">Município</label>
                         <select 
                             class="form-select"
                             id="inputMunicipio"                          
                             name="municipio"
                             formControlName="municipio"
+                            [(ngModel)]="documento.municipio.idMunicipio"
                         >
-                            <option selected disabled>Selecione</option>
-                            <option>Apuí</option>
-                            <option>Barcelos</option>
-                            <option>Barreirinha</option>
-                            <option>Borba</option>
-                            <option>Careiro Castanho</option>
-                            <option>Juruti</option>
-                            <option>Nhamundá</option>
-                            <option>Novo Airão</option>
-                            <option>Oriximiná</option>
-                            <option>Parintins</option>
-                            <option>Puranga Conquista</option>
-                            <option>Terra Santa</option>
+                            <option selected disabled [ngValue]="null" >Selecione</option>
+                            <option *ngFor="let item of arrayMunicipios; index as i;" [ngValue]="item.idMunicipio" >{{item.nomeMunicipio}}</option>                         
+                           
                         </select>
                         <span *ngIf="!formulario?.get('municipio')?.valid && formulario?.get('municipio')?.touched" class="help-block"> Seleção do município obrigatória</span>  
                     </div>
@@ -73,25 +66,13 @@
                             id="inputComunidade"                             
                             name="comunidade"
                             formControlName="comunidade"
+                            [(ngModel)]="documento.comunidade.idComunidade"
                         >
-                            <option selected disabled>Selecione</option>
-                            <option>Comunidade Aliança</option>
-                            <option>Comunidade Ascensão</option>
-                            <option>Comunidade Barreto</option>
-                            <option>Comunidade Bela Vista do Guariba</option>
-                            <option>Comunidade Boca dos Currais</option>
-                            <option>Comunidade Castanhal'</option>
-                            <option>Comunidade Granja Ceres</option>
-                            <option>Comunidade Igapó Açu</option>
-                            <option>Comunidade Mamori</option>
-                            <option>Comunidade Nova Esperança</option>
-                            <option>Comunidade Pintado</option>
-                            <option>Comunidade Poço Fundo</option>
-                            <option>Comunidade Salgado I</option>
-                            <option>Comunidade São José</option>
-                            <option>Comunidade Tucumanduba</option>
-                        </select>
-                        <span *ngIf="!formulario?.get('comunidade')?.valid && formulario?.get('comunidade')?.touched" class="help-block"> Seleção da comunidade obrigatória</span>  
+                            <option selected disabled  [ngValue]="null">Selecione</option>
+                            <option *ngFor="let item of arrayComunidades; index as i;" [ngValue]="item.idComunidade" >{{item.nomeComunidade}}</option>                     
+    
+                        </select>                     
+                        <span *ngIf="!formulario?.get('comunidade')?.valid && formulario?.get('comunidade')?.touched" class="help-block"> Seleção da comunidade obrigatória</span> 
                     </div>
                 </div>
             </div>
