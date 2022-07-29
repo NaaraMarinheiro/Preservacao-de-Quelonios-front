@@ -3,5 +3,6 @@ export interface Usuario {
     nome: string;
     tipoUsuario: string;
     username:string;
+    password:string
     enabled:boolean;
 }
