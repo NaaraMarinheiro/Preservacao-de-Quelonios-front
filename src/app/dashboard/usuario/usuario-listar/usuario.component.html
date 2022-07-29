@@ -94,21 +94,21 @@
                         </thead>
 
                         <tbody>
-                            <tr *ngFor="let item of usuarios | keys; index as i; ">
+                            <tr *ngFor="let item of usuarios ; index as i">
                                 <td class="text-center">
-                                  {{usuarios[item].matricula}}
+                                  {{item.matricula}}
                                 </td>
                                 <td class="text-center">
-                                    {{usuarios[item].nome}}
+                                    {{item.nome}}
                                 </td>
                                 <td class="text-center">
-                                    {{usuarios[item].username}}
+                                    {{item.username}}
                                 </td>
                                 <td class="text-center">
-                                    {{usuarios[item].tipoUsuario}}
+                                    {{item.tipoUsuario}}
                                 </td>
                                 <td class="text-center">
-                                    {{usuarios[item].enabled}}
+                                    {{item.enabled?"Ativo":"Inativo"}}                                   
                                 </td>
 
                                 <!-- botões -->

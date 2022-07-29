@@ -9,7 +9,12 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 })
 export class UsuarioComponent implements OnInit {
 
-  public usuarios:any={};
+  public usuarios:{enabled:boolean,
+    matricula:string,
+     nome:string,
+     password:string,
+     tipoUsuario:string,
+     username:string} []
 
   constructor(private usuarioService: UsuarioService) { }
 
@@ -17,9 +22,5 @@ export class UsuarioComponent implements OnInit {
   async  ngOnInit() {
     this.usuarios = await this.usuarioService.listAll();
  }
-
-
- 
- 
 
 }

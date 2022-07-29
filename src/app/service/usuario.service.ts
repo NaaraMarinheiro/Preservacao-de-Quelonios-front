@@ -14,6 +14,6 @@ export class UsuarioService {
   // Requisição GET 
   async listAll() {
     let result = await axios.get(this.urlUsuario);
-    return result.data;
+    return result.data._embedded.usuarioVOList;
   }
 }
