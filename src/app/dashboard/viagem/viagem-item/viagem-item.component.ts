@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CicloService } from 'src/app/service/ciclo.service';
+import { ViagemService } from 'src/app/service/viagem.service';
 
 @Component({
   selector: 'app-viagem-item',
@@ -35,11 +38,33 @@ export class ViagemItemComponent implements OnInit {
 
   ];
 
+  public resultado: any = {
+    municipio: {
+      nomeMunicipio: ""
+    },
+    comunidade: {
+      nomeComunidade: ""
+    },
+    uf: ""
+  };
 
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private meuCicloService: CicloService, private minhaViagemService: ViagemService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    let idCiclo = String(this.route.snapshot.paramMap.get('cicloId'));
+    let idViagem = String(this.route.snapshot.paramMap.get('viagemId'));
+    
+
+    this.getViagem(idCiclo, idViagem);
+    //this.listarFormulariosDaViagem()
+
   }
+
+  async getViagem(idCiclo: string, idViagem: string) {
+    this.resultado = await this.minhaViagemService.listByID(idCiclo, idViagem);
+  }
+
+  //listarFormulariosDaViagem()
 
 }

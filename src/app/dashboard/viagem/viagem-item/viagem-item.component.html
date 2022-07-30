@@ -1,22 +1,22 @@
 <div class="container">
 
-    <h3 id="migalhas"> Home/Ciclo/Ciclo Barreirinha 2022/Viagem 101</h3>
+    <h3 id="migalhas"> Home/Ciclo/{{resultado.idCiclo.nomeCiclo}}/</h3>
 
     <div class="conteudo">
-        <h2 class="mb-4">Viagem 101 - 20/02/2022</h2>
+        <h2 class="mb-4"> Viagem - ID  {{resultado.idViagem}} </h2>
 
         <form>
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="inputNome">Nome do Ciclo</label>
-                        <input type="text" class="form-control" id="inputNome">
+                        <input type="text" class="form-control" id="inputNome" [value] = "resultado.idCiclo.nomeCiclo" disabled>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="Estado">Estado</label>
-                        <input type="text" class="form-control" id="Estado">
+                        <input type="text" class="form-control" id="Estado" [value] = "resultado.idCiclo.uf" disabled>
                     </div>
                 </div>
             </div>
@@ -25,13 +25,13 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="comunidade">Município</label>
-                        <input type="text" class="form-control" id="comunidade">
+                        <input type="text" class="form-control" id="comunidade" [value] = "resultado.idCiclo.municipio.nomeMunicipio" disabled>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="maunicipio">Comunidade</label>
-                        <input type="text" class="form-control" id="municipio">
+                        <input type="text" class="form-control" id="municipio" [value] = "resultado.idCiclo.comunidade.nomeComunidade" disabled>
                     </div>
                 </div>
             </div>
@@ -41,19 +41,19 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="idviagem">Id Viagem</label>
-                        <input type="number" class="form-control" id="viagemid">
+                        <input type="text" class="form-control" id="viagemid" [value] = "resultado.idViagem" disabled>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="Coordenador">Coordenador</label>
-                        <input type="text" class="form-control" id="coordenador">
+                        <input type="text" class="form-control" id="coordenador" [value] = "resultado.coordenador.nome" disabled>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="Data">Data</label>
-                        <input type="text" class="form-control" id="dataviagem">
+                        <input type="text" class="form-control" id="dataviagem" [value] = "resultado.dataViagem" disabled>
                     </div>
                 </div>
             </div>
