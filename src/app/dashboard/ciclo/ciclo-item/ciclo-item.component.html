@@ -50,35 +50,41 @@
 
             <div class="div-tabela-minhas-viagens">
 
-                <div class="row">
+                <div class="row divisor" *ngFor="let item of arrayDeViagens">
                     <div class="col-md-3 pe-md-1">
-                        <div class="canto-colorido-verde"></div>
+                        <div [ngClass] = "{
+                            'canto-colorido-verde': item.status == 'Iniciada', 
+                            'canto-colorido-rosa': item.status == 'Agendada'
+                        }" class="canto-colorido-verde"></div>
                         <div class="div-dados-id-viagem">
 
-                            <span class="subtitulo-dados-viagem"><b>ID 003</b></span>
+                            <span class="subtitulo-dados-viagem"><b>ID {{item.idViagem}}</b></span>
 
                             <div class="item-id-viagem">
-                                <span class="status-em-atualizacao">Em atualização</span>
+                                <span [ngClass] = "{
+                                    'status-em-atualizacao': item.status == 'Iniciada',
+                                    'status-agendada': item.status == 'Agendada'
+
+                                }">{{item.status}}</span>
                             </div>
                             <div class="item-id-viagem" >
                                 <img class="icone" src="../../../../assets/img/pin-map.svg" width="20" height="20"><span
-                                    class="label-comunidade" > Comunidade Rio Largo</span>
+                                    class="label-comunidade" >{{item.idCiclo.comunidade.nomeComunidade}}</span>
                             </div>
                             <div class="item-id-viagem">
                                 <img class="icone" src="../../../../assets/img/calendar.svg" width="20"
-                                    height="20"><span class="label-comunidade">26/06/2022</span>
+                                    height="20"><span class="label-comunidade">{{item.dataViagem}}</span>
                             </div>
 
                         </div>
                     </div>
                     <div class="col-md-9 ps-md-0 div-viagem">
                         <div class="div-dados-viagem">
-                            <span class="subtitulo-dados-viagem"><b>Ciclo Barreirinha 2022</b></span>
+                            <span class="subtitulo-dados-viagem">{{item.idCiclo.nomeCiclo}}</span>
 
-                            <span class="texto-dados-viagem"><b>Participantes:</b></span>
-                            <span class="texto-dados-viagem">José da Silva - voluntário</span>
-                            <span class="texto-dados-viagem">Maria da Silva - voluntário</span>
-                            <span class="texto-dados-viagem">João da Silva - voluntário</span>
+                            <span class="texto-dados-viagem" style="font-weight:500">Coordenador:</span>
+                            <span class="texto-dados-viagem">{{item.coordenador.nome}}</span>
+                            
                         </div>
                         <div class="div-botoes-viagem">
                             <div class="div-botao-formulario">
@@ -91,65 +97,9 @@
                                 <div class="flex-item-center">
                                     <td>
                                         <div class="d-flex justify-content-around">
-                                            <button type="button" id="button-visao" routerLink="viagem/022"
+                                            <button type="button" id="button-visao" [routerLink]="['viagem', item.idViagem]"
                                                 routerLinkActive="active-style"></button>
-                                            <button type="button" id="button-editar" routerLink="viagem/022/editar"
-                                                routerLinkActive="active-style"></button>
-                                            <button type="button" id="button-excluir"></button>
-                                        </div>
-                                    </td>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="divisor"></div>
-
-                <div class="row">
-                    <div class="col-md-3 pe-md-1">
-                        <div class="canto-colorido-rosa"></div>
-                        <div class="div-dados-id-viagem">
-
-                            <span class="subtitulo-dados-viagem"><b>ID 002</b></span>
-
-                            <div class="item-id-viagem">
-                                <span class="status-agendada">Agendada</span>
-                            </div>
-                            <div class="item-id-viagem">
-                                <img class="icone" src="../../../../assets/img/pin-map.svg" width="20" height="20"><span
-                                    class="label-comunidade">Comunidade Rio Largo</span>
-                            </div>
-                            <div class="item-id-viagem">
-                                <img class="icone" src="../../../../assets/img/calendar.svg" width="20"
-                                    height="20"><span class="label-comunidade">26/06/2022</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9 ps-md-0 div-viagem">
-                        <div class="div-dados-viagem">
-
-                            <span class="subtitulo-dados-viagem"><b>Ciclo Barreirinha 2022</b></span>
-
-                            <span class="texto-dados-viagem"><b>Participantes:</b></span>
-                            <span class="texto-dados-viagem">José da Silva - voluntário</span>
-                            <span class="texto-dados-viagem">Maria da Silva - voluntário</span>
-                            <span class="texto-dados-viagem">João da Silva - voluntário</span>
-                        </div>
-                        <div class="div-botoes-viagem">
-                            <div class="div-botao-formulario">
-                                <button type="button" class="btn btn-success" routerLink="viagem/022"
-                                    routerLinkActive="active-style"><span class="span-formulario">+
-                                        Formulário</span></button>
-                            </div>
-                            <div class="flex-center div-espaco-botoes"></div>
-                            <div class="flex-center-bottom div-botoes-conteudo">
-                                <div class="flex-item-center">
-                                    <td>
-                                        <div class="d-flex justify-content-around">
-                                            <button type="button" id="button-visao" routerLink="viagem/022"
-                                                routerLinkActive="active-style"></button>
-                                            <button type="button" id="button-editar" routerLink="viagem/022/editar"
+                                            <button type="button" id="button-editar" [routerLink]="['viagem', item.idViagem, 'editar']"
                                                 routerLinkActive="active-style"></button>
                                             <button type="button" id="button-excluir"></button>
                                         </div>
@@ -160,59 +110,12 @@
                     </div>
                 </div>
 
-                <div class="divisor"></div>
+                <!--Usar ngClass para aplicar a cor do status do card-->
+                <!-- <div class="canto-colorido-verde"></div> -->
+                <!-- <div class="canto-colorido-rosa"></div> -->
+                <!-- <div class="canto-colorido-cinza"></div> -->
 
-                <div class="row">
-                    <div class="col-md-3 pe-md-1">
-                        <div class="canto-colorido-cinza"></div>
-                        <div class="div-dados-id-viagem">
-                            <span class="subtitulo-dados-viagem"><b>ID 001</b></span>
-
-
-                            <div class="item-id-viagem">
-                                <span class="status-finalizada">Finalizada</span>
-                            </div>
-                            <div class="item-id-viagem">
-                                <img class="icone" src="../../../../assets/img/pin-map.svg" width="20" height="20"><span
-                                    class="label-comunidade">Comunidade Rio Largo</span>
-                            </div>
-                            <div class="item-id-viagem">
-                                <img class="icone" src="../../../../assets/img/calendar.svg" width="20"
-                                    height="20"><span class="label-comunidade">26/06/2022</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9 ps-md-0 div-viagem">
-                        <div class="div-dados-viagem">
-                            <span class="subtitulo-dados-viagem"><b>Ciclo Barreirinha 2022</b></span>
-                            <span class="texto-dados-viagem"><b>Participantes:</b></span>
-                            <span class="texto-dados-viagem">José da Silva - voluntário</span>
-                            <span class="texto-dados-viagem">Maria da Silva - voluntário</span>
-                            <span class="texto-dados-viagem">João da Silva - voluntário</span>
-                        </div>
-                        <div class="div-botoes-viagem">
-                            <div class="div-botao-formulario">
-                                <button type="button" class="btn btn-success" routerLink="viagem/022"
-                                    routerLinkActive="active-style"><span class="span-formulario">+
-                                        Formulário</span></button>
-                            </div>
-                            <div class="flex-center div-espaco-botoes"></div>
-                            <div class="flex-center-bottom div-botoes-conteudo">
-                                <div class="flex-item-center">
-                                    <td>
-                                        <div class="d-flex justify-content-around">
-                                            <button type="button" id="button-visao" routerLink="viagem/022"
-                                                routerLinkActive="active-style"></button>
-                                            <button type="button" id="button-editar" routerLink="viagem/022/editar"
-                                                routerLinkActive="active-style"></button>
-                                            <button type="button" id="button-excluir"></button>
-                                        </div>
-                                    </td>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
         </div>
     </div>

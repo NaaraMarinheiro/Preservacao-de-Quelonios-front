@@ -22,10 +22,15 @@ export class CicloItemComponent implements OnInit {
   constructor(private route: ActivatedRoute, private meuCicloService: CicloService ) { }
 
   async ngOnInit() {
+    /**
+     * 1. [ok] Buscar lista de viagens no backend
+     * 2. Criar os cards com NGfor
+     * 3. 
+     */
     let id = String(this.route.snapshot.paramMap.get('cicloId'));
-
     this.getCiclo(id);
-    //this.listarViagensDoCiclo()
+
+    this.listarViagensDoCiclo(id)
 
   }
 
@@ -33,5 +38,9 @@ export class CicloItemComponent implements OnInit {
     this.resultado = await this.meuCicloService.listByID(id);
   }
 
-  //async listarViagensDoCiclo(){}
+  public arrayDeViagens: any[] = []; 
+  async listarViagensDoCiclo(id:string){
+    this.arrayDeViagens = await this.meuCicloService.listAllByCicle(id);
+    console.log(this.arrayDeViagens)
+  }
 }
