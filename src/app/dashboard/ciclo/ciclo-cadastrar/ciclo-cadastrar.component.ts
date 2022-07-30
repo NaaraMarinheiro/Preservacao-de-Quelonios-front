@@ -4,6 +4,7 @@ import { CicloService } from 'src/app/service/ciclo.service';
 import { ComunidadeService } from 'src/app/service/comunidade.service';
 import { MunicipioService } from 'src/app/service/municipio.service';
 import { Ciclo } from '../ciclo-interface';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-ciclo-cadastrar',
@@ -32,7 +33,8 @@ export class CicloCadastrarComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private service: CicloService,
               private municipioService:MunicipioService,
-              private comunidadeService:ComunidadeService) { }
+              private comunidadeService:ComunidadeService,
+              private toastrService: ToastrService) { }
 
   ngOnInit(): void {
     this.configurarFormulario();
@@ -57,7 +59,9 @@ export class CicloCadastrarComponent implements OnInit {
     
       console.log(this.documento);
       this.formulario.reset();
-
+      this.toastrService.success('Ciclo cadastrado com sucesso!',"Resultado", {
+        timeOut: 3000,
+      });
     } else {
       console.log('formulario inválido')
       Object.keys(this.formulario.controls).forEach(campo => {

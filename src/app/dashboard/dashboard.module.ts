@@ -21,7 +21,6 @@ import { ViagemCadastrarComponent } from './viagem/viagem-cadastrar/viagem-cadas
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViagemEditarComponent } from './viagem/viagem-editar/viagem-editar.component';
 
-
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -33,10 +32,7 @@ import { ViagemEditarComponent } from './viagem/viagem-editar/viagem-editar.comp
     SolturaCadastrarComponent,
     SolturaEditarComponent,
     ViagemCadastrarComponent,
-    ViagemEditarComponent,
-
-   
-
+    ViagemEditarComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +43,7 @@ import { ViagemEditarComponent } from './viagem/viagem-editar/viagem-editar.comp
     UsuarioRoutingModule,
     RelatorioModule,
     RelatorioRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     DashboardComponent,

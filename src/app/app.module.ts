@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { DashboardModule } from './dashboard/dashboard.module'; 
 import { LoginComponent } from './login/login.component'; 
 import { AuthService } from './service/auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { AuthService } from './service/auth.service';
     BrowserModule,
     AppRoutingModule,
     DashboardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

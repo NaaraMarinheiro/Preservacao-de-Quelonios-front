@@ -1,3 +1,5 @@
+@import '~ngx-toastr/toastr.css';
+
 /* Reset */
 * {
     font-family: 'Fira Sans', sans-serif;
