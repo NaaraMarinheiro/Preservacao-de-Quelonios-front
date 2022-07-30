@@ -3,64 +3,58 @@
     <!-- card de pesquisar usuario -->
     <div class="conteudo">
 
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-        <div class="row">
-            <div class="">
-                <!-- primeira linha de inputs -->
-                <div class="row">
-                    <!-- input id ciclo -->
-                    <div class="col-md-6 ">
-                        <label class="text-nowrap" for="inputMatricula">Matrícula</label>
-                        <input type="text" formControlName="matricula" class="form-control" id="inputMatricula">
-                        <span *ngIf="!signupForm?.get('matricula')?.valid && signupForm?.get('matricula')?.touched " class="help-block">O campo matrícula é obrigatório</span>
+        <form>
+            <div class="row">
+                <div class="">
+                    <!-- primeira linha de inputs -->
+                    <div class="row">
+                        <!-- input matricula -->
+                        <div class="col-md-6 ">
+                            <label class="text-nowrap" for="inputMatricula">Matrícula</label>
+                            <input type="text" class="form-control" id="inputMatricula">
+                        </div>
+
+                        <!-- input email -->
+                        <div class="col-md-6 ">
+                            <label class="text-nowrap" for="inputEmail">Email</label>
+                            <input type="email" class="form-control" id="inputEmail">
+
+                        </div>
                     </div>
 
-                    <!-- input nome -->
-                    <div class="col-md-6 ">
-                        <label class="text-nowrap" for="inputEmail">Email</label>
-                        <input type="email" formControlName="email" class="form-control" id="inputEmail">
-                        <span *ngIf="!signupForm?.get('email')?.valid && signupForm?.get('email')?.touched " class="help-block">O campo email é obrigatório</span>
+                    <!-- segunda linha de inputs -->
+                    <div class="row mt-2">
+                        <!-- select nome completo -->
+                        <div class="col-md-6 ">
+                            <label class="text-nowrap" for="inputNomeCompleto">Nome Completo</label>
+                            <input type="text" class="form-control" id="inputNomeCompleto">
+                        </div>
+
+                        <!-- select tipo usuario -->
+                        <div class="col-md-6 ">
+                            <label class="text-nowrap" for="inputTipoUsuario">Tipo de Usuário</label>
+                            <select id="inputTipoUsuario" class="form-control">
+                                <option selected>Selecione</option>
+                                <option>Voluntário</option>
+                                <option>Coordenador</option>
+                            </select>
+
+                        </div>
                     </div>
                 </div>
 
-                <!-- segunda linha de inputs -->
                 <div class="row mt-2">
-                    <!-- select estado -->
-                    <div class="col-md-6 ">
-                        <label class="text-nowrap" for="inputNomeCompleto">Nome Completo</label>
-                        <input type="text" formControlName="nome" class="form-control" id="inputNomeCompleto">
-                        <span *ngIf="!signupForm?.get('nome')?.valid && signupForm?.get('nome')?.touched " class="help-block">O campo nome completo é obrigatório</span>
+                    <div class="botao">
+                        <button type="button" class="btn btn-success" id="botao-pesquisar">Pesquisar
+                        </button>
                     </div>
 
-                    <!-- select Municipio -->
-                    <div class="col-md-6 ">
-                        <label class="text-nowrap" for="inputTipoUsuario">Tipo de Usuário</label>
-                        <select id="inputTipoUsuario" formControlName="tipoUsuario" class="form-control">
-                            <option selected>Selecione</option>
-                            <option>Voluntário</option>
-                            <option>Coordenador</option>
-                        </select>
-                        <span *ngIf="!signupForm?.get('tipoUsuario')?.valid && signupForm?.get('tipoUsuario')?.touched " class="help-block">Seleção tipo de usuário é obrigatória</span>
-                    </div>
                 </div>
             </div>
-
-            <div class="row mt-2">
-                <div class="botao">
-                    <button type="submit" class="btn btn-success" id="botao-pesquisar">Pesquisar
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </form>
+        </form>
     </div>
 
-
-
-
-
-    <!-- DIVISÃO AQUIIIIII   -->
+    <!-- Listagem de usuarios  -->
     <div class="conteudo">
         <div class="row">
             <div class="">
@@ -83,50 +77,49 @@
                                 Nome
                             </th>
                             <th class="text-center">
-                                Tipo de usuário
+                                Email
                             </th>
                             <th class="text-center">
-                                Email
+                                Tipo de usuário
                             </th>
                             <th class="text-center">
                                 Status
                             </th>
-                            <th class="text-center">
+                            <!-- <th class="text-center">
                                 Permissão
-                            </th>
+                            </th> -->
                             <th class="text-center">
 
                             </th>
                         </thead>
 
                         <tbody>
-                            <tr *ngFor="let item of usuarios; index as i;">
+                            <tr *ngFor="let item of usuarios ; index as i">
                                 <td class="text-center">
-                                    {{item.matricula}}
+                                  {{item.matricula}}
                                 </td>
                                 <td class="text-center">
                                     {{item.nome}}
                                 </td>
                                 <td class="text-center">
+                                    {{item.username}}
+                                </td>
+                                <td class="text-center">
                                     {{item.tipoUsuario}}
                                 </td>
                                 <td class="text-center">
-                                    {{item.email}}
+                                    {{item.enabled?"Ativo":"Inativo"}}                                   
                                 </td>
-                                <td class="text-center">
-                                    {{item.status}}
-                                </td>
-                                <td class="text-center">
-                                    {{item.permissao}}
-                                </td>
+
                                 <!-- botões -->
                                 <td class="text-center">
                                     <div class="d-flex justify-content-around">
+                                        <!-- botao de editar -->
                                         <button type="button" id="button-editar" routerLink="editar"
                                             routerLinkActive="active-style">
                                         </button>
 
-
+                                        <!-- botao de excluir -->
                                         <button type="button" id="button-excluir"></button>
 
                                     </div>

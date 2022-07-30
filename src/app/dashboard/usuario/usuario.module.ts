@@ -11,7 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     UsuarioComponent,
     UsuarioCadastrarComponent,
-    UsuarioEditarComponent
+    UsuarioEditarComponent,
   ],
   imports: [
     CommonModule,

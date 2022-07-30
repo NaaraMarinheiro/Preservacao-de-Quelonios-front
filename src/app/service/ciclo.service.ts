@@ -10,8 +10,9 @@ export class CicloService {
   private urlCiclo = "http://localhost:8080/api/ciclo"
   private urlViagem = "http://localhost:8080/api/viagem"
 
-  constructor() { }   
+  constructor() { }
 
+  // Requisição GET 
   async listAll() {
     let result = await axios.get(this.urlCiclo);
     return result.data;
@@ -37,19 +38,12 @@ export class CicloService {
   }
 
   // Requisição POST
- async insert(ciclos:Ciclo) {
+  async insert(ciclos: Ciclo) {
 
-  let body = JSON.stringify(ciclos);
-  /* let headers:any = new Headers(
-    {'Accept': 'application/json',
-     'Content-Type': 'application/json'}
-  );
- */
-
-  let result = await axios.post(this.urlCiclo,body,{headers: {'content-type':'application/json'}});
-  console.log(result);
-  return result;  
-
+    let body = JSON.stringify(ciclos);
+    let result = await axios.post(this.urlCiclo, body, { headers: { 'content-type': 'application/json' } });
+    console.log(result);
+    return result;
   }
 
   // ***

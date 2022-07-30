@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { VirtualTimeScheduler } from 'rxjs';
+import { UsuarioService } from 'src/app/service/usuario.service';
+import { Usuario } from '../usuario-interface';
 
 @Component({
   selector: 'app-usuario-cadastrar',
@@ -11,7 +12,26 @@ export class UsuarioCadastrarComponent implements OnInit {
 
   signupForm: FormGroup = new FormGroup({});
 
+  documento:Usuario={
+    matricula: '',
+    nome: '',
+    tipoUsuario: '',
+    username: '',
+    password:'',
+    enabled: true
+  }
+
+  constructor(private usuarioService:UsuarioService){}
+
   ngOnInit(): void {
+    this.configurarFormulario();
+   }
+
+   get f() {
+    return this.signupForm.controls;
+   }
+
+   configurarFormulario() {
     this.signupForm = new FormGroup({
       'matricula': new FormControl(null,[Validators.required]),
       'email': new FormControl(null, [Validators.required, Validators.email]),
@@ -22,13 +42,13 @@ export class UsuarioCadastrarComponent implements OnInit {
     })
    }
 
-   get f() {
-    return this.signupForm.controls;
-   }
-
    onSubmit(){
     if (this.signupForm.valid){
-    console.log(this.signupForm);
+      // requisicao http aqui
+      this.usuarioService.insert(this.documento)
+        alert("Usuário inserido com sucesso!!");
+
+    console.log(this.documento);
     this.signupForm.reset();
   
     }else{

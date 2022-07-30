@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
   selector: 'app-usuario',
@@ -7,52 +8,19 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent implements OnInit {
-  public usuarios=[
-    {
-        matricula: "7139",
-        nome:"José da Silva",
-        tipoUsuario:"Voluntário",
-        email:"jose@email.com",
-        status:"Ativo",
-        permissao:"Voluntário"
-    },
-    {
-        matricula: "4896",
-        nome:"Amanda Alvez",
-        tipoUsuario:"Voluntário",
-        email:"amanda@email.com",
-        status:"Ativo",
-        permissao:"Voluntário"
-    }
-];
-signupForm: FormGroup = new FormGroup({});
 
-ngOnInit(): void {
-  this.signupForm = new FormGroup({
-    'matricula': new FormControl(null,[Validators.required]),
-    'email': new FormControl(null, [Validators.required, Validators.email]),
-    'nome': new FormControl(null,[Validators.required]),
-    'tipoUsuario': new FormControl(null,[Validators.required]),
-  })
+  public usuarios:{enabled:boolean,
+    matricula:string,
+     nome:string,
+     password:string,
+     tipoUsuario:string,
+     username:string} []
+
+  constructor(private usuarioService: UsuarioService) { }
+
+
+  async  ngOnInit() {
+    this.usuarios = await this.usuarioService.listAll();
  }
 
- get f() {
-  return this.signupForm.controls;
- }
-
-onSubmit(){
-  if (this.signupForm.valid){
-  console.log(this.signupForm);
-  this.signupForm.reset();
-
-  }else{
-    console.log('formulário inválido')
-    Object.keys(this.signupForm.controls).forEach(campo =>{
-      const controle =this.signupForm.get(campo);
-        controle?.markAsTouched();
-    })
-    
-  }
-
- }
 }
