@@ -35,17 +35,22 @@ export class ViagemItemComponent implements OnInit {
       formulario: "coleta",
       usuario: "jose antonio augusto silvino silva"
     },
-
   ];
 
   public resultado: any = {
-    municipio: {
-      nomeMunicipio: ""
+    idCiclo: {
+      idCiclo: "",
+      municipio: {
+        nomeMunicipio: ""
+      },
+      comunidade: {
+        nomeComunidade: ""
+      },
+      uf: ""
     },
-    comunidade: {
-      nomeComunidade: ""
+    coordenador:{
+      nome:""
     },
-    uf: ""
   };
 
 
@@ -62,7 +67,7 @@ export class ViagemItemComponent implements OnInit {
   }
 
   async getViagem(idCiclo: string, idViagem: string) {
-    this.resultado = await this.minhaViagemService.listByID(idCiclo, idViagem);
+    this.resultado = await this.minhaViagemService.listByID(idViagem);
   }
 
   //listarFormulariosDaViagem()

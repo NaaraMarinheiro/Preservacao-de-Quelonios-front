@@ -31,4 +31,9 @@ export class UsuarioService {
     console.log(result);
     return result;
   }
+
+  async listByID(id:string) {
+    let result = await axios.get(this.urlUsuario + '/' + id);
+    return result.data;
+   } 
 }

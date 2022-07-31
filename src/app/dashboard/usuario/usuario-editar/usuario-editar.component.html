@@ -18,15 +18,15 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="inputEmail">Email</label>
-                        <input type="email" formControlName="email" class="form-control" id="inputEmail">
-                        <span *ngIf="!signupForm?.get('email')?.valid && signupForm?.get('email')?.touched " class="help-block">O campo email é obrigatório</span>
+                        <input type="email" formControlName="username" class="form-control" id="inputEmail">
+                        <span *ngIf="!signupForm?.get('username')?.valid && signupForm?.get('username')?.touched " class="help-block">O campo email é obrigatório</span>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="inputSenha">Senha</label>
-                        <input type="password" formControlName="senha" class="form-control" id="inputSenha">
-                        <span *ngIf="!signupForm?.get('senha')?.valid && signupForm?.get('senha')?.touched " class="help-block">O campo senha é obrigatório</span>
+                        <input type="password" formControlName="password" class="form-control" id="inputSenha">
+                        <span *ngIf="!signupForm?.get('password')?.valid && signupForm?.get('password')?.touched " class="help-block">O campo senha é obrigatório</span>
                     </div>
                 </div>
                 <div class="row mt-2">
@@ -42,8 +42,8 @@
                             <label for="inputTipoUsuario">Tipo de Usuário</label>
                             <select id="inputTipoUsuario" formControlName="tipoUsuario" class="form-control">
                                 <option selected>Selecione</option>
-                                <option>Voluntário</option>
-                                <option>Coordenador</option>
+                                <option value="VOLUNTARIO">Voluntário</option>
+                                <option value="ADMIN">Coordenador</option>
                             </select>
                             <span *ngIf="!signupForm?.get('tipoUsuario')?.valid && signupForm?.get('tipoUsuario')?.touched " class="help-block">Seleção tipo de usuário é obrigatória</span>
                         </div>
@@ -53,12 +53,12 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="inputStatus">Status</label>
-                            <select id="inputStatus" formControlName="status" class="form-control">
+                            <select id="inputStatus" formControlName="enabled" class="form-control">
                                 <option selected>Selecione</option>
-                                <option>Ativo</option>
-                                <option>Inativo</option>
+                                <option value="true">Ativo</option>
+                                <option value="false">Inativo</option>
                             </select>
-                            <span *ngIf="!signupForm?.get('status')?.valid && signupForm?.get('status')?.touched " class="help-block">Seleção de status é obrigatório</span>
+                            <span *ngIf="!signupForm?.get('enabled')?.valid && signupForm?.get('enabled')?.touched " class="help-block">Seleção de status é obrigatório</span>
                         </div>
                     </div>
                 </div>

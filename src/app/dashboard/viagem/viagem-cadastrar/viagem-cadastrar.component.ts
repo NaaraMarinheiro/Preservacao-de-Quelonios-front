@@ -26,14 +26,16 @@ export class ViagemCadastrarComponent implements OnInit {
     uf: ""
   };
   //req http
-  constructor(private route: ActivatedRoute, private meuCicloService: CicloService, private minhaViagemService: ViagemService,
+  constructor(
+    private route: ActivatedRoute,
+    private meuCicloService: CicloService,
+    private minhaViagemService: ViagemService,
     private meuUsuarioService: UsuarioService
   ) { }
 
   signupForm: FormGroup = new FormGroup({});
   private idCiclo: string;
 
-  // ngOnInit
   async ngOnInit() {
     /**
      * 1. Configrar o formulário

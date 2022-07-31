@@ -1,5 +1,5 @@
 <div class="container">
-    <h3 id="migalhas"> Home/Ciclos/Ciclo Barreirinha-2022/Viagem101/FormularioColeta</h3>
+    <h3 id="migalhas"> Home/Ciclos/{{resultado.idCiclo.nomeCiclo}}/Viagem{{resultado.idViagem}}/FormularioColeta</h3>
     <div class="conteudo">
         <!-- cabeçalho do furmulario -->
         <div class="titulo">
@@ -10,70 +10,34 @@
             <div class="row">
                 <div class="col-md-4">
                     <label class="text-nowrap" for="inputID">ID Ciclo</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" [value]="resultado.idCiclo.idCiclo" disabled>
                 </div>
 
                 <div class="col-md-4">
                     <label class="text-nowrap" for="inputEstado">Estado</label>
-
-                    <select id="inputEstado" class="form-control">
-                        <option selected>Selecione</option>
-                        <option>AM</option>
-                        <option>PA</option>
-                    </select>
+                    <input id="inputEstado" class="form-control" [value]="resultado.idCiclo.uf" disabled>
                 </div>
 
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <label class="text-nowrap" id="label-municipio" for="inputMunicipio">Município</label>
-                    <select id="inputMunicipio" class="form-control">
-                        <option selected>Selecione</option>
-                        <option>Apuí</option>
-                        <option>Barcelos</option>
-                        <option>Barreirinha</option>
-                        <option>Borba</option>
-                        <option>Careiro Castanho</option>
-                        <option>Juruti</option>
-                        <option>Nhamundá</option>
-                        <option>Novo Airão</option>
-                        <option>Oriximiná</option>
-                        <option>Parintins</option>
-                        <option>Puranga Conquista</option>
-                        <option>Terra Santa</option>
-                    </select>
+                    <input id="inputMunicipio" class="form-control" [value]="resultado.idCiclo.municipio.nomeMunicipio" disabled>
                 </div>
                 <div class="col-md-4 ">
                     <label class="text-nowrap" id="label-comunidade" for="inputComunidade">Comunidade</label>
-                    <select id="inputComunidade" class="form-control">
-                        <option selected>Selecione</option>
-                        <option>Comunidade Aliança</option>
-                        <option>Comunidade Ascensão</option>
-                        <option>Comunidade Barreto</option>
-                        <option>Comunidade Bela Vista do Guariba</option>
-                        <option>Comunidade Boca dos Currais</option>
-                        <option>Comunidade Castanhal'</option>
-                        <option>Comunidade Granja Ceres</option>
-                        <option>Comunidade Igapó Açu</option>
-                        <option>Comunidade Mamori</option>
-                        <option>Comunidade Nova Esperança</option>
-                        <option>Comunidade Pintado</option>
-                        <option>Comunidade Poço Fundo</option>
-                        <option>Comunidade Salgado I</option>
-                        <option>Comunidade São José</option>
-                        <option>Comunidade Tucumanduba</option>
-                    </select>
+                    <input id="inputComunidade" class="form-control" [value]="resultado.idCiclo.comunidade.nomeComunidade" disabled>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="col-md-4">
                     <label class="text-nowrap" id="label-viagem" for="inputIDViagem">ID Viagem</label>
-                    <input id= "idViagem" type="text" class="form-control">
+                    <input id= "idViagem" type="text" class="form-control" [value]="resultado.idViagem" disabled>
                 </div>
                 <div class="col-md-4">
                     <label class="text-nowrap" for="inputData">Data</label>
-                    <input id="input-data" type="date" class="form-control">
+                    <input id="input-data" type="date" class="form-control" [value]="resultado.dataViagem" disabled>
                 </div>
             </div>
             <hr>

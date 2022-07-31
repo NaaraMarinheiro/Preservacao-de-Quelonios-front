@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
   selector: 'app-usuario-editar',
@@ -8,17 +10,26 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class UsuarioEditarComponent implements OnInit {
 
+  matricula: string;
   signupForm: FormGroup = new FormGroup({});
 
-  ngOnInit(): void {
+
+  constructor (private route: ActivatedRoute, private meuService: UsuarioService){
+  }
+
+  async ngOnInit(){
     this.signupForm = new FormGroup({
       'matricula': new FormControl(null,[Validators.required]),
-      'email': new FormControl(null, [Validators.required, Validators.email]),
-      'senha': new FormControl(null, Validators.required),
+      'username': new FormControl(null, [Validators.required, Validators.email]),
+      'password': new FormControl(null, Validators.required),
       'nome': new FormControl(null,[Validators.required]),
       'tipoUsuario': new FormControl(null,[Validators.required]),
-      'status': new FormControl(null,[Validators.required]),
+      'enabled': new FormControl(null,[Validators.required]),
     })
+
+    this.matricula = String(this.route.snapshot.paramMap.get('usuarioId'));
+
+    await this.fetchUser(this.matricula);
    }
 
    get f() {
@@ -40,4 +51,10 @@ export class UsuarioEditarComponent implements OnInit {
     }
   
    }
-  }
+
+   async fetchUser(matricula:string){
+    let result = await this.meuService.listByID(matricula);
+    result.password = "";
+    this.signupForm.patchValue(result)
+   }
+}

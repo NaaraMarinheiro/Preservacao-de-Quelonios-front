@@ -20,7 +20,7 @@ export class ViagemService {
 
   // ***
 
-  async listByID(idCiclo: string, idViagem: string) {
+  async listByID(idViagem: string) {
     let result = await axios.get(this.urlViagem + '/' + idViagem);
     return result.data;
   }
@@ -30,10 +30,12 @@ export class ViagemService {
   //   return result.data;
   // }
 
-  async update() {
+  async update(idViagem: string) {
+    let result = await axios.put(this.urlViagem + '/' + 'editar' + idViagem);
+    return result.data;
   }
 
-  del() { }
+  delete() { }
 
 
 
