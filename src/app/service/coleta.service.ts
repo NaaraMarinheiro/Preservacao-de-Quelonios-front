@@ -4,7 +4,7 @@ import axios from 'axios';
 @Injectable({
   providedIn: 'root'
 })
-export class FormularioService {
+export class ColetaService {
 
   private urlColeta = "http://localhost:8080/api/coleta"
 
@@ -12,7 +12,7 @@ export class FormularioService {
 
   listAll() { }
 
-  async listByID(idCiclo:string, idViagem:string, idColeta:string) {
+  async listByIDColeta(idCiclo:string, idViagem:string, idColeta:string) {
     let result = await axios.get(this.urlColeta + '/' + idColeta);
     return result.data;
   }

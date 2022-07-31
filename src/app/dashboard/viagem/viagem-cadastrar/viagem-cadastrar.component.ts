@@ -11,7 +11,6 @@ import { ViagemService } from 'src/app/service/viagem.service';
   styleUrls: ['./viagem-cadastrar.component.css']
 })
 
-
 export class ViagemCadastrarComponent implements OnInit {
 
 
@@ -73,12 +72,14 @@ export class ViagemCadastrarComponent implements OnInit {
     console.log(this.signupForm)
     if (this.signupForm.valid) {
       let novaViagem = this.signupForm.value;
+
       novaViagem.idCiclo = {
         idCiclo: this.idCiclo
       };
       novaViagem.coordenador = {
         matricula: parseInt(novaViagem.coordenador, 10)
       };
+      
       this.minhaViagemService.insert(novaViagem);
     }
 

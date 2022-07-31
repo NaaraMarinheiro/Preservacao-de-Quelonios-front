@@ -77,7 +77,7 @@
     justify-content: stretch
 }
 
-.canto-colorido-cinza {
+/**.canto-colorido-cinza {
     width: 6px;
     height: 100%;
     background: rgba(144, 144, 144, 1);
@@ -86,7 +86,7 @@
     border-bottom-left-radius: 6px;
     float: left;
     justify-content: stretch
-}
+}*/
 
 
 .div-dados-viagem {

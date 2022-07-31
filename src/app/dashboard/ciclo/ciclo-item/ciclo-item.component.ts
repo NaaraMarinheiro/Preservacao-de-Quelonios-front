@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CicloService } from 'src/app/service/ciclo.service';
 
+
 @Component({
   selector: 'app-ciclo-item',
   templateUrl: './ciclo-item.component.html',
@@ -23,13 +24,11 @@ export class CicloItemComponent implements OnInit {
 
   async ngOnInit() {
     /**
-     * 1. [ok] Buscar lista de viagens no backend
+     * 1. Buscar lista de viagens no backend
      * 2. Criar os cards com NGfor
-     * 3. 
      */
     let id = String(this.route.snapshot.paramMap.get('cicloId'));
     this.getCiclo(id);
-
     this.listarViagensDoCiclo(id)
 
   }
@@ -41,6 +40,5 @@ export class CicloItemComponent implements OnInit {
   public arrayDeViagens: any[] = []; 
   async listarViagensDoCiclo(id:string){
     this.arrayDeViagens = await this.meuCicloService.listAllByCicle(id);
-    console.log(this.arrayDeViagens)
   }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { FormularioService } from 'src/app/service/formulario.service';
+import { ColetaService } from 'src/app/service/coleta.service';
 import { ViagemService } from 'src/app/service/viagem.service';
 
 @Component({
@@ -32,7 +32,7 @@ export class ColetaCadastrarComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private minhaViagemService: ViagemService,
-    private minhaColetaService: FormularioService,
+    private minhaColetaService: ColetaService,
     private toastrService: ToastrService,
     private router: Router,
   ) { }

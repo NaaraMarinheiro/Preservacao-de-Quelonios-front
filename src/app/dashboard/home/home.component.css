@@ -128,20 +128,21 @@
     float:left;
     justify-content: stretch
 }
-.canto-colorido-cinza {
+
+/**.canto-colorido-cinza {
     width: 6px;
     height: 100%;
     background: rgba(144, 144, 144, 1);
     opacity: 1;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    float:left;
+    float: left;
     justify-content: stretch
-}
+}*/
 
 
 .div-dados-viagem {
-    width: 30%;
+    width: 50%;
     height: 100%;
     background: rgba(243, 243, 243, 1);
     display: flex;
@@ -154,8 +155,8 @@
 .subtitulo-dados-viagem {
     color: rgba(47, 57, 78, 1);
     font-family: Fira Sans;
-    font-weight: Medium;
-    font-size: 22px;
+    font-weight: 500;
+    font-size: 1.1rem;
     opacity: 1;
     text-align: left;
     padding: 10px
@@ -231,7 +232,7 @@
 }
 
 .div-botoes-viagem {
-    width: 70%;
+    width: 50%;
     height: 100%;
     background: rgba(243, 243, 243, 1);
     display: flex;
