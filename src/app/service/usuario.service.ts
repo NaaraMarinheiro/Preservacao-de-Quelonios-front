@@ -21,6 +21,7 @@ export class UsuarioService {
   listCoordenadores() {
   
   }
+  
 
   // Requisição POST
   async insert(usuarios: Usuario) {
@@ -31,4 +32,17 @@ export class UsuarioService {
     console.log(result);
     return result;
   }
+
+  async listByID(id:string) {
+    try {
+      let result = await axios.get(this.urlUsuario + '/' + id);
+      return result.data;
+    } catch(err:any) {
+      if(err.response.status == 404) {
+        return null;
+      } else {
+        throw err;
+      }
+    }
+   } 
 }

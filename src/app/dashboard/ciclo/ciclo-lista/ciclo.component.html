@@ -4,57 +4,59 @@
 
     <div class="conteudo">
 
-        <!-- card de pesquisar usuario -->
-        <div class="row">
-            <div class="">
-                <!-- primeira linha de inputs -->
-                <div class="row">
-                    <!-- input id ciclo -->
-                    <div class="col-md-6 ">
-                        <label class="text-nowrap" for="inputIdCiclo">Id Ciclo</label>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <!-- card de pesquisar usuario -->
+            <div class="row">
+                <div class="">
+                    <!-- primeira linha de inputs -->
+                    <div class="row">
+                        <!-- input id ciclo -->
+                        <div class="col-md-6 ">
+                            <label class="text-nowrap" for="inputIdCiclo">Id Ciclo</label>
+                            <input type="number" formControlName="idCiclo" class="form-control" id="inputIdCiclo"  [(ngModel)]="idCicloPesquisa">
+                            <span *ngIf="!formulario?.get('idCiclo')?.valid && formulario?.get('idCiclo')?.touched" class="help-block">Id do ciclo obrigatório</span>
+                        </div>
 
-                        <input type="text" class="form-control" id="inputIdCiclo">
+                        <!-- input nome -->
+                        <div class="col-md-6 ">
+                            <label class="text-nowrap" for="inputNome">Nome</label>
+                            <input type="text" class="form-control" id="inputNome">
+                        </div>
                     </div>
 
-                    <!-- input nome -->
-                    <div class="col-md-6 ">
-                        <label class="text-nowrap" for="inputNome">Nome</label>
-                        <input type="text" class="form-control" id="inputNome">
-                    </div>
-                </div>
+                    <!-- segunda linha de inputs -->
+                    <div class="row mt-2">
+                        <!-- select estado -->
+                        <div class="col-md-6 ">
+                            <label class="text-nowrap" for="inputEstado">Estado</label>
+                            <input type="text" class="form-control" id="estado">
+                        </div>
 
-                <!-- segunda linha de inputs -->
-                <div class="row mt-2">
-                    <!-- select estado -->
-                    <div class="col-md-6 ">
-                        <label class="text-nowrap" for="inputEstado">Estado</label>
-                        <input type="text" class="form-control" id="estado">
-                    </div>
-
-                    <!-- select Municipio -->
-                    <div class="col-md-6 ">
-                        <label class="text-nowrap" for="inputMunicipio">Município</label>
-                        <input type="text" class="form-control" id="municipio">
-                    </div>
-                </div>
-
-                <!-- terceira linha de inputs -->
-                <div class="row mt-2">
-                    <!-- select comunidade -->
-                    <div id="div-comunidade" class="col-md-6 ">
-                        <label class="text-nowrap" for="inputComunidade">Comunidade</label>
-                        <input type="text" class="form-control" id="comunidade">
+                        <!-- select Municipio -->
+                        <div class="col-md-6 ">
+                            <label class="text-nowrap" for="inputMunicipio">Município</label>
+                            <input type="text" class="form-control" id="municipio">
+                        </div>
                     </div>
 
-                    <!-- botão de pesquisa -->
-                    <div class="botao">
-                        <button type="button" class="btn btn-success" id="botao-pesquisar">Pesquisar
-                        </button>
+                    <!-- terceira linha de inputs -->
+                    <div class="row mt-2">
+                        <!-- select comunidade -->
+                        <div id="div-comunidade" class="col-md-6 ">
+                            <label class="text-nowrap" for="inputComunidade">Comunidade</label>
+                            <input type="text" class="form-control" id="comunidade">
+                        </div>
+
+                        <!-- botão de pesquisa -->
+                        <div class="botao">
+                            <button type="submit" class="btn btn-success" id="botao-pesquisar">Pesquisar
+                            </button>
+                        </div>
+                        
                     </div>
-                    
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 
     <div class="conteudo">

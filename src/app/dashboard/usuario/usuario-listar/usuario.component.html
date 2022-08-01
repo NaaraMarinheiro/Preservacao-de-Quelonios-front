@@ -3,7 +3,7 @@
     <!-- card de pesquisar usuario -->
     <div class="conteudo">
 
-        <form>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="">
                     <!-- primeira linha de inputs -->
@@ -11,7 +11,8 @@
                         <!-- input matricula -->
                         <div class="col-md-6 ">
                             <label class="text-nowrap" for="inputMatricula">Matrícula</label>
-                            <input type="text" class="form-control" id="inputMatricula">
+                            <input type="number" class="form-control" [(ngModel)]="matriculaPesquisa" formControlName="matricula" id="inputMatricula">
+                            <span *ngIf="!formulario?.get('matricula')?.valid && formulario?.get('matricula')?.touched" class="help-block">Matrícula obrigatória</span>               
                         </div>
 
                         <!-- input email -->
@@ -45,7 +46,7 @@
 
                 <div class="row mt-2">
                     <div class="botao">
-                        <button type="button" class="btn btn-success" id="botao-pesquisar">Pesquisar
+                        <button type="submit" class="btn btn-success" id="botao-pesquisar">Pesquisar
                         </button>
                     </div>
 
