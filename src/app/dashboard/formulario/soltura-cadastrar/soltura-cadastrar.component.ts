@@ -81,8 +81,7 @@ export class SolturaCadastrarComponent implements OnInit {
           this.toastrService.success('Formulário cadastrado!', "Sucesso", {
             timeOut: 8000,
           });
-          this.solturaForm.reset(); //apaga o form para gerar outro
-          //this.router.navigate(['/ciclo/'+ this.idCiclo + "/viagem/" + this.idViagem]);  - redirecionamento 
+          this.solturaForm.reset();
         }
       } catch (error) {
         this.toastrService.error('Formulário não cadastrado', "Erro", {

@@ -11,6 +11,7 @@ import { ViagemService } from 'src/app/service/viagem.service';
   styleUrls: ['./eclosao-cadastrar.component.css']
 })
 export class EclosaoCadastrarComponent implements OnInit {
+
   public eclosaoForm: FormGroup;
   public resultado: any = {
     idCiclo: {
@@ -79,8 +80,7 @@ export class EclosaoCadastrarComponent implements OnInit {
           this.toastrService.success('Formulário cadastrado!', "Sucesso", {
             timeOut: 8000,
           });
-          this.eclosaoForm.reset(); //apaga o form para gerar outro
-          //this.router.navigate(['/ciclo/'+ this.idCiclo + "/viagem/" + this.idViagem]);  - redirecionamento 
+          this.eclosaoForm.reset(); 
         }
       } catch (error) {
         this.toastrService.error('Formulário não cadastrado', "Erro", {
