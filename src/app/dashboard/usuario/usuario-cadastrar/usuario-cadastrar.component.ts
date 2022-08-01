@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { Usuario } from '../usuario-interface';
 
@@ -21,7 +22,8 @@ export class UsuarioCadastrarComponent implements OnInit {
     enabled: true
   }
 
-  constructor(private usuarioService:UsuarioService){}
+  constructor(private usuarioService:UsuarioService,
+              private toastrService: ToastrService){}
 
   ngOnInit(): void {
     this.configurarFormulario();
@@ -46,8 +48,10 @@ export class UsuarioCadastrarComponent implements OnInit {
     if (this.signupForm.valid){
       // requisicao http aqui
       this.usuarioService.insert(this.documento)
-        alert("Usuário inserido com sucesso!!");
-
+        
+      this.toastrService.success('Usuário inserido com sucesso!!',"Resultado", {
+        timeOut: 3000,
+      });
     console.log(this.documento);
     this.signupForm.reset();
   

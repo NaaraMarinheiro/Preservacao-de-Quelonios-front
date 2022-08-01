@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CicloService } from 'src/app/service/ciclo.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { ViagemService } from 'src/app/service/viagem.service';
@@ -29,7 +30,8 @@ export class ViagemCadastrarComponent implements OnInit {
     private route: ActivatedRoute,
     private meuCicloService: CicloService,
     private minhaViagemService: ViagemService,
-    private meuUsuarioService: UsuarioService
+    private meuUsuarioService: UsuarioService,
+    private toastrService: ToastrService
   ) { }
 
   signupForm: FormGroup = new FormGroup({});
@@ -81,6 +83,9 @@ export class ViagemCadastrarComponent implements OnInit {
       };
       
       this.minhaViagemService.insert(novaViagem);
+      this.toastrService.success('Viagem inserida com sucesso!!',"Resultado", {
+        timeOut: 3000,
+      });
     }
 
     // if (this.signupForm.valid) {

@@ -12,13 +12,13 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class CicloComponent implements OnInit {
 
-  formulario!: FormGroup;
+  formulario!: FormGroup;  
   idCicloPesquisa: string;
   
   // precisa tipar com ainterface, no lugar de any
   public meuArrayDeCiclos:any;
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: FormBuilder,  
               private service: CicloService,
               private toastrService: ToastrService) { }
 
@@ -43,7 +43,7 @@ export class CicloComponent implements OnInit {
         this.meuArrayDeCiclos.push(resultado);
         this.formulario.reset();
       } else {
-        console.log('Haruo')
+      
         this.toastrService.warning('Nenhum ciclo foi encontrado!',"Resultado", {
           timeOut: 3000,
         });
@@ -58,17 +58,5 @@ export class CicloComponent implements OnInit {
     }
   }
 
-  // public ciclos = [
-  //   {
-  //     idCiclo: "101",
-  //     nomeCiclo: "Barreirinha 2022",
-  //     uf: "AM",
-  //     municipio: "Barreirinha",
-  //     comunidade: "Comunidade Nova Esperança"
-  //   }
-
-  // ];
-
-
-
 }
+

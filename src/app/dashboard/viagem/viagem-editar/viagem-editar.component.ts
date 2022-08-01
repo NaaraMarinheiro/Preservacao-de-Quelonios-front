@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CicloService } from 'src/app/service/ciclo.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { ViagemService } from 'src/app/service/viagem.service';
@@ -33,7 +34,8 @@ export class ViagemEditarComponent implements OnInit {
     private route: ActivatedRoute,
     private meuCicloService: CicloService,
     private minhaViagemService: ViagemService,
-    private meuUsuarioService: UsuarioService
+    private meuUsuarioService: UsuarioService,
+    private toastrService: ToastrService
   ) { }
 
   async ngOnInit() {
@@ -82,6 +84,12 @@ export class ViagemEditarComponent implements OnInit {
   }
 
   onSubmit() {
+
+    this.toastrService.success('Viagem alterada com sucesso!',"Resultado", {
+      timeOut: 3000,
+    });
+
+
     // console.log(this.signupForm)
 
     // tentativa de update - falhou
