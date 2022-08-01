@@ -23,4 +23,8 @@ export class UsuarioComponent implements OnInit {
     this.usuarios = await this.usuarioService.listAll();
  }
 
+ deletarUsuario(matriucla:any){
+  this.usuarioService.del(matriucla);
+ }
+
 }
