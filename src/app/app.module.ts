@@ -7,8 +7,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { LoginComponent } from './login/login.component'; 
 import { AuthService } from './service/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { ToastrModule } from 'ngx-toastr';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    NgChartsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

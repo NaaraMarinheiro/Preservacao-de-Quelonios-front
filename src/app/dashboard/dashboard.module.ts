@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgChartsModule } from 'ng2-charts';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { CicloRoutingModule } from './ciclo/ciclo-routing.module';
@@ -44,6 +45,7 @@ import { ViagemEditarComponent } from './viagem/viagem-editar/viagem-editar.comp
     RelatorioModule,
     RelatorioRoutingModule,
     ReactiveFormsModule,
+    NgChartsModule
   ],
   exports: [
     DashboardComponent,

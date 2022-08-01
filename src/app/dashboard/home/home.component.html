@@ -43,10 +43,15 @@
             </div>
             <div class="div-grafico col-md">
                 <span class="subtitulo">
-                    <h3>Tartarugas soltas</h3>
+                    <h3>Filhotes soltos</h3>
                 </span>
-                <div class="img-grafico col-md-12">
-                    <!-- <img src="../../../../assets/img/grafico.png"> -->
+                <div>
+                    <canvas baseChart width="400" 
+                        [type]="'line'"
+                        [data]="lineChartData"
+                        [options]="lineChartOptions"
+                        [legend]="lineChartLegend">
+                    </canvas>
 
                 </div>
             </div>

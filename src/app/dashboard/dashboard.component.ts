@@ -11,5 +11,14 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  getNome(){
+    let usuarioAtual = localStorage.getItem("usuarioAtual");
 
+    if (usuarioAtual) {
+      return JSON.parse(usuarioAtual).nome;
+    } else {
+      return ''
+    }
+  }
 }
