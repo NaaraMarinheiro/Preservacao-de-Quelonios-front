@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class UsuarioEditarComponent implements OnInit {
   signupForm: FormGroup = new FormGroup({});
 
 
-  constructor (private route: ActivatedRoute, private meuService: UsuarioService){
+  constructor (private route: ActivatedRoute, private meuService: UsuarioService,  private toastrService: ToastrService){
   }
 
   async ngOnInit(){
@@ -40,7 +41,9 @@ export class UsuarioEditarComponent implements OnInit {
     if (this.signupForm.valid){
     console.log(this.signupForm);
     this.signupForm.reset();
-  
+    this.toastrService.success('Usuário alterado com sucesso!!',"Resultado", {
+      timeOut: 3000,
+    });
     }else{
       console.log('formulário inválido')
       Object.keys(this.signupForm.controls).forEach(campo =>{

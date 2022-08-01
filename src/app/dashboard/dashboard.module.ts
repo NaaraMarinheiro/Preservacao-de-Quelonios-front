@@ -33,7 +33,7 @@ import { ViagemEditarComponent } from './viagem/viagem-editar/viagem-editar.comp
     SolturaCadastrarComponent,
     SolturaEditarComponent,
     ViagemCadastrarComponent,
-    ViagemEditarComponent
+    ViagemEditarComponent,
   ],
   imports: [
     CommonModule,
