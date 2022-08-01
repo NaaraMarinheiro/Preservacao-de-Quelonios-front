@@ -10,7 +10,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="inputNome">Nome do Ciclo</label>
-                        <input type="text" class="form-control" [value]="resultado.idCiclo.nomeCiclo" disabled>
+                        <input type="text" class="form-control" [value]="resultado.idCiclo.nomeCiclo"  disabled >
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -46,7 +46,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="text-nowrap" for="inputData">Data</label>
-                        <input id="input-data" type="date" class="form-control" formControlName="dataViagem" [value]="resultado.dataViagem">
+                        <input id="input-data" type="date" class="form-control" formControlName="dataViagem" [value]="resultado.dataViagem"   [(ngModel)]="documento.dataViagem">
                         <span 
                         *ngIf="!signupForm?.get('dataViagem')?.valid && signupForm?.get('dataViagem')?.touched "
                         class="help-block">O campo data é obrigatório</span>
@@ -63,47 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-2">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario">Participantes</label>
-                        <select id="inputTipoUsuario" class="form-control"formControlName="participantes">
-                            <option selected disabled value="">Selecione</option>
-                            <option>Bruna</option>
-                            <option>Márcio</option>
-                            <option>Alberto</option>
-                            <option>Juliana</option>
-                        </select>
-                        <span *ngIf="!signupForm?.get('participantes')?.valid && signupForm?.get('participantes')?.touched" class="help-block">O campo participantes é obrigatório</span>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario"></label>
-                        <select id="inputTipoUsuario" class="form-control">
-                            <option selected disabled value="">Selecione</option>
-                            <option>Bruna</option>
-                            <option>Márcio</option>
-                            <option>Alberto</option>
-                            <option>Juliana</option>
-                        </select>
-                        <span *ngIf="!signupForm?.get('participantes')?.valid && signupForm?.get('participantes')?.touched" class="help-block">O campo participantes é obrigatório</span>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario"></label>
-                        <select id="inputTipoUsuario" class="form-control">
-                            <option selected disabled value=""  >Selecione</option>
-                            <option>Bruna</option>
-                            <option>Márcio</option>
-                            <option>Alberto</option>
-                            <option>Juliana</option>
-                        </select>
-                        <span *ngIf="!signupForm?.get('participantes')?.valid && signupForm?.get('participantes')?.touched" class="help-block">O campo participantes é obrigatório</span>
-                    </div>
-                </div>
-            </div>
+           
             <div class="botao">
                 <button type="submit" class="btn btn-success  ">Salvar</button>
             </div>

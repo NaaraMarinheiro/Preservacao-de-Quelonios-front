@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { CicloService } from 'src/app/service/ciclo.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { ViagemService } from 'src/app/service/viagem.service';
+import { Viagem } from '../viagem-interface';
 
 @Component({
   selector: 'app-viagem-editar',
@@ -29,6 +30,26 @@ export class ViagemEditarComponent implements OnInit {
   };
   private idViagem: string;
   private idCiclo: string;
+
+  documento: Viagem = {
+    idViagem: '',
+    dataViagem: '',
+    coordenador: {
+      idCoordenador: ''
+    },
+    ciclo: {
+      idCiclo: '',
+      nomeCiclo: '',
+      municipio: {
+        idMunicipio: '',
+        nomeMunicipio: ''
+      },
+      comunidade: {
+        idComunidade: '',
+        nomeComunidade: ''
+      }
+    }
+  }
 
   constructor(
     private route: ActivatedRoute,
@@ -84,10 +105,23 @@ export class ViagemEditarComponent implements OnInit {
   }
 
   onSubmit() {
+    if (this.signupForm.valid) {
+      this.minhaViagemService.editar(this.documento, this.documento.idViagem);
+      console.log(this.documento);
+      this.signupForm.reset();
 
-    this.toastrService.success('Viagem alterada com sucesso!',"Resultado", {
-      timeOut: 3000,
-    });
+      this.toastrService.success('Viagem alterada com sucesso!', "Resultado", {
+        timeOut: 3000,
+      });
+    } else {
+      console.log('formulário inválido')
+      Object.keys(this.signupForm.controls).forEach(campo => {
+        const controle = this.signupForm.get(campo);
+        controle?.markAsTouched();
+      })
+    }
+
+
 
 
     // console.log(this.signupForm)
@@ -119,6 +153,6 @@ export class ViagemEditarComponent implements OnInit {
   })*/
 
 
-  
+
 
 }
