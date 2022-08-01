@@ -1,5 +1,5 @@
 <div class="container">
-    <h3 id="migalhas"> Home/Ciclos/Ciclo Barreirinha-2022/Viagem101/FormularioEclosao</h3>
+    <h3 id="migalhas"> Home/Ciclos/{{resultado.idCiclo.nomeCiclo}}/Viagem{{resultado.idViagem}}/FormularioEclosao</h3>
     <div class="conteudo">
         <div class="titulo">
             <h1>Formulário Eclosão</h1>
@@ -9,24 +9,23 @@
             <div class="row">
                 <div class="col-md-4">
                     <label class="text-nowrap" for="inputID">ID Ciclo</label>
-
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" [value]="resultado.idCiclo.idCiclo" disabled>
                 </div>
         
                 <div class="col-md-4">
                     <label class="text-nowrap" for="inputEstado">Estado</label>
-
-                    <select id="inputEstado" class="form-control">
+                    <select id="inputEstado" class="form-control"[value]="resultado.idCiclo.uf" disabled>
                         <option selected>Selecione</option>
                         <option>AM</option>
                         <option>PA</option>
                     </select>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-4">
                     <label class="text-nowrap" id="label-municipio" for="inputMunicipio">Município</label>
-                    <select id="inputMunicipio" class="form-control">
+                    <select id="inputMunicipio" class="form-control"[value]="resultado.idCiclo.municipio.nomeMunicipio" disabled>
                         <option selected>Selecione</option>
                         <option>Apuí</option>
                         <option>Barcelos</option>
@@ -42,10 +41,10 @@
                         <option>Terra Santa</option>
                     </select>
                 </div>
+
                 <div class="col-md-4 ">
                     <label class="text-nowrap" id="label-comunidade" for="inputComunidade">Comunidade</label>
-
-                    <select id="inputComunidade" class="form-control">
+                    <select id="inputComunidade" class="form-control"[value]="resultado.idCiclo.comunidade.nomeComunidade" disabled>
                         <option selected>Selecione</option>
                         <option>Comunidade Aliança</option>
                         <option>Comunidade Ascensão</option>
@@ -69,11 +68,12 @@
             <div class="row">
                 <div class="col-md-4">
                     <label class="text-nowrap" id="label-viagem" for="inputIDViagem">ID Viagem</label>
-                    <input type="text" class="form-control">
+                    <input id= "idViagem" type="text" class="form-control" [value]="resultado.idViagem" disabled>
                 </div>
+
                 <div class="col-md-4">
                     <label class="text-nowrap" for="inputData">Data</label>
-                    <input id="input-data" type="date" class="form-control">
+                    <input id="input-data" type="date" class="form-control" [value]="resultado.dataViagem" disabled>
                 </div>
             </div>
             <hr>
