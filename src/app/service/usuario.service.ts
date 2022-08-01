@@ -19,7 +19,7 @@ export class UsuarioService {
   }
 
   listCoordenadores() {
-  
+
   }
 
   // Requisição POST
@@ -36,4 +36,27 @@ export class UsuarioService {
     let result = await axios.get(this.urlUsuario + '/' + id);
     return result.data;
    } 
+   
+  // Requisição PUT
+  async update(usuarios: Usuario, id: string) {
+    let body = JSON.stringify(usuarios);
+    let url = `${this.urlUsuario}/${id}`;
+
+    let result = await axios.put(url, body,
+      { headers: { 'content-type': 'application/json' } });
+
+    console.log(result);
+    return result;
+  }
+
+  // Requisicao DELETE
+  // Não está permitindo a deleção
+  async del(matricula:string){
+    let url = `${this.urlUsuario}/${matricula}`;
+
+    let result = await axios.delete(url);
+    console.log("deletou");
+    return result;
+  }
+
 }

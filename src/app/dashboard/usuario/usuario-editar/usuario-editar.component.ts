@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { UsuarioService } from 'src/app/service/usuario.service';
+import { Usuario } from '../usuario-interface';
 
 @Component({
   selector: 'app-usuario-editar',
@@ -13,11 +14,32 @@ export class UsuarioEditarComponent implements OnInit {
   matricula: string;
   signupForm: FormGroup = new FormGroup({});
 
-
-  constructor (private route: ActivatedRoute, private meuService: UsuarioService){
+  documento:Usuario={
+    matricula: '',
+    nome: '',
+    tipoUsuario: '',
+    username: '',
+    password:'',
+    enabled: true
   }
 
-  async ngOnInit(){
+
+  constructor(private route: ActivatedRoute, private usuarioService:UsuarioService){}
+
+
+  async ngOnInit() {
+      this. configurarFormulario();
+    
+      this.matricula = String(this.route.snapshot.paramMap.get('usuarioId'));
+
+      await this.fetchUser(this.matricula);
+   }
+
+   get f() {
+    return this.signupForm.controls;
+   }
+
+   configurarFormulario(){
     this.signupForm = new FormGroup({
       'matricula': new FormControl(null,[Validators.required]),
       'username': new FormControl(null, [Validators.required, Validators.email]),
@@ -25,20 +47,21 @@ export class UsuarioEditarComponent implements OnInit {
       'nome': new FormControl(null,[Validators.required]),
       'tipoUsuario': new FormControl(null,[Validators.required]),
       'enabled': new FormControl(null,[Validators.required]),
-    })
-
-    this.matricula = String(this.route.snapshot.paramMap.get('usuarioId'));
-
-    await this.fetchUser(this.matricula);
+    })    
    }
 
-   get f() {
-    return this.signupForm.controls;
+   async fetchUser(matricula:string){
+    let result = await this.usuarioService.listByID(matricula);
+    result.password = "";
+    this.signupForm.patchValue(result)
    }
 
    onSubmit(){
     if (this.signupForm.valid){
-    console.log(this.signupForm);
+      // requisicao http put
+      this.usuarioService.update(this.documento, this.documento.matricula);
+
+    console.log(this.documento);
     this.signupForm.reset();
   
     }else{
@@ -46,15 +69,12 @@ export class UsuarioEditarComponent implements OnInit {
       Object.keys(this.signupForm.controls).forEach(campo =>{
         const controle =this.signupForm.get(campo);
           controle?.markAsTouched();
-      })
-      
+      })      
     }
   
    }
 
-   async fetchUser(matricula:string){
-    let result = await this.meuService.listByID(matricula);
-    result.password = "";
-    this.signupForm.patchValue(result)
-   }
+
+
+
 }
