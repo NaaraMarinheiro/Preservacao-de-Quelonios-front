@@ -48,8 +48,16 @@ export class CicloService {
 
   // ***
   async listByID(id:string) {
-    let result = await axios.get(this.urlCiclo + '/' + id);
-    return result.data;
+    try {
+      let result = await axios.get(this.urlCiclo + '/' + id);
+      return result.data;
+    } catch(err:any) {
+      if(err.response.status == 404) {
+        return null;
+      } else {
+        throw err;
+      }
+    }
    } 
 
   update() { }

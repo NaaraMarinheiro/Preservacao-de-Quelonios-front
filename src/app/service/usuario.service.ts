@@ -22,6 +22,7 @@ export class UsuarioService {
 
   }
 
+
   // Requisição POST
   async insert(usuarios: Usuario) {
     let body = JSON.stringify(usuarios);
@@ -32,11 +33,21 @@ export class UsuarioService {
     return result;
   }
 
-  async listByID(id:string) {
-    let result = await axios.get(this.urlUsuario + '/' + id);
-    return result.data;
-   } 
-   
+  async listByID(id: string) {
+
+    try {
+      let result = await axios.get(this.urlUsuario + '/' + id);
+      return result.data;
+    } catch (err: any) {
+      if (err.response.status == 404) {
+        return null;
+      } else {
+        throw err;
+      }
+    }
+
+  }
+
   // Requisição PUT
   async update(usuarios: Usuario, id: string) {
     let body = JSON.stringify(usuarios);
@@ -51,7 +62,7 @@ export class UsuarioService {
 
   // Requisicao DELETE
   // Não está permitindo a deleção
-  async del(matricula:string){
+  async del(matricula: string) {
     let url = `${this.urlUsuario}/${matricula}`;
 
     let result = await axios.delete(url);
@@ -59,4 +70,6 @@ export class UsuarioService {
     return result;
   }
 
+
 }
+
