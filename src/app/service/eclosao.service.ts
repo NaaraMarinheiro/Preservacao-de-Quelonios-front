@@ -10,7 +10,19 @@ export class EclosaoService {
 
   constructor() { }
 
-  listAll() { }
+  async listAll() { 
+
+    let result = await axios.get(this.urlEclosao);
+    let arrayDeEclosao = result.data._embedded.eclosaoVOList;
+
+    arrayDeEclosao = arrayDeEclosao.map((elemento: any)=>{
+      let dataSplit = elemento.viagem.dataViagem.split("-")
+        elemento.dataFormatada = dataSplit[2] + "/" + dataSplit[1]+ "/" + dataSplit[0];
+
+      return elemento;
+    });
+    return arrayDeEclosao;
+  }
 
   async listByIDEclosao(idCiclo:string, idViagem:string, idEclosao:string) {
     let result = await axios.get(this.urlEclosao + '/' + idEclosao);

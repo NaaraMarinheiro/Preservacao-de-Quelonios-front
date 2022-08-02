@@ -119,7 +119,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="usuario">Participante</label>
+                        <label for="usuario">Usuário</label>
                         <input type="text" class="form-control" id="usuario">
                     </div>
                 </div>
@@ -136,40 +136,37 @@
             <div class="table-responsive">
                 <table class="table">
                     <thead class="text-primary">
-                        <th class="text-center">IdCiclo</th>
                         <th class="text-center">Formulário</th>
+                        <!-- <th class="text-center">Id Form</th> -->
                         <th class="text-center">Municipio</th>
                         <th class="text-center">Comunidade</th>
-                        <th class="text-center">Data</th>
+                        <th class="text-center">Data da Viagem</th>
                         <th class="text-center">Usuário</th>
                         <th class="text-center"></th>
-
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr *ngFor="let item of arrayDeFormularios">
                             <td class="text-center">
-
+                                {{ item.tipo }}  
+                            </td>
+                            <!-- <td class="text-center">
+                                {{ item.idSoltura }}
+                            </td> -->
+                            <td class="text-center">
+                                {{ item.viagem.idCiclo.municipio.nomeMunicipio }}
                             </td>
                             <td class="text-center">
-                                
+                                {{ item.viagem.idCiclo.comunidade.nomeComunidade }}
                             </td>
                             <td class="text-center">
-                                
+                                {{ item.dataFormatada}}
                             </td>
                             <td class="text-center">
-                                
-                            </td>
-                            <td class="text-center">
-                                
-                            </td>
-                            <td class="text-center">
-                                
+                                {{ item.voluntario.nome }}
                             </td>
                             <td>
                                 <div class="d-flex justify-content-around">
                                     <button type="button" id="button-visao"></button>
-                                    <button type="button" id="button-editar"></button>
-                                    <button type="button" id="button-excluir"></button>
                                 </div>
                             </td>
                         </tr>

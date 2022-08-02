@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CicloService } from 'src/app/service/ciclo.service';
+import { ColetaService } from 'src/app/service/coleta.service';
+import { EclosaoService } from 'src/app/service/eclosao.service';
 import { SolturaService } from 'src/app/service/soltura.service';
 import { ViagemService } from 'src/app/service/viagem.service';
 
@@ -40,7 +42,7 @@ export class ViagemItemComponent implements OnInit {
 
   public resultado: any = []; 
 
-  constructor(private route: ActivatedRoute, private meuCicloService: CicloService, private minhaViagemService: ViagemService, private mSolturaService: SolturaService) { }
+  constructor(private route: ActivatedRoute, private meuCicloService: CicloService, private minhaViagemService: ViagemService, private minhaSolturaService: SolturaService, private minhaEclosaoService: EclosaoService, private minhaColetaService: ColetaService) { }
 
   public idCiclo = "";
   public idViagem = "";
@@ -57,6 +59,7 @@ export class ViagemItemComponent implements OnInit {
   async ngOnInit() {
     this.recuperarIDsDaURL();
     this.getViagem();
+    this.listarFormulariosDaViagem()
   }
 
   private recuperarIDsDaURL() {
@@ -79,5 +82,38 @@ export class ViagemItemComponent implements OnInit {
     }
     console.log(this.detalhesDaViagem);
   }
+
+
+    // Listagem de formulários
+  public arrayDeFormularios: any = [];
+  async listarFormulariosDaViagem(){
+    // getFormulariosDeColeta()
+    // getFormulariosDeEclosao()
+
+    let solturas = await this.minhaSolturaService.listAll();
+    solturas = solturas.map((element: any)=> {
+      element.tipo = "Soltura"
+      return element
+    })
+    //spread operator
+    this.arrayDeFormularios.push(...solturas);
+
+    let eclosoes = await this.minhaEclosaoService.listAll();
+    eclosoes = eclosoes.map((element: any)=> {
+      element.tipo = "Eclosão"
+      return element
+    })
+    this.arrayDeFormularios.push(...eclosoes);
+
+    let coletas = await this.minhaColetaService.listAll();
+    coletas = coletas.map((element: any)=> {
+      element.tipo = "Coleta"
+      return element
+    })
+    this.arrayDeFormularios.push(...coletas);
+
+    console.log(this.arrayDeFormularios);
+  }
+
 
 }
