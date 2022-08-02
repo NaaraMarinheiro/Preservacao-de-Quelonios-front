@@ -19,7 +19,7 @@
                             formControlName="nomeCiclo"
                             [(ngModel)]="documento.nomeCiclo"
                         >
-                        <span *ngIf="!formulario?.get('nomeCiclo')?.valid && formulario?.get('nomeCiclo')?.touched" class="help-block"> Campo nome obrigatório</span>
+                        <span *ngIf="!formulario?.get('nomeCiclo')?.valid && formulario?.get('nomeCiclo')?.touched" class="help-block"> Campo obrigatório</span>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -36,7 +36,7 @@
                             <option>AM</option>
                             <option>PA</option>
                         </select>  
-                        <span *ngIf="!formulario?.get('uf')?.valid && formulario?.get('uf')?.touched" class="help-block"> Seleção do estado obrigatória</span>               
+                        <span *ngIf="!formulario?.get('uf')?.valid && formulario?.get('uf')?.touched" class="help-block"> Seleção obrigatória</span>               
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                             <option *ngFor="let item of arrayMunicipios; index as i;" [ngValue]="item.idMunicipio" >{{item.nomeMunicipio}}</option>                         
                            
                         </select>
-                        <span *ngIf="!formulario?.get('municipio')?.valid && formulario?.get('municipio')?.touched" class="help-block"> Seleção do município obrigatória</span>  
+                        <span *ngIf="!formulario?.get('municipio')?.valid && formulario?.get('municipio')?.touched" class="help-block"> Seleção  obrigatória</span>  
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -71,9 +71,11 @@
                             <option selected disabled  [ngValue]="null">Selecione</option>
                             <option *ngFor="let item of arrayComunidades; index as i;" [ngValue]="item.idComunidade" >{{item.nomeComunidade}}</option>                     
     
-                        </select>                     
-                        <span *ngIf="!formulario?.get('comunidade')?.valid && formulario?.get('comunidade')?.touched" class="help-block"> Seleção da comunidade obrigatória</span> 
+                        </select>      
+                        <span *ngIf="!formulario?.get('comunidade')?.valid && formulario?.get('comunidade')?.touched" class="help-block"> Seleção  obrigatória</span>                 
+                        
                     </div>
+                    
                 </div>
             </div>
 

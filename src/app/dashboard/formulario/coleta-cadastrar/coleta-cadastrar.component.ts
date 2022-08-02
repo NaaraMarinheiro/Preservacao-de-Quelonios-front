@@ -94,6 +94,12 @@ export class ColetaCadastrarComponent implements OnInit {
           timeOut: 3000,
         });
       }
+    }else {
+      console.log('formulario inválido')
+      Object.keys(this.coletaForm.controls).forEach(campo => {
+        const controle = this.coletaForm.get(campo);
+        controle?.markAsTouched();
+      })
     }
   }
 }

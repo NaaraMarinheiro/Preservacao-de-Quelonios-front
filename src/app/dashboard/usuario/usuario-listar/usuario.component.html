@@ -12,7 +12,7 @@
                         <div class="col-md-6 ">
                             <label class="text-nowrap" for="inputMatricula">Matrícula</label>
                             <input type="number" class="form-control" [(ngModel)]="matriculaPesquisa" formControlName="matricula" id="inputMatricula">
-                            <span *ngIf="!formulario?.get('matricula')?.valid && formulario?.get('matricula')?.touched" class="help-block">Matrícula obrigatória</span>               
+                            <span *ngIf="!formulario?.get('matricula')?.valid && formulario?.get('matricula')?.touched" class="help-block">Campo obrigatório</span>               
                         </div>
 
                         <!-- input email -->
@@ -85,10 +85,7 @@
                             </th>
                             <th class="text-center">
                                 Status
-                            </th>
-                            <!-- <th class="text-center">
-                                Permissão
-                            </th> -->
+                            </th>                            
                             <th class="text-center">
 
                             </th>

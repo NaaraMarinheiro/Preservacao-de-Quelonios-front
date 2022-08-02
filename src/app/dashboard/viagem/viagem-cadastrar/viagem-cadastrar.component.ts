@@ -86,7 +86,13 @@ export class ViagemCadastrarComponent implements OnInit {
       this.toastrService.success('Viagem inserida com sucesso!!',"Resultado", {
         timeOut: 3000,
       });
-    }
+    }else {
+        console.log('formulário inválido')
+        Object.keys(this.signupForm.controls).forEach(campo => {
+          const controle = this.signupForm.get(campo);
+          controle?.markAsTouched();
+        })
+      }
 
     // if (this.signupForm.valid) {
     //   // criar a requisição http aqui

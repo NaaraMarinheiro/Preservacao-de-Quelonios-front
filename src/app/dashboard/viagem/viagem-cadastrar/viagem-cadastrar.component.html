@@ -43,7 +43,7 @@
                     <div class="form-group">
                         <label class="text-nowrap" for="inputData">Data</label>
                         <input id="input-data" type="date" class="form-control" formControlName="dataViagem">
-                        <span *ngIf="!signupForm?.get('data')?.valid && signupForm?.get('data')?.touched " class="help-block">O campo data é obrigatório</span>
+                        <span *ngIf="!signupForm?.get('dataViagem')?.valid && signupForm?.get('dataViagem')?.touched " class="help-block">Campo obrigatório</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -53,7 +53,7 @@
                             <option selected disabled value="">Selecione</option>
                             <option *ngFor = "let item of arrayDeCoordenadores" [ngValue] ="item.matricula">{{item.nome}}</option>
                         </select>
-                        <span *ngIf="!signupForm?.get('coordenador')?.valid && signupForm?.get('coordenador')?.touched " class="help-block">O campo coordenador é obrigatório</span>
+                        <span *ngIf="!signupForm?.get('coordenador')?.valid && signupForm?.get('coordenador')?.touched " class="help-block">Seleção obrigatória</span>
                     </div>
                 </div>                
             </div>

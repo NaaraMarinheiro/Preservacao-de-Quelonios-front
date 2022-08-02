@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Viagem } from '../dashboard/viagem/viagem-interface';
 import axios from '../utils/axios';
 
 @Injectable({
@@ -29,6 +30,14 @@ export class ViagemService {
     let result = await axios.put(this.urlViagem + '/' + 'editar' + idViagem);
     return result.data;
   }
+
+  async editar(viagens :Viagem, id:string){
+    let body =JSON.stringify(viagens);
+    let url=`${this.urlViagem}/${id}`;
+
+    let result = await axios.put(url, body, 
+      {headers: {'content-type': 'application/json' }});
+  } 
 
   delete() { }
 

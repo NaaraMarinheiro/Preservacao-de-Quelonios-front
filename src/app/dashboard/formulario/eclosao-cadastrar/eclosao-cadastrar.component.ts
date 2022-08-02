@@ -87,6 +87,12 @@ export class EclosaoCadastrarComponent implements OnInit {
           timeOut: 3000,
         });
       }
+    }else {
+      console.log('formulario inválido')
+      Object.keys(this.eclosaoForm.controls).forEach(campo => {
+        const controle = this.eclosaoForm.get(campo);
+        controle?.markAsTouched();
+      })
     }
   }
 }

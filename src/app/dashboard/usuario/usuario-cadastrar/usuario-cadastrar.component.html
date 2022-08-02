@@ -18,7 +18,7 @@
                         id="inputMatricula" 
                         [(ngModel)]="documento.matricula">
 
-                        <span *ngIf="!signupForm?.get('matricula')?.valid && signupForm?.get('matricula')?.touched " class="help-block">O campo matrícula é obrigatório</span>
+                        <span *ngIf="!signupForm?.get('matricula')?.valid && signupForm?.get('matricula')?.touched " class="help-block">Campo obrigatório</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -31,7 +31,7 @@
                          id="inputEmail"
                          [(ngModel)]="documento.username">
 
-                        <span *ngIf="!signupForm?.get('email')?.valid && signupForm?.get('email')?.touched " class="help-block">O campo email é obrigatório</span>
+                        <span *ngIf="!signupForm?.get('email')?.valid && signupForm?.get('email')?.touched " class="help-block">Campo obrigatório</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -44,7 +44,7 @@
                           id="inputSenha"
                           [(ngModel)]="documento.password">
 
-                        <span *ngIf="!signupForm?.get('senha')?.valid && signupForm?.get('senha')?.touched " class="help-block">O campo senha é obrigatório</span>
+                        <span *ngIf="!signupForm?.get('senha')?.valid && signupForm?.get('senha')?.touched " class="help-block">Campo obrigatório</span>
                     </div>
                 </div>
                 <div class="row mt-2">
@@ -58,7 +58,7 @@
                               id="inputNome"
                               [(ngModel)]="documento.nome">
 
-                            <span *ngIf="!signupForm?.get('nome')?.valid && signupForm?.get('nome')?.touched " class="help-block">O campo nome completo é obrigatório</span>
+                            <span *ngIf="!signupForm?.get('nome')?.valid && signupForm?.get('nome')?.touched " class="help-block">Campo obrigatório</span>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -71,7 +71,7 @@
                                 <option>COORDENADOR</option>
                             </select>
 
-                            <span *ngIf="!signupForm?.get('tipoUsuario')?.valid && signupForm?.get('tipoUsuario')?.touched " class="help-block">Seleção tipo de usuário é obrigatória</span>
+                            <span *ngIf="!signupForm?.get('tipoUsuario')?.valid && signupForm?.get('tipoUsuario')?.touched " class="help-block">Seleção obrigatória</span>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                                 <option ngValue="false">Inativo</option>
                             </select>
 
-                            <span *ngIf="!signupForm?.get('status')?.valid && signupForm?.get('status')?.touched " class="help-block">Seleção de status é obrigatório</span>
+                            <span *ngIf="!signupForm?.get('status')?.valid && signupForm?.get('status')?.touched " class="help-block">Seleção obrigatória</span>
                         </div>
                     </div>
                 </div>

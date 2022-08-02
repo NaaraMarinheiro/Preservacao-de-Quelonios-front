@@ -88,6 +88,12 @@ export class SolturaCadastrarComponent implements OnInit {
           timeOut: 3000,
         });
       }
+    }else {
+      console.log('formulario inválido')
+      Object.keys(this.solturaForm.controls).forEach(campo => {
+        const controle = this.solturaForm.get(campo);
+        controle?.markAsTouched();
+      })
     }
   }
 }
