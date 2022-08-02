@@ -55,14 +55,7 @@
                         </select>
                         <span *ngIf="!signupForm?.get('coordenador')?.valid && signupForm?.get('coordenador')?.touched " class="help-block">O campo coordenador é obrigatório</span>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario">Voluntário</label>
-                        <input id="inputTipoUsuario" class="form-control" formControlName="voluntario">  
-                        <span *ngIf="!signupForm?.get('voluntario')?.valid && signupForm?.get('voluntario')?.touched" class="help-block">O campo voluntário é obrigatório</span>
-                    </div>
-                </div>
+                </div>                
             </div>
             <div class="botao">
                 <button type="submit" class="btn btn-success  ">Salvar</button>
