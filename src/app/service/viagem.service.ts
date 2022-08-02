@@ -32,6 +32,28 @@ export class ViagemService {
 
   delete() { }
 
+  async listById2(idCiclo:string){
+    let result = await axios.get(this.urlViagem);
+    let filteredResult = result.data._embedded.viagemVOList.filter((elemento: any) => {
+      return (elemento.idCiclo.idCiclo == idCiclo)
+    });
+
+    filteredResult = filteredResult.map((elemento: any) => {
+      let dataAtual = new Date();
+      let dataDaViagem = new Date(elemento.dataViagem)
+      let iniciada = dataAtual > dataDaViagem;
+      elemento.status = (iniciada == true ? "Iniciada": "Agendada");
+
+      let dataSplit = elemento.dataViagem.split("-")
+      elemento.dataFormatada = dataSplit[2] + "/" + dataSplit[1]+ "/" + dataSplit[0];
+      
+      return elemento;
+    });
+
+    return filteredResult;
+  }
+
+
   // Find all Viagens com classificação entre agendada e iniciada
   async listAllViagensClassificadas() {
     let resultadoDaRequisicao = await axios.get(this.urlViagem);

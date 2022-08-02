@@ -1,22 +1,24 @@
 <div class="container">
 
-    <h3 id="migalhas"> Home/Ciclos/{{resultado.idCiclo.nomeCiclo}}/</h3>
+    <h3 id="migalhas"> Home/Ciclos/{{ detalhesDaViagem.nomeDoCiclo }}</h3>
 
     <div class="conteudo">
-        <h2 class="mb-4"> Viagem - ID  {{resultado.idViagem}} </h2>
+        <h2 class="mb-4"> Viagem - ID {{ idViagem }} </h2>
 
         <form>
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="inputNome">Nome do Ciclo</label>
-                        <input type="text" class="form-control" id="inputNome" [value] = "resultado.idCiclo.nomeCiclo" disabled>
+                        <input type="text" class="form-control" id="inputNome" [value]="detalhesDaViagem.nomeDoCiclo"
+                            disabled>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="Estado">Estado</label>
-                        <input type="text" class="form-control" id="Estado" [value] = "resultado.idCiclo.uf" disabled>
+                        <input type="text" class="form-control" id="Estado" [value]="detalhesDaViagem.UFDoCiclo"
+                            disabled>
                     </div>
                 </div>
             </div>
@@ -25,13 +27,15 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="comunidade">Município</label>
-                        <input type="text" class="form-control" id="comunidade" [value] = "resultado.idCiclo.municipio.nomeMunicipio" disabled>
+                        <input type="text" class="form-control" id="comunidade"
+                            [value]="detalhesDaViagem.municipioDoCiclo" disabled>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="maunicipio">Comunidade</label>
-                        <input type="text" class="form-control" id="municipio" [value] = "resultado.idCiclo.comunidade.nomeComunidade" disabled>
+                        <input type="text" class="form-control" id="municipio"
+                            [value]="detalhesDaViagem.ComunidadeDoCiclo" disabled>
                     </div>
                 </div>
             </div>
@@ -41,19 +45,22 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="idviagem">Id Viagem</label>
-                        <input type="text" class="form-control" id="viagemid" [value] = "resultado.idViagem" disabled>
+                        <input type="text" class="form-control" id="viagemid" [value]="detalhesDaViagem.idDaViagem"
+                            disabled>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="Coordenador">Coordenador</label>
-                        <input type="text" class="form-control" id="coordenador" [value] = "resultado.coordenador.nome" disabled>
+                        <input type="text" class="form-control" id="coordenador"
+                            [value]="detalhesDaViagem.nomeCoordenador" disabled>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="Data">Data</label>
-                        <input type="text" class="form-control" id="dataviagem" [value] = "resultado.dataViagem" disabled>
+                        <input type="text" class="form-control" id="dataviagem" [value]="detalhesDaViagem.dataFormatada"
+                            disabled>
                     </div>
                 </div>
             </div>
@@ -67,7 +74,8 @@
 
             <div class="button-img-form">
                 <h3 style="color:white">Formulário Coleta</h3>
-                <button type="button" class="btn btn-light" routerLink="coleta/cadastrar" routerLinkActive="active-style">Adicionar</button>
+                <button type="button" class="btn btn-light" routerLink="coleta/cadastrar"
+                    routerLinkActive="active-style">Adicionar</button>
             </div>
         </div>
 
@@ -76,7 +84,8 @@
 
             <div class="button-img-form">
                 <h3 style="color:white">Formulário Eclosão</h3>
-                <button type="button" class="btn btn-light" routerLink="eclosao/cadastrar" routerLinkActive="active-style">Adicionar</button>
+                <button type="button" class="btn btn-light" routerLink="eclosao/cadastrar"
+                    routerLinkActive="active-style">Adicionar</button>
             </div>
         </div>
 
@@ -85,7 +94,8 @@
 
             <div class="button-img-form">
                 <h3 style="color:white">Formulário Soltura</h3>
-                <button type="button" class="btn btn-light" routerLink="soltura/cadastrar" routerLinkActive="active-style">Adicionar</button>
+                <button type="button" class="btn btn-light" routerLink="soltura/cadastrar"
+                    routerLinkActive="active-style">Adicionar</button>
             </div>
         </div>
     </div>
@@ -127,33 +137,33 @@
                 <table class="table">
                     <thead class="text-primary">
                         <th class="text-center">IdCiclo</th>
+                        <th class="text-center">Formulário</th>
                         <th class="text-center">Municipio</th>
                         <th class="text-center">Comunidade</th>
                         <th class="text-center">Data</th>
-                        <th class="text-center">formulário</th>
                         <th class="text-center">Usuário</th>
                         <th class="text-center"></th>
 
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of formulariosArray">
+                        <tr>
                             <td class="text-center">
-                                {{item.IdCiclo}}
+
                             </td>
                             <td class="text-center">
-                                {{item.municipio}}
+                                
                             </td>
                             <td class="text-center">
-                                {{item.comunidade}}
+                                
                             </td>
                             <td class="text-center">
-                                {{item.data}}
+                                
                             </td>
                             <td class="text-center">
-                                {{item.formulario}}
+                                
                             </td>
                             <td class="text-center">
-                                {{item.usuario}}
+                                
                             </td>
                             <td>
                                 <div class="d-flex justify-content-around">

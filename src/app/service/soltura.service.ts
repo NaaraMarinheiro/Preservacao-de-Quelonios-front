@@ -12,7 +12,16 @@ export class SolturaService {
 
   async listAll() { 
     let result = await axios.get(this.urlSoltura);
-    return result.data._embedded.solturaVOList;
+    let arrayDeSoltura = result.data._embedded.solturaVOList;
+
+    arrayDeSoltura = arrayDeSoltura.map((elemento: any)=>{
+      let dataSplit = elemento.viagem.dataViagem.split("-")
+        elemento.dataFormatada = dataSplit[2] + "/" + dataSplit[1]+ "/" + dataSplit[0];
+
+      return elemento;
+    });
+
+    return arrayDeSoltura;
   }
 
   async listByID(idSoltura:string) {

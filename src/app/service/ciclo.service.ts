@@ -30,6 +30,9 @@ export class CicloService {
       let dataDaViagem = new Date(elemento.dataViagem)
       let iniciada = dataAtual > dataDaViagem;
       elemento.status = (iniciada == true ? "Iniciada": "Agendada");
+
+      let dataSplit = elemento.dataViagem.split("-")
+      elemento.dataFormatada = dataSplit[2] + "/" + dataSplit[1]+ "/" + dataSplit[0];
       
       return elemento;
     });

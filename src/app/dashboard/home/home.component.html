@@ -28,7 +28,7 @@
                                     {{soltura.idSoltura}}
                                 </td>
                                 <td class="text-center">
-                                    {{soltura.dataSoltura}}
+                                    {{soltura.dataFormatada}}
                                 </td>
                                 <td class="text-center">
                                     {{soltura.voluntario.nome}} preencheu soltura de {{soltura.especie}} em
@@ -101,7 +101,7 @@
                             </div>
                             <div class="div-botoes-viagem">
                                 <div class="div-botao-formulario">
-                                    <button type="button" class="btn btn-success" routerLink="viagem/022"
+                                    <button type="button" class="btn btn-success" [routerLink]="['/ciclo', item.idCiclo.idCiclo, 'viagem', item.idViagem]"
                                         routerLinkActive="active-style"><span class="span-formulario">+
                                             Formulário</span></button>
                                 </div>
