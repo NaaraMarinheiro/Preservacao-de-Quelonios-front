@@ -5,6 +5,8 @@ import { SolturaService } from 'src/app/service/soltura.service';
 import { ViagemService } from 'src/app/service/viagem.service';
 import { ChartConfiguration, ChartOptions, ChartType } from "chart.js";
 
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -78,5 +80,8 @@ export class HomeComponent implements OnInit {
     this.logDeSoltura = await this.minhaSolturaService.listAll();
   }
 
+ 
+ 
+ 
 
 }
