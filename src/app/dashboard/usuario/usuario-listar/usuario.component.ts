@@ -59,8 +59,11 @@ export class UsuarioComponent implements OnInit {
     }
   }
 
- deletarUsuario(matriucla:any){
-  this.usuarioService.del(matriucla);
+ async deletarUsuario(matricula:any){
+  await this.usuarioService.del(matricula);
+  await this.ngOnInit();
+  this.toastrService.success('Usuário deletado com sucesso!',"Resultado", {
+    timeOut: 3000,
+  });
  }
-
 }

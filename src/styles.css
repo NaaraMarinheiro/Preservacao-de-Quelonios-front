@@ -37,6 +37,7 @@ html, body{
     height: 100%;
 }
 
+.toast-container { position: fixed !important; top: 30px !important; right: 30px !important;}
 
 /*body, input[type="text"], button {
     color: #333;
