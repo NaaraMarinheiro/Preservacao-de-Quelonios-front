@@ -1,11 +1,11 @@
 <div class="container">
-    <h3 id="migalhas"> Home/Ciclo//NovaViagem</h3>
+    <h3 id="migalhas"> Home/Ciclo/EditarViagem</h3>
     <div class="conteudo">
 
         <h2 class="titulo">Editar Viagem</h2>
         <h6>Editar uma viagem existente no sistema</h6>
         <br>
-        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()"> 
+        <form [formGroup]="viagemForm" (ngSubmit)="onSubmit()"> 
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
@@ -43,27 +43,31 @@
                         <input id= "idViagem" type="text" class="form-control" [value]="resultado.idViagem" disabled>
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="text-nowrap" for="inputData">Data</label>
-                        <input id="input-data" type="date" class="form-control" formControlName="dataViagem" [value]="resultado.dataViagem" 
-                        [(ngModel)]="documento.dataViagem">
+                        <input id="input-data" type="date" class="form-control" formControlName="dataViagem" [value]="resultado.dataViagem" (change)="dateChange($event)">
                         <span 
-                        *ngIf="!signupForm?.get('dataViagem')?.valid && signupForm?.get('dataViagem')?.touched "
+                        *ngIf="!viagemForm?.get('dataViagem')?.valid && viagemForm?.get('dataViagem')?.touched "
                         class="help-block">Campo obrigatório</span>
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="form-group">
                         <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario">Coordenador</label>
                         <select id="inputTipoUsuario" formControlName="matricula" class="form-control" [(ngModel)]="resultado.matricula">
                             <option selected disabled value="">Selecione</option>
-                            <option [ngValue]="item.matricula" *ngFor="let item of arrayDeCoordenadores">{{item.nome}}</option>
+                            <option [ngValue]="resultado.matricula" *ngFor="let item of arrayDeCoordenadores">{{item.nome}}</option>
                         </select>
-                        <span *ngIf="!signupForm?.get('matricula')?.valid && signupForm?.get('matricula')?.touched " class="help-block">Seleção obrigatória</span>
+                        
+                        <span *ngIf="!viagemForm?.get('matricula')?.valid && viagemForm?.get('matricula')?.touched " class="help-block">Campo obrigatório</span>
                     </div>
                 </div>
             </div>
+            
+            
            
             <div class="botao">
                 <button type="submit" class="btn btn-success  ">Salvar</button>

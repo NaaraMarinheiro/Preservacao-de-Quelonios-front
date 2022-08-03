@@ -39,28 +39,10 @@ html, body{
 
 .toast-container { position: fixed !important; top: 30px !important; right: 30px !important;}
 
-/*body, input[type="text"], button {
-    color: #333;
+.toast-title{
+    color: white;
 }
 
-button {
-    background-color: #eee;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    color: black;
-    font-size: 1.2rem;
-    padding: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-  }
-
-  button:disabled {
-    background-color: #eee;
-    color: #aaa;
-    cursor: auto;
-  }
-  */
-
-  
+.toast-message{
+    color: white;
+}

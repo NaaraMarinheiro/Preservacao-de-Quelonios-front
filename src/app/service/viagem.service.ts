@@ -26,9 +26,10 @@ export class ViagemService {
     return result.data;
   }
 
-  async update(idViagem: string) {
-    let result = await axios.put(this.urlViagem + '/' + 'editar' + idViagem);
-    return result.data;
+  async update(idViagem: any, viagemAtualizada: any) {
+    let endpoint = this.urlViagem + '/' + idViagem;
+    let result = await axios.put(endpoint, viagemAtualizada);
+    return result.status;
   }
 
   async editar(viagens :Viagem, id:string){
@@ -41,12 +42,12 @@ export class ViagemService {
 
   delete() { }
 
-  async listById2(idCiclo:string){
+  async listById2(idViagem:string){
     let result = await axios.get(this.urlViagem);
     let filteredResult = result.data._embedded.viagemVOList.filter((elemento: any) => {
-      return (elemento.idCiclo.idCiclo == idCiclo)
+      return (elemento.idViagem == idViagem)
     });
-
+    
     filteredResult = filteredResult.map((elemento: any) => {
       let dataAtual = new Date();
       let dataDaViagem = new Date(elemento.dataViagem)
