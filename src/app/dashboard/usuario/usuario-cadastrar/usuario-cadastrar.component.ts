@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { Usuario } from '../usuario-interface';
@@ -23,7 +24,9 @@ export class UsuarioCadastrarComponent implements OnInit {
   }
 
   constructor(private usuarioService:UsuarioService,
-              private toastrService: ToastrService){}
+              private toastrService: ToastrService,
+              private router:Router,
+              private route: ActivatedRoute){}
 
   ngOnInit(): void {
     this.configurarFormulario();
@@ -44,23 +47,27 @@ export class UsuarioCadastrarComponent implements OnInit {
     })
    }
 
-   onSubmit(){
+   async onSubmit(){
+    try {
+      let result = await this.usuarioService.insert(this.documento);
     if (this.signupForm.valid){
-      // requisicao http aqui
-      this.usuarioService.insert(this.documento)
-        
-      this.toastrService.success('Usuário inserido com sucesso!!',"Resultado", {
+      this.toastrService.success('Usuário cadastrado com sucesso!',"Resultado", {
         timeOut: 3000,
       });
-    console.log(this.documento);
-    this.signupForm.reset();
-  
-    }else{
-      console.log('formulário inválido')
-      Object.keys(this.signupForm.controls).forEach(campo =>{
-        const controle =this.signupForm.get(campo);
-          controle?.markAsTouched();
-      })
+      this.router.navigate(['/usuario']);
+    }
+  } catch (error) {
+    this.toastrService.error('Usuário não cadastrado', "Erro", {
+      timeOut: 5000,
+    });
+
+
+    // }else{
+    //   console.log('formulário inválido')
+    //   Object.keys(this.signupForm.controls).forEach(campo =>{
+    //     const controle =this.signupForm.get(campo);
+    //       controle?.markAsTouched();
+    //   })
       
     }
   

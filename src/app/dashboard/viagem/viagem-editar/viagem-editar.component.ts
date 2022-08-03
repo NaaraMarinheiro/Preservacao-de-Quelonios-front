@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CicloService } from 'src/app/service/ciclo.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
@@ -14,7 +14,7 @@ import { ViagemService } from 'src/app/service/viagem.service';
 
 export class ViagemEditarComponent implements OnInit {
 
-  public signupForm: FormGroup;
+  public viagemForm: FormGroup;
   public resultado: any = {
     idCiclo: {
       idCiclo: "",
@@ -29,50 +29,49 @@ export class ViagemEditarComponent implements OnInit {
   };
   private idViagem: string;
   private idCiclo: string;
+  public result: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
     private meuCicloService: CicloService,
     private minhaViagemService: ViagemService,
     private meuUsuarioService: UsuarioService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private router: Router,
   ) { }
 
   async ngOnInit() {
     this.configurarFormulario();
     await this.getViagem();
+
+    this.configurarData();
     this.configurarSelectCoordenador();
   }
-
 
   async getViagem() {
     this.idViagem = String(this.route.snapshot.paramMap.get('viagemId'));
     this.idCiclo = String(this.route.snapshot.paramMap.get('cicloId'));
     this.resultado = await this.minhaViagemService.listByID(this.idViagem);
 
-    // let matricula = this.resultado.coordenador.matricula || "";
-    // if(this.signupForm && this.signupForm.get('matricula')) {
-    //   this.signupForm.get('matricula').setValue(matricula);
-    // }
-
     this.resultado.matricula = this.resultado.coordenador.matricula;
   }
 
+  configurarData(){ 
+    let dataViagem = this.viagemForm.get('dataViagem');
+    if (dataViagem) {
+      dataViagem.setValue(this.resultado.dataViagem);
+    }
+  }
+
   configurarFormulario() {
-    this.signupForm = new FormGroup({
-      'nomeciclo': new FormControl(null),
-      'estado': new FormControl(null),
-      'municipio': new FormControl(null),
-      'comunidade': new FormControl(null),
-      'id_viagem': new FormControl(null),
+    this.viagemForm = new FormGroup({
       'dataViagem': new FormControl(null, Validators.required),
-      'matricula': new FormControl('', Validators.required),
-      'participantes': new FormControl('', Validators.required),
+      'matricula': new FormControl('', Validators.required)
     });
   }
 
   get f() {
-    return this.signupForm.controls;
+    return this.viagemForm.controls;
   }
 
   public arrayDeCoordenadores: any[] = [];
@@ -81,44 +80,53 @@ export class ViagemEditarComponent implements OnInit {
     this.arrayDeCoordenadores = this.arrayDeCoordenadores.filter((elemento) => {
       return elemento.tipoUsuario == "ADMIN"
     })
+
+    let matricula = this.viagemForm.get('matricula');
+    if (matricula) {
+      matricula.setValue(this.resultado.matricula); 
+    }
   }
 
-  onSubmit() {
-
-    this.toastrService.success('Viagem alterada com sucesso!',"Resultado", {
-      timeOut: 3000,
-    });
-
-
-    // console.log(this.signupForm)
-
-    // tentativa de update - falhou
-    /**if (this.signupForm.valid) {
-      let viagemAlterada = this.signupForm.value;
-      viagemAlterada.idViagem = {
-        idViagem: this.idViagem
-      };
-      viagemAlterada.coordenador = {
-        matricula: parseInt(viagemAlterada.coordenador, 10)
-      };
-      this.minhaViagemService.update(viagemAlterada); */
+  dateChange(event: any) {
+    let dataViagem = this.viagemForm.get('dataViagem');
+    if (dataViagem) {
+      dataViagem.setValue(event.target.value);
+    }
   }
 
+  // adaptação enquanto não faz o endpoint do back - 
+  //necessária correção no back para eliminar o ciclo do update de viagem.
 
-  /** código reescrito
-   * if (this.signupForm.valid) {
-     //criar a requisição http aqui
-   console.log(this.signupForm);
-   this.signupForm.reset();
- 
-   } else {
-   console.log('formulário inválido')
-   Object.keys(this.signupForm.controls).forEach(campo => {
-      const controle = this.signupForm.get(campo);
-      controle?.markAsTouched();
-  })*/
+  async onSubmit() {
+    //ajuste de formato do objeto a ser enviado para o service
+    try {
+      if (this.viagemForm.valid) {
+        let viagemAlterada = this.viagemForm.value;
 
+        viagemAlterada.idCiclo = {
+          idCiclo: +this.resultado.idCiclo.idCiclo
+        };
+        viagemAlterada.coordenador = {
+          matricula: +viagemAlterada.matricula
+        };
 
-  
+        delete viagemAlterada.matricula;
+
+        // alteração no service para passar o id e o objeto
+        let result = await this.minhaViagemService.update(this.idViagem, viagemAlterada);
+        if (result == 200) {
+          this.toastrService.success('Viagem alterada com sucesso!', "Resultado", {
+            timeOut: 3000,
+          });
+          this.router.navigate(['/ciclo/' + this.idCiclo]);
+        }
+      }
+    } catch (error) {
+      this.toastrService.error('Viagem não alterada', "Erro", {
+        timeOut: 5000,
+      });
+    }
+  }
+
 
 }

@@ -5,17 +5,19 @@ import { ComunidadeService } from 'src/app/service/comunidade.service';
 import { MunicipioService } from 'src/app/service/municipio.service';
 import { Ciclo } from '../ciclo-interface';
 import { ToastrService } from 'ngx-toastr';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-ciclo-cadastrar',
   templateUrl: './ciclo-cadastrar.component.html',
   styleUrls: ['./ciclo-cadastrar.component.css']
 })
+
 export class CicloCadastrarComponent implements OnInit {
 
   formulario!: FormGroup;
 
-  documento:Ciclo={
+  documento: Ciclo = {
     nomeCiclo: '',
     uf: '',
     municipio: {
@@ -27,19 +29,21 @@ export class CicloCadastrarComponent implements OnInit {
   }
 
   // variavel que guarda os municipios
-  public arrayMunicipios:any;
-  public arrayComunidades:any;
+  public arrayMunicipios: any;
+  public arrayComunidades: any;
 
   constructor(private formBuilder: FormBuilder,
-              private service: CicloService,
-              private municipioService:MunicipioService,
-              private comunidadeService:ComunidadeService,
-              private toastrService: ToastrService) { }
+    private cicloService: CicloService,
+    private municipioService: MunicipioService,
+    private comunidadeService: ComunidadeService,
+    private toastrService: ToastrService,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.configurarFormulario();
     this.selecionarMunicipio();
-    this. selecionarComunidade();
+    this.selecionarComunidade();
   }
 
   configurarFormulario() {
@@ -52,37 +56,35 @@ export class CicloCadastrarComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    if (this.formulario.valid) {
-      // criar a requisição http aqui
-      this.service.insert(this.documento);
-    
-      console.log(this.documento);
-      this.formulario.reset();
-      this.toastrService.success('Ciclo cadastrado com sucesso!',"Resultado", {
-        timeOut: 3000,
+  async onSubmit() {
+    try {
+      let result = await this.cicloService.insert(this.documento);
+      if (this.formulario.valid) {
+        this.toastrService.success('Ciclo cadastrado com sucesso!', "Resultado", {
+          timeOut: 3000,
+        });
+        this.router.navigate(['/ciclo']);
+      }
+    } catch (error) {
+      this.toastrService.error('Ciclo não cadastrado', "Erro", {
+        timeOut: 5000,
       });
-    } else {
-      console.log('formulario inválido')
-      Object.keys(this.formulario.controls).forEach(campo => {
-        const controle = this.formulario.get(campo);
-        controle?.markAsTouched();
-      })
-    }
-  }
 
+
+      //} else {
+      //  console.log('formulario inválido')
+      //  Object.keys(this.formulario.controls).forEach(campo => {
+      //    const controle = this.formulario.get(campo);
+      //    controle?.markAsTouched();
+
+    }}
 
   async selecionarMunicipio(){
-    this.arrayMunicipios = await this.municipioService.listAll();
-
-  }
-
+      this.arrayMunicipios = await this.municipioService.listAll();
+    }
 
   async selecionarComunidade(){
-    this.arrayComunidades = await this.comunidadeService.listAll();
-
-  }
-
-
+      this.arrayComunidades = await this.comunidadeService.listAll();
+    }
 
 }
