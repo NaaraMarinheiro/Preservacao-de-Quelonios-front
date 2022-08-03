@@ -37,7 +37,7 @@ html, body{
     height: 100%;
 }
 
-.toast-container { position: fixed !important; top: 30px !important; right: 30px !important;}
+.toast-container { position: fixed !important; top: 1.875rem !important; right: 1.875rem!important;}
 
 .toast-title{
     color: white;

@@ -47,7 +47,7 @@
     top: 0;
     /* height: 100vh; */
     overflow: auto;
-    box-shadow: 5px 0px 30px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0.3125rem 0rem 1.875rem 0.3125rem rgba(0, 0, 0, 0.05);
 }
 
 #sidebar a {
@@ -64,7 +64,7 @@
 }
 
 .sidebar-icon {
-    height: 35px;
+    height:2.1875rem;
     filter: invert(68%) sepia(0%) saturate(2796%) hue-rotate(49deg) brightness(86%) contrast(75%);
 }
 
