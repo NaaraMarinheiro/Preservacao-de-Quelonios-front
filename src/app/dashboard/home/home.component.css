@@ -12,6 +12,7 @@
     padding: 1.2rem 1.2rem 1.2rem 1.2rem;    
     /* margin: 1.8rem 1.2rem 0rem 0rem; */
 }
+@media (min-width: 769px){
 
 .div-grafico {
     background: rgba(255, 255, 255, 1);
@@ -20,9 +21,28 @@
     border-radius: 6px;
     overflow: hidden;
     padding: 1.2rem;
+
     margin-left: 1rem;
     /* margin: 1.8rem 0rem 0rem 0rem; */
 }
+}
+
+@media (max-width: 768px){
+
+    .div-grafico {
+        background: rgba(255, 255, 255, 1);
+        opacity: 1;
+        border: 1px solid rgba(243, 241, 241, 1);
+        border-radius: 6px;
+        overflow: hidden;
+        padding: 1.2rem;
+    
+        margin-top: 1rem;
+        /* margin: 1.8rem 0rem 0rem 0rem; */
+    }
+    }
+
+
 
 .div-tabela-modificacoes {
     display: table;
