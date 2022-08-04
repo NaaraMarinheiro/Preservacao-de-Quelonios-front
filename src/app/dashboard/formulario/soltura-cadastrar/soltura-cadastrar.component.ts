@@ -10,6 +10,7 @@ import { ViagemService } from 'src/app/service/viagem.service';
   templateUrl: './soltura-cadastrar.component.html',
   styleUrls: ['./soltura-cadastrar.component.css']
 })
+
 export class SolturaCadastrarComponent implements OnInit {
 
   public solturaForm: FormGroup;
@@ -39,7 +40,6 @@ export class SolturaCadastrarComponent implements OnInit {
   ngOnInit() {
     this.configurarFormularioSoltura();
     this.getViagem();
-
   }
 
   async getViagem() {
@@ -60,13 +60,10 @@ export class SolturaCadastrarComponent implements OnInit {
       'plastraoLargura': new FormControl(null, Validators.required),
       'peso': new FormControl(null, Validators.required),
       'altura': new FormControl(null, Validators.required),
-
-    } )
-
+    })
   }
 
   async onSubmit() {
-    console.log(this.solturaForm);
     if (this.solturaForm.valid) {
       let novaSoltura = this.solturaForm.value;
       novaSoltura.viagem = {
@@ -88,7 +85,7 @@ export class SolturaCadastrarComponent implements OnInit {
           timeOut: 3000,
         });
       }
-    }else {
+    } else {
       console.log('formulario inválido')
       Object.keys(this.solturaForm.controls).forEach(campo => {
         const controle = this.solturaForm.get(campo);

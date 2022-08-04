@@ -10,7 +10,6 @@
     margin-bottom: 1.5rem;
 }
 
-
 .botao {
     margin-top: 1rem;
     display: flex;
@@ -26,5 +25,5 @@ select.ng-invalid.ng-touched {
 }
 
 span {
-    color:red
+    color: red
 }

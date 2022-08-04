@@ -11,79 +11,62 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="inputNome">Nome do Ciclo</label>
-                        <input 
-                            type="text"
-                            class="form-control"
-                            id="inputNome"
-                            name="nomeCiclo"
-                            formControlName="nomeCiclo"
-                            [(ngModel)]="documento.nomeCiclo"
-                        >
-                        <span *ngIf="!formulario?.get('nomeCiclo')?.valid && formulario?.get('nomeCiclo')?.touched" class="help-block"> Campo obrigatório</span>
+                        <input type="text" class="form-control" id="inputNome" name="nomeCiclo"
+                            formControlName="nomeCiclo" [(ngModel)]="documento.nomeCiclo">
+                        <span *ngIf="!formulario?.get('nomeCiclo')?.valid && formulario?.get('nomeCiclo')?.touched"
+                            class="help-block"> Campo obrigatório</span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="text-nowrap" for="inputEstado">Estado</label>
-                        <select 
-                            class="form-select"
-                            id="inputEstado"                            
-                            name="uf"
-                            formControlName="uf"
-                            [(ngModel)]="documento.uf"
-                            >
+                        <select class="form-select" id="inputEstado" name="uf" formControlName="uf"
+                            [(ngModel)]="documento.uf">
                             <option selected disabled>Selecione</option>
                             <option>AM</option>
                             <option>PA</option>
-                        </select>  
-                        <span *ngIf="!formulario?.get('uf')?.valid && formulario?.get('uf')?.touched" class="help-block"> Seleção obrigatória</span>               
+                        </select>
+                        <span *ngIf="!formulario?.get('uf')?.valid && formulario?.get('uf')?.touched"
+                            class="help-block"> Seleção obrigatória</span>
                     </div>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col-md-6">
-                    <div class="form-group" >
-                        <label  for="inputMunicipio">Município</label>
-                        <select 
-                            class="form-select"
-                            id="inputMunicipio"                          
-                            name="municipio"
-                            formControlName="municipio"
-                            [(ngModel)]="documento.municipio.idMunicipio"
-                        >
-                            <option selected disabled [ngValue]="null" >Selecione</option>
-                            <option *ngFor="let item of arrayMunicipios; index as i;" [ngValue]="item.idMunicipio" >{{item.nomeMunicipio}}</option>                         
-                           
+                    <div class="form-group">
+                        <label for="inputMunicipio">Município</label>
+                        <select class="form-select" id="inputMunicipio" name="municipio" formControlName="municipio"
+                            [(ngModel)]="documento.municipio.idMunicipio">
+                            <option selected disabled [ngValue]="null">Selecione</option>
+                            <option *ngFor="let item of arrayMunicipios; index as i;" [ngValue]="item.idMunicipio">
+                                {{item.nomeMunicipio}}</option>
+
                         </select>
-                        <span *ngIf="!formulario?.get('municipio')?.valid && formulario?.get('municipio')?.touched" class="help-block"> Seleção  obrigatória</span>  
+                        <span *ngIf="!formulario?.get('municipio')?.valid && formulario?.get('municipio')?.touched"
+                            class="help-block"> Seleção obrigatória</span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="inputComunidade">Comunidade</label>
-                        <select
-                            class="form-select"
-                            id="inputComunidade"                             
-                            name="comunidade"
-                            formControlName="comunidade"
-                            [(ngModel)]="documento.comunidade.idComunidade"
-                        >
-                            <option selected disabled  [ngValue]="null">Selecione</option>
-                            <option *ngFor="let item of arrayComunidades; index as i;" [ngValue]="item.idComunidade" >{{item.nomeComunidade}}</option>                     
-    
-                        </select>      
-                        <span *ngIf="!formulario?.get('comunidade')?.valid && formulario?.get('comunidade')?.touched" class="help-block"> Seleção  obrigatória</span>                 
-                        
+                        <select class="form-select" id="inputComunidade" name="comunidade" formControlName="comunidade"
+                            [(ngModel)]="documento.comunidade.idComunidade">
+                            <option selected disabled [ngValue]="null">Selecione</option>
+                            <option *ngFor="let item of arrayComunidades; index as i;" [ngValue]="item.idComunidade">
+                                {{item.nomeComunidade}}</option>
+
+                        </select>
+                        <span *ngIf="!formulario?.get('comunidade')?.valid && formulario?.get('comunidade')?.touched"
+                            class="help-block"> Seleção obrigatória</span>
+
                     </div>
-                    
+
                 </div>
             </div>
-
-                <!-- botao -->
-                <div class="botao">
-                    <button type="submit" class="btn btn-success"> Salvar </button>
-                </div>
-                <div toastContainer></div>          
+            <div class="botao">
+                <button type="submit" class="btn btn-success"> Salvar </button>
+            </div>
+            <div toastContainer></div>
         </form>
     </div>
 </div>

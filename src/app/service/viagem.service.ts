@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Viagem } from '../dashboard/viagem/viagem-interface'; 
+import { Viagem } from '../dashboard/viagem/viagem-interface';
 import { AxiosClient } from '../utils/axios';
 
 @Injectable({
@@ -32,39 +32,37 @@ export class ViagemService {
     return result.status;
   }
 
-  async editar(viagens :Viagem, id:string){
-    let body =JSON.stringify(viagens);
-    let url=`${this.urlViagem}/${id}`;
+  async editar(viagens: Viagem, id: string) {
+    let body = JSON.stringify(viagens);
+    let url = `${this.urlViagem}/${id}`;
 
-    let result = await this.meuAxios.put(url, body, 
-      {headers: {'content-type': 'application/json' }});
-  } 
+    let result = await this.meuAxios.put(url, body,
+      { headers: { 'content-type': 'application/json' } });
+  }
 
   delete() { }
 
-  async listById2(idViagem:string){
+  async listById2(idViagem: string) {
     let result = await this.meuAxios.get(this.urlViagem);
     let filteredResult = result.data._embedded.viagemVOList.filter((elemento: any) => {
       return (elemento.idViagem == idViagem)
     });
-    
+
     filteredResult = filteredResult.map((elemento: any) => {
       let dataAtual = new Date();
       let dataDaViagem = new Date(elemento.dataViagem)
       let iniciada = dataAtual > dataDaViagem;
-      elemento.status = (iniciada == true ? "Iniciada": "Agendada");
+      elemento.status = (iniciada == true ? "Iniciada" : "Agendada");
 
       let dataSplit = elemento.dataViagem.split("-")
-      elemento.dataFormatada = dataSplit[2] + "/" + dataSplit[1]+ "/" + dataSplit[0];
-      
+      elemento.dataFormatada = dataSplit[2] + "/" + dataSplit[1] + "/" + dataSplit[0];
+
       return elemento;
     });
 
     return filteredResult;
   }
 
-
-  // Find all Viagens com classificação entre agendada e iniciada
   async listAllViagensClassificadas() {
     let resultadoDaRequisicao = await this.meuAxios.get(this.urlViagem);
     let arrayDeViagens = resultadoDaRequisicao.data._embedded.viagemVOList;
@@ -77,8 +75,8 @@ export class ViagemService {
       elemento.status = (iniciada == true ? "Iniciada" : "Agendada");
 
       let dataSplit = elemento.dataViagem.split("-")
-      elemento.dataFormatada = dataSplit[2] + "/" + dataSplit[1]+ "/" + dataSplit[0];
-      
+      elemento.dataFormatada = dataSplit[2] + "/" + dataSplit[1] + "/" + dataSplit[0];
+
       return elemento;
     });
 

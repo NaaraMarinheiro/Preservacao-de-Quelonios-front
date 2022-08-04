@@ -4,7 +4,6 @@
 
     <div class="conteudo">
         <h2 class="mb-4"> Viagem - ID {{ idViagem }} </h2>
-
         <form>
             <div class="row">
                 <div class="col-md-4">
@@ -45,8 +44,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="idviagem">Id Viagem</label>
-                        <input type="text" class="form-control" id="viagemid" [value]="idViagem"
-                            disabled>
+                        <input type="text" class="form-control" id="viagemid" [value]="idViagem" disabled>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -66,8 +64,6 @@
             </div>
         </form>
     </div>
-
-    <!-- cards dos formulários -->
     <div class="row">
         <div class="col-md-4 card-form mt-4">
             <img src="../../../../assets/img/foto-coleta-filtro.png" class="img-format">
@@ -130,7 +126,7 @@
             </div>
         </form>
     </div>
-    <!--Listagem de Formulários -->
+
     <div class="conteudo mb-4">
         <div class="col-md-12">
             <div class="table-responsive">
@@ -146,7 +142,7 @@
                     <tbody>
                         <tr *ngFor="let item of arrayDeFormularios">
                             <td class="text-center">
-                                {{ item.tipo }}  
+                                {{ item.tipo }}
                             </td>
                             <td class="text-center">
                                 {{ item.viagem.idCiclo.municipio.nomeMunicipio }}
@@ -169,8 +165,6 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
-
     </div>
 </div>

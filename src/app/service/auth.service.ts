@@ -8,9 +8,9 @@ export class AuthService {
 
   constructor() { }
 
-  async login (username:string, password:string) {
+  async login(username: string, password: string) {
     let result = await axios.post(
-      "http://localhost:8080/auth/signin", 
+      "http://localhost:8080/auth/signin",
       {
         username: username,
         password: password
@@ -20,7 +20,6 @@ export class AuthService {
       localStorage.setItem("usuarioAtual", JSON.stringify(result.data));
     }
     return result.status;
-  } 
-
-
+  }
+  
 }

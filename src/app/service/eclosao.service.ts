@@ -12,7 +12,6 @@ export class EclosaoService {
   constructor(private meuAxios: AxiosClient) { }
 
   async listAll() { 
-
     let result = await this.meuAxios.get(this.urlEclosao);
     let arrayDeEclosao = result.data._embedded.eclosaoVOList;
 

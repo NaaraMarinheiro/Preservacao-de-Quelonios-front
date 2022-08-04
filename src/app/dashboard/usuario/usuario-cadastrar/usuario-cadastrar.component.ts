@@ -14,62 +14,53 @@ export class UsuarioCadastrarComponent implements OnInit {
 
   signupForm: FormGroup = new FormGroup({});
 
-  documento:Usuario={
+  documento: Usuario = {
     matricula: '',
     nome: '',
     tipoUsuario: '',
     username: '',
-    password:'',
+    password: '',
     enabled: true
   }
 
-  constructor(private usuarioService:UsuarioService,
-              private toastrService: ToastrService,
-              private router:Router,
-              private route: ActivatedRoute){}
+  constructor(private usuarioService: UsuarioService,
+    private toastrService: ToastrService,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.configurarFormulario();
-   }
+  }
 
-   get f() {
+  get f() {
     return this.signupForm.controls;
-   }
+  }
 
-   configurarFormulario() {
+  configurarFormulario() {
     this.signupForm = new FormGroup({
-      'matricula': new FormControl(null,[Validators.required]),
+      'matricula': new FormControl(null, [Validators.required]),
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'senha': new FormControl(null, Validators.required),
-      'nome': new FormControl(null,[Validators.required]),
-      'tipoUsuario': new FormControl(null,[Validators.required]),
-      'status': new FormControl(null,[Validators.required]),
+      'nome': new FormControl(null, [Validators.required]),
+      'tipoUsuario': new FormControl(null, [Validators.required]),
+      'status': new FormControl(null, [Validators.required]),
     })
-   }
+  }
 
-   async onSubmit(){
+  async onSubmit() {
     try {
       let result = await this.usuarioService.insert(this.documento);
-    if (this.signupForm.valid){
-      this.toastrService.success('Usuário cadastrado com sucesso!',"Resultado", {
-        timeOut: 3000,
+      if (this.signupForm.valid) {
+        this.toastrService.success('Usuário cadastrado com sucesso!', "Resultado", {
+          timeOut: 3000,
+        });
+        this.router.navigate(['/usuario']);
+      }
+    } catch (error) {
+      this.toastrService.error('Usuário não cadastrado', "Erro", {
+        timeOut: 5000,
       });
-      this.router.navigate(['/usuario']);
     }
-  } catch (error) {
-    this.toastrService.error('Usuário não cadastrado', "Erro", {
-      timeOut: 5000,
-    });
-
-
-    // }else{
-    //   console.log('formulário inválido')
-    //   Object.keys(this.signupForm.controls).forEach(campo =>{
-    //     const controle =this.signupForm.get(campo);
-    //       controle?.markAsTouched();
-    //   })
-      
-    }
-  
-   }
   }
+
+}

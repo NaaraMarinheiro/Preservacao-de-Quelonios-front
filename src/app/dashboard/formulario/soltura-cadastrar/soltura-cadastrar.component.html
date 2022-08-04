@@ -5,6 +5,7 @@
             <h1>Formulário Soltura</h1>
             <h6>Preenchimento das informações de soltura</h6>
         </div>
+        
         <form [formGroup]="solturaForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-md-4">
@@ -23,12 +24,14 @@
                 <div class="col-md-4">
                     <label class="text-nowrap" id="label-municipio" for="inputMunicipio">Município</label>
 
-                    <input id="inputMunicipio" class="form-control" [value]="resultado.idCiclo.municipio.nomeMunicipio" disabled>
+                    <input id="inputMunicipio" class="form-control" [value]="resultado.idCiclo.municipio.nomeMunicipio"
+                        disabled>
                 </div>
                 <div class="col-md-4 ">
                     <label class="text-nowrap" id="label-comunidade" for="inputComunidade">Comunidade</label>
 
-                    <input id="inputComunidade" class="form-control" [value]="resultado.idCiclo.comunidade.nomeComunidade" disabled>
+                    <input id="inputComunidade" class="form-control"
+                        [value]="resultado.idCiclo.comunidade.nomeComunidade" disabled>
                 </div>
             </div>
             <hr>
@@ -47,123 +50,79 @@
 
                 <div class="form-group col-md-4">
                     <label class="text-nowrap" for="inputMatricula">Matrícula do voluntário</label>
-                    <input 
-                    type="text" 
-                    id= "voluntario" 
-                    formControlName="voluntario" 
-                    class="form-control">
-                    <span 
-                    *ngIf="!solturaForm.get('voluntario')?.valid && solturaForm.get('voluntario')?.touched"
-                    class= "help-block"> Campo obrigatório </span>
+                    <input type="text" id="voluntario" formControlName="voluntario" class="form-control">
+                    <span *ngIf="!solturaForm.get('voluntario')?.valid && solturaForm.get('voluntario')?.touched"
+                        class="help-block"> Campo obrigatório </span>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="text-nowrap" for="inputNumeroAnimal">Número do animal</label>
-                    <input 
-                    type="text" 
-                    id= "numeroAnimal" 
-                    formControlName="numeroAnimal" 
-                    class="form-control">
-                    <span 
-                    *ngIf="!solturaForm.get('numeroAnimal')?.valid && solturaForm.get('numeroAnimal')?.touched"
-                    class= "help-block"> Campo obrigatório </span>
+                    <input type="text" id="numeroAnimal" formControlName="numeroAnimal" class="form-control">
+                    <span *ngIf="!solturaForm.get('numeroAnimal')?.valid && solturaForm.get('numeroAnimal')?.touched"
+                        class="help-block"> Campo obrigatório </span>
 
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="text-nowrap" for="inputEspecie">Espécie</label>
-                    <input 
-                    type="text" 
-                    id= "especie" 
-                    formControlName="especie" 
-                    class="form-control">
-                    <span 
-                    *ngIf="!solturaForm.get('especie')?.valid && solturaForm.get('especie')?.touched"
-                    class= "help-block"> Campo obrigatório </span>
+                    <input type="text" id="especie" formControlName="especie" class="form-control">
+                    <span *ngIf="!solturaForm.get('especie')?.valid && solturaForm.get('especie')?.touched"
+                        class="help-block"> Campo obrigatório </span>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="text-nowrap" for="inputDataNascimento">Data da soltura</label>
-                    <input 
-                    type="date" 
-                    id= "dataSoltura" 
-                    formControlName="dataSoltura" 
-                    class="form-control">
-                    <span 
-                    *ngIf="!solturaForm.get('dataSoltura')?.valid && solturaForm.get('dataSoltura')?.touched"
-                    class= "help-block"> Campo obrigatório </span>
+                    <input type="date" id="dataSoltura" formControlName="dataSoltura" class="form-control">
+                    <span *ngIf="!solturaForm.get('dataSoltura')?.valid && solturaForm.get('dataSoltura')?.touched"
+                        class="help-block"> Campo obrigatório </span>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="text-nowrap" for="inputComprimentoCarapaca">Comprimento da carapaça </label>
-                    <input 
-                    type="text" 
-                    id= "carapacaComprimento" 
-                    formControlName="carapacaComprimento" 
-                    class="form-control">
-                    <span 
-                    *ngIf="!solturaForm.get('carapacaComprimento')?.valid && solturaForm.get('carapacaComprimento')?.touched"
-                    class= "help-block"> Campo obrigatório </span>
+                    <input type="text" id="carapacaComprimento" formControlName="carapacaComprimento"
+                        class="form-control">
+                    <span
+                        *ngIf="!solturaForm.get('carapacaComprimento')?.valid && solturaForm.get('carapacaComprimento')?.touched"
+                        class="help-block"> Campo obrigatório </span>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="text-nowrap" for="inputLarguraCarapaca">Largura da carapaça</label>
-                    <input 
-                    type="text" 
-                    id= "carapacaLargura" 
-                    formControlName="carapacaLargura" 
-                    class="form-control">
-                    <span 
-                    *ngIf="!solturaForm.get('carapacaLargura')?.valid && solturaForm.get('carapacaLargura')?.touched"
-                    class= "help-block"> Campo obrigatório </span>
+                    <input type="text" id="carapacaLargura" formControlName="carapacaLargura" class="form-control">
+                    <span
+                        *ngIf="!solturaForm.get('carapacaLargura')?.valid && solturaForm.get('carapacaLargura')?.touched"
+                        class="help-block"> Campo obrigatório </span>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="text-nowrap" for="inputComprimentoPlastrao">Comprimento do plastrão</label>
-                    <input 
-                    type="text" 
-                    id= "plastraoComprimento" 
-                    formControlName="plastraoComprimento" 
-                    class="form-control">
-                    <span 
-                    *ngIf="!solturaForm.get('plastraoComprimento')?.valid && solturaForm.get('plastraoComprimento')?.touched"
-                    class= "help-block"> Campo obrigatório </span>
+                    <input type="text" id="plastraoComprimento" formControlName="plastraoComprimento"
+                        class="form-control">
+                    <span
+                        *ngIf="!solturaForm.get('plastraoComprimento')?.valid && solturaForm.get('plastraoComprimento')?.touched"
+                        class="help-block"> Campo obrigatório </span>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="text-nowrap" for="inputLarguraPlastrao">Largura do plastrão </label>
-                    <input 
-                    type="text" 
-                    id= "plastraoLargura" 
-                    formControlName="plastraoLargura" 
-                    class="form-control">
-                    <span 
-                    *ngIf="!solturaForm.get('plastraoLargura')?.valid && solturaForm.get('plastraoLargura')?.touched"
-                    class= "help-block"> Campo obrigatório </span>
+                    <input type="text" id="plastraoLargura" formControlName="plastraoLargura" class="form-control">
+                    <span
+                        *ngIf="!solturaForm.get('plastraoLargura')?.valid && solturaForm.get('plastraoLargura')?.touched"
+                        class="help-block"> Campo obrigatório </span>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="text-nowrap" for="inputPeso">Peso </label>
-                    <input 
-                    type="text" 
-                    id= "peso" 
-                    formControlName="peso" 
-                    class="form-control">
-                    <span 
-                    *ngIf="!solturaForm.get('peso')?.valid && solturaForm.get('peso')?.touched"
-                    class= "help-block"> Campo obrigatório </span>
+                    <input type="text" id="peso" formControlName="peso" class="form-control">
+                    <span *ngIf="!solturaForm.get('peso')?.valid && solturaForm.get('peso')?.touched"
+                        class="help-block"> Campo obrigatório </span>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="text-nowrap" for="inputAltura">Altura </label>
-                    <input 
-                    type="text" 
-                    id= "altura" 
-                    formControlName="altura" 
-                    class="form-control">
-                    <span 
-                    *ngIf="!solturaForm.get('altura')?.valid && solturaForm.get('altura')?.touched"
-                    class= "help-block"> Campo obrigatório </span>
+                    <input type="text" id="altura" formControlName="altura" class="form-control">
+                    <span *ngIf="!solturaForm.get('altura')?.valid && solturaForm.get('altura')?.touched"
+                        class="help-block"> Campo obrigatório </span>
                 </div>
 
             </div>

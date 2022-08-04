@@ -7,8 +7,6 @@
             <div class="div-modificacoes col-md-7">
                 <h3>Últimas solturas</h3>
                 <div class="div-tabela-modificacoes col-md-12">
-
-                    <!-- Pode substituir o "item" por qualquer nome, no caso coloquei "soltura" -->
                     <table class="table table-sm">
                         <thead class=" text-primary">
                             <th class="text-center">
@@ -46,10 +44,7 @@
                     <h3>Filhotes soltos</h3>
                 </span>
                 <div>
-                    <canvas baseChart width="400" 
-                        [type]="'line'"
-                        [data]="lineChartData"
-                        [options]="lineChartOptions"
+                    <canvas baseChart width="400" [type]="'line'" [data]="lineChartData" [options]="lineChartOptions"
                         [legend]="lineChartLegend">
                     </canvas>
 
@@ -88,7 +83,6 @@
                                     <img class="icone" src="../../../../assets/img/calendar.svg" width="20"
                                         height="20"><span class="label-comunidade">{{item.dataFormatada}}</span>
                                 </div>
-
                             </div>
                         </div>
                         <div class="col-md-9 ps-md-0 div-viagem">
@@ -101,7 +95,8 @@
                             </div>
                             <div class="div-botoes-viagem">
                                 <div class="div-botao-formulario">
-                                    <button type="button" class="btn btn-success" [routerLink]="['/ciclo', item.idCiclo.idCiclo, 'viagem', item.idViagem]"
+                                    <button type="button" class="btn btn-success"
+                                        [routerLink]="['/ciclo', item.idCiclo.idCiclo, 'viagem', item.idViagem]"
                                         routerLinkActive="active-style"><span class="span-formulario">+
                                             Formulário</span></button>
                                 </div>
@@ -124,13 +119,8 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+</div>

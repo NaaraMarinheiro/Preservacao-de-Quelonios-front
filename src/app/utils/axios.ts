@@ -35,7 +35,6 @@ export class AxiosClient {
         let tokenAtual = JSON.parse(usuarioAtual).token;
         if (config && config.headers) config.headers['Authorization'] = "Bearer " + tokenAtual;
       }
-
       return config;
     }, function (error) {
       return Promise.reject(error);
@@ -47,10 +46,10 @@ export class AxiosClient {
       return response;
     },
       (error) => {
-        //Mudar para erro 401 (Unauthorized) no backend
+        //Mudar para erro 401 (Unauthorized) no backend  - 04/08/22
         // if (error.response.status === 500) { // erro na autenticação
-          localStorage.removeItem("usuarioAtual");
-          router.navigate(['/login']);
+        localStorage.removeItem("usuarioAtual");
+        router.navigate(['/login']);
         // }
         return Promise.reject(error);
       });

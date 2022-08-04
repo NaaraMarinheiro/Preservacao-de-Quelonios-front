@@ -1,10 +1,6 @@
-/*Navbar 
-#navbar {
-    display: flex;
-    justify-content: space-between;
-    background:#FFFF;
-    color: #2F394E;
-}*/
+#content {
+    margin-bottom: 4rem;
+}
 
 #main-container {
     display: flex;
@@ -36,6 +32,18 @@
     margin-right: 2rem;
 }
 
+.dropdown-toggle:hover {
+    border-color: transparent
+}
+
+.dropdown-toggle.show {
+    border-color: transparent
+}
+
+.dropdown-item:hover {
+    background-color: #f3f3f3;
+}
+
 #sidebar {
     display: flex;
     flex-direction: column;
@@ -45,7 +53,6 @@
     width: 9rem;
     background-color: white;
     top: 0;
-    /* height: 100vh; */
     overflow: auto;
     box-shadow: 0.3125rem 0rem 1.875rem 0.3125rem rgba(0, 0, 0, 0.05);
 }
@@ -64,7 +71,7 @@
 }
 
 .sidebar-icon {
-    height:2.1875rem;
+    height: 2.1875rem;
     filter: invert(68%) sepia(0%) saturate(2796%) hue-rotate(49deg) brightness(86%) contrast(75%);
 }
 
@@ -105,6 +112,6 @@ footer div:last-child {
     text-align: center;
 }
 
-footer > div{
+footer>div {
     color: white
 }

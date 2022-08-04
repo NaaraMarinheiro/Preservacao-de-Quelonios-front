@@ -14,16 +14,18 @@ export class UsuarioComponent implements OnInit {
   formulario!: FormGroup;
   matriculaPesquisa: string;
 
-  public usuarios:{enabled:boolean,
-    matricula:string,
-     nome:string,
-     password:string,
-     tipoUsuario:string,
-     username:string} []
+  public usuarios: {
+    enabled: boolean,
+    matricula: string,
+    nome: string,
+    password: string,
+    tipoUsuario: string,
+    username: string
+  }[]
 
   constructor(private usuarioService: UsuarioService,
-              private formBuilder: FormBuilder,
-              private toastrService: ToastrService) { }
+    private formBuilder: FormBuilder,
+    private toastrService: ToastrService) { }
 
   configurarFormulario() {
     this.formulario = this.formBuilder.group({
@@ -31,22 +33,22 @@ export class UsuarioComponent implements OnInit {
     });
   }
 
-  async  ngOnInit() {
+  async ngOnInit() {
     this.configurarFormulario();
     this.usuarios = await this.usuarioService.listAll();
   }
 
   async onSubmit() {
     if (this.formulario.valid) {
-      
+
       let resultado: Usuario = await this.usuarioService.listByID(this.matriculaPesquisa);
       console.log(resultado);
       this.usuarios = [];
-      if(resultado) {
+      if (resultado) {
         this.usuarios.push(resultado);
         this.formulario.reset();
       } else {
-        this.toastrService.warning('Nenhum usuário foi encontrado!',"Resultado", {
+        this.toastrService.warning('Nenhum usuário foi encontrado!', "Resultado", {
           timeOut: 3000,
         });
       }
@@ -59,11 +61,11 @@ export class UsuarioComponent implements OnInit {
     }
   }
 
- async deletarUsuario(matricula:any){
-  await this.usuarioService.del(matricula);
-  await this.ngOnInit();
-  this.toastrService.success('Usuário deletado com sucesso!',"Resultado", {
-    timeOut: 3000,
-  });
- }
+  async deletarUsuario(matricula: any) {
+    await this.usuarioService.del(matricula);
+    await this.ngOnInit();
+    this.toastrService.success('Usuário deletado com sucesso!', "Resultado", {
+      timeOut: 3000,
+    });
+  }
 }

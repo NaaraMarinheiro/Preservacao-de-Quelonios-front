@@ -1,6 +1,5 @@
 @import '~ngx-toastr/toastr.css';
 
-/* Reset */
 * {
     font-family: 'Fira Sans', sans-serif;
     font-size: 0.97rem;
@@ -16,33 +15,37 @@ h1 {
 
 h2 {
     font-size: 1.5rem !important;
-    font-weight: 500 !important; 
+    font-weight: 500 !important;
 }
 
 h3 {
     font-size: 1.3rem !important;
-    font-weight: 500 !important; 
+    font-weight: 500 !important;
 }
 
 h4 {
     font-size: 1rem !important;
 }
 
-
 body {
     background-color: #F1F2F0 !important;
 }
 
-html, body{
+html,
+body {
     height: 100%;
 }
 
-.toast-container { position: fixed !important; top: 1.875rem !important; right: 1.875rem!important;}
+.toast-container {
+    position: fixed !important;
+    top: 1.875rem !important;
+    right: 1.875rem !important;
+}
 
-.toast-title{
+.toast-title {
     color: white;
 }
 
-.toast-message{
+.toast-message {
     color: white;
 }

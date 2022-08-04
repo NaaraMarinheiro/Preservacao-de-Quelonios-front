@@ -12,28 +12,23 @@ export class RelatorioService {
 
   constructor(private meuAxios: AxiosClient) { }
 
-
   async gerarPdfColeta() {
-
-    let result = await this.meuAxios.get(this.urlRelatorioColeta, 
-      { headers: { 'Accept': 'application/pdf' }, responseType: 'blob'});
+    let result = await this.meuAxios.get(this.urlRelatorioColeta,
+      { headers: { 'Accept': 'application/pdf' }, responseType: 'blob' });
     console.log(result);
     return result.data;
   }
   async gerarPdfEclosao() {
-
-    let result = await this.meuAxios.get(this.urlRelatorioEclosao, 
-      { headers: { 'Accept': 'application/pdf' }, responseType: 'blob'});
+    let result = await this.meuAxios.get(this.urlRelatorioEclosao,
+      { headers: { 'Accept': 'application/pdf' }, responseType: 'blob' });
     console.log(result);
     return result.data;
   }
   async gerarPdfSoltura() {
-
-    let result = await this.meuAxios.get(this.urlRelatorioSoltura, 
-      { headers: { 'Accept': 'application/pdf' }, responseType: 'blob'});
+    let result = await this.meuAxios.get(this.urlRelatorioSoltura,
+      { headers: { 'Accept': 'application/pdf' }, responseType: 'blob' });
     console.log(result);
     return result.data;
   }
-
 
 }

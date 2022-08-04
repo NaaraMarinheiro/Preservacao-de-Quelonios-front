@@ -7,9 +7,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes
-    //,{ enableTracing: true <-- debugging purpose only}
-  )],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class RelatorioRoutingModule { }

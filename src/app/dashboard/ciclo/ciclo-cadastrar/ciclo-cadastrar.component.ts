@@ -28,11 +28,11 @@ export class CicloCadastrarComponent implements OnInit {
     }
   }
 
-  // variavel que guarda os municipios
   public arrayMunicipios: any;
   public arrayComunidades: any;
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(
+    private formBuilder: FormBuilder,
     private cicloService: CicloService,
     private municipioService: MunicipioService,
     private comunidadeService: ComunidadeService,
@@ -52,7 +52,6 @@ export class CicloCadastrarComponent implements OnInit {
       uf: ['', Validators.required],
       municipio: ['', Validators.required],
       comunidade: ['', Validators.required]
-
     });
   }
 
@@ -69,22 +68,15 @@ export class CicloCadastrarComponent implements OnInit {
       this.toastrService.error('Ciclo não cadastrado', "Erro", {
         timeOut: 5000,
       });
-
-
-      //} else {
-      //  console.log('formulario inválido')
-      //  Object.keys(this.formulario.controls).forEach(campo => {
-      //    const controle = this.formulario.get(campo);
-      //    controle?.markAsTouched();
-
-    }}
-
-  async selecionarMunicipio(){
-      this.arrayMunicipios = await this.municipioService.listAll();
     }
+  }
 
-  async selecionarComunidade(){
-      this.arrayComunidades = await this.comunidadeService.listAll();
-    }
+  async selecionarMunicipio() {
+    this.arrayMunicipios = await this.municipioService.listAll();
+  }
+
+  async selecionarComunidade() {
+    this.arrayComunidades = await this.comunidadeService.listAll();
+  }
 
 }

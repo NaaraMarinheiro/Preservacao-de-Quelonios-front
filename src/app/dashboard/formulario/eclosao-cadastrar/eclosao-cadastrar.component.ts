@@ -39,29 +39,28 @@ export class EclosaoCadastrarComponent implements OnInit {
   ngOnInit() {
     this.configurarFormularioEclosao();
     this.getViagem();
-
   }
-  
+
   async getViagem() {
     this.idViagem = String(this.route.snapshot.paramMap.get('viagemId'));
     this.idCiclo = String(this.route.snapshot.paramMap.get('cicloId'));
     this.resultado = await this.minhaViagemService.listByID(this.idViagem);
   }
 
-  configurarFormularioEclosao(){
-  this.eclosaoForm = new FormGroup({
-    'voluntario': new FormControl(null, Validators.required),
-    'numeroCova': new FormControl(null, Validators.required),
-    'dataNascimento': new FormControl(null, Validators.required),
-    'especie': new FormControl(null, Validators.required),
-    'quantidadeFilhoteVivo': new FormControl(null, Validators.required),
-    'quantidadeOvoInviavel': new FormControl(null, Validators.required),
-    'quantidadeOvoInfertil': new FormControl(null, Validators.required),
-    'quantidadeFilhoteMortoFormiga': new FormControl(null, Validators.required),
-    'quantidadeFilhoteMortoBicheira': new FormControl(null, Validators.required),
-    'quantidadeFilhoteMortoOutros': new FormControl(null, Validators.required),
+  configurarFormularioEclosao() {
+    this.eclosaoForm = new FormGroup({
+      'voluntario': new FormControl(null, Validators.required),
+      'numeroCova': new FormControl(null, Validators.required),
+      'dataNascimento': new FormControl(null, Validators.required),
+      'especie': new FormControl(null, Validators.required),
+      'quantidadeFilhoteVivo': new FormControl(null, Validators.required),
+      'quantidadeOvoInviavel': new FormControl(null, Validators.required),
+      'quantidadeOvoInfertil': new FormControl(null, Validators.required),
+      'quantidadeFilhoteMortoFormiga': new FormControl(null, Validators.required),
+      'quantidadeFilhoteMortoBicheira': new FormControl(null, Validators.required),
+      'quantidadeFilhoteMortoOutros': new FormControl(null, Validators.required),
 
-  });  
+    });
   }
 
   async onSubmit() {
@@ -80,14 +79,14 @@ export class EclosaoCadastrarComponent implements OnInit {
           this.toastrService.success('Formulário cadastrado!', "Sucesso", {
             timeOut: 8000,
           });
-          this.eclosaoForm.reset(); 
+          this.eclosaoForm.reset();
         }
       } catch (error) {
         this.toastrService.error('Formulário não cadastrado', "Erro", {
           timeOut: 3000,
         });
       }
-    }else {
+    } else {
       console.log('formulario inválido')
       Object.keys(this.eclosaoForm.controls).forEach(campo => {
         const controle = this.eclosaoForm.get(campo);

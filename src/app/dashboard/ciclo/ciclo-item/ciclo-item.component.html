@@ -9,7 +9,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="inputIdCiclo">Nome do Ciclo</label>
-                        <input type="text" class="form-control" id="inputIdCiclo" [value]="resultado.nomeCiclo" disabled>
+                        <input type="text" class="form-control" id="inputIdCiclo" [value]="resultado.nomeCiclo"
+                            disabled>
                     </div>
                 </div>
 
@@ -25,13 +26,15 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="inputComunidade">Município</label>
-                        <input type="text" class="form-control" id="municipio"[value]="resultado.municipio.nomeMunicipio" disabled>
+                        <input type="text" class="form-control" id="municipio"
+                            [value]="resultado.municipio.nomeMunicipio" disabled>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="inputMunicipio">Comunidade</label>
-                        <input type="text" class="form-control" id="comunidade" [value]="resultado.comunidade.nomeComunidade" disabled>
+                        <input type="text" class="form-control" id="comunidade"
+                            [value]="resultado.comunidade.nomeComunidade" disabled>
                     </div>
                 </div>
                 <div class="botao">
@@ -39,10 +42,9 @@
                         routerLinkActive="active-style">+ Nova Viagem
                     </button>
                 </div>
-            </div>            
+            </div>
         </form>
     </div>
- 
 
     <div class="mb-4">
         <div class="div-minhas-viagens col-md-12">
@@ -52,7 +54,7 @@
 
                 <div class="row divisor" *ngFor="let item of arrayDeViagens">
                     <div class="col-md-3 pe-md-1">
-                        <div [ngClass] = "{
+                        <div [ngClass]="{
                             'canto-colorido-verde': item.status == 'Iniciada', 
                             'canto-colorido-rosa': item.status == 'Agendada'
                         }" class="canto-colorido-verde"></div>
@@ -61,15 +63,15 @@
                             <span class="subtitulo-dados-viagem"><b>ID {{item.idViagem}}</b></span>
 
                             <div class="item-id-viagem">
-                                <span [ngClass] = "{
+                                <span [ngClass]="{
                                     'status-em-atualizacao': item.status == 'Iniciada',
                                     'status-agendada': item.status == 'Agendada'
 
                                 }">{{item.status}}</span>
                             </div>
-                            <div class="item-id-viagem" >
+                            <div class="item-id-viagem">
                                 <img class="icone" src="../../../../assets/img/pin-map.svg" width="20" height="20"><span
-                                    class="label-comunidade" >{{item.idCiclo.comunidade.nomeComunidade}}</span>
+                                    class="label-comunidade">{{item.idCiclo.comunidade.nomeComunidade}}</span>
                             </div>
                             <div class="item-id-viagem">
                                 <img class="icone" src="../../../../assets/img/calendar.svg" width="20"
@@ -84,7 +86,7 @@
 
                             <span class="texto-dados-viagem" style="font-weight:500">Coordenador:</span>
                             <span class="texto-dados-viagem">{{item.coordenador.nome}}</span>
-                            
+
                         </div>
                         <div class="div-botoes-viagem">
                             <div class="div-botao-formulario">
@@ -97,9 +99,11 @@
                                 <div class="flex-item-center">
                                     <td>
                                         <div class="d-flex justify-content-around">
-                                            <button type="button" id="button-visao" [routerLink]="['viagem', item.idViagem]"
+                                            <button type="button" id="button-visao"
+                                                [routerLink]="['viagem', item.idViagem]"
                                                 routerLinkActive="active-style"></button>
-                                            <button type="button" id="button-editar" [routerLink]="['viagem', item.idViagem, 'editar']"
+                                            <button type="button" id="button-editar"
+                                                [routerLink]="['viagem', item.idViagem, 'editar']"
                                                 routerLinkActive="active-style"></button>
                                             <button type="button" id="button-excluir"></button>
                                         </div>
@@ -109,13 +113,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!--Usar ngClass para aplicar a cor do status do card-->
-                <!-- <div class="canto-colorido-verde"></div> -->
-                <!-- <div class="canto-colorido-rosa"></div> -->
-                <!-- <div class="canto-colorido-cinza"></div> -->
-
-               
             </div>
         </div>
     </div>
