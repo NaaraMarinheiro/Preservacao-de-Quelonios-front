@@ -12,7 +12,6 @@ export class CicloService {
 
   constructor(private meuAxios: AxiosClient) { }
 
-  // Requisição GET 
   async listAll() {
     let result = await this.meuAxios.get(this.urlCiclo);
     return result.data;
@@ -40,16 +39,13 @@ export class CicloService {
     return filteredResult;
   }
 
-  // Requisição POST
   async insert(ciclos: Ciclo) {
-
     let body = JSON.stringify(ciclos);
     let result = await this.meuAxios.post(this.urlCiclo, body, { headers: { 'content-type': 'application/json' } });
     console.log(result);
     return result;
   }
 
-  // ***
   async listByID(id:string) {
     try {
       let result = await this.meuAxios.get(this.urlCiclo + '/' + id);

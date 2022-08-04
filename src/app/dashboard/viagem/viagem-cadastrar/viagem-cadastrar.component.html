@@ -12,7 +12,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="inputNome">Nome do Ciclo</label>
-                        <input type="text" class="form-control" id="inputNome"  [value]="resultado.nomeCiclo" disabled>
+                        <input type="text" class="form-control" id="inputNome" [value]="resultado.nomeCiclo" disabled>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -26,13 +26,15 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="text-nowrap" for="inputMunicipio">Município</label>
-                        <input type="text" id="inputMunicipio" class="form-control" [value]="resultado.municipio.nomeMunicipio" disabled>
+                        <input type="text" id="inputMunicipio" class="form-control"
+                            [value]="resultado.municipio.nomeMunicipio" disabled>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="text-nowrap" for="inputComunidade">Comunidade</label>
-                        <input type="text" id="inputComunidade" class="form-control" [value]="resultado.comunidade.nomeComunidade" disabled>
+                        <input type="text" id="inputComunidade" class="form-control"
+                            [value]="resultado.comunidade.nomeComunidade" disabled>
                     </div>
                 </div>
             </div>
@@ -43,19 +45,22 @@
                     <div class="form-group">
                         <label class="text-nowrap" for="inputData">Data</label>
                         <input id="input-data" type="date" class="form-control" formControlName="dataViagem">
-                        <span *ngIf="!signupForm?.get('dataViagem')?.valid && signupForm?.get('dataViagem')?.touched " class="help-block">Campo obrigatório</span>
+                        <span *ngIf="!signupForm?.get('dataViagem')?.valid && signupForm?.get('dataViagem')?.touched "
+                            class="help-block">Campo obrigatório</span>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label id="label-tipo-usuario" class="text-nowrap" for="selectCoordenador">Coordenador</label>
-                        <select id="selectCoordenador" formControlName="coordenador" class="form-control">                            
+                        <select id="selectCoordenador" formControlName="coordenador" class="form-control">
                             <option selected disabled value="">Selecione</option>
-                            <option *ngFor = "let item of arrayDeCoordenadores" [ngValue] ="item.matricula">{{item.nome}}</option>
+                            <option *ngFor="let item of arrayDeCoordenadores" [ngValue]="item.matricula">{{item.nome}}
+                            </option>
                         </select>
-                        <span *ngIf="!signupForm?.get('coordenador')?.valid && signupForm?.get('coordenador')?.touched " class="help-block">Seleção obrigatória</span>
+                        <span *ngIf="!signupForm?.get('coordenador')?.valid && signupForm?.get('coordenador')?.touched "
+                            class="help-block">Seleção obrigatória</span>
                     </div>
-                </div>                
+                </div>
             </div>
             <div class="botao">
                 <button type="submit" class="btn btn-success  ">Salvar</button>

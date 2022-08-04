@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'; 
+import { Injectable } from '@angular/core';
 import { AxiosClient } from '../utils/axios';
 
 @Injectable({
@@ -10,13 +10,13 @@ export class SolturaService {
 
   constructor(private meuAxios: AxiosClient) { }
 
-  async listAll() { 
+  async listAll() {
     let result = await this.meuAxios.get(this.urlSoltura);
     let arrayDeSoltura = result.data._embedded.solturaVOList;
 
-    arrayDeSoltura = arrayDeSoltura.map((elemento: any)=>{
+    arrayDeSoltura = arrayDeSoltura.map((elemento: any) => {
       let dataSplit = elemento.viagem.dataViagem.split("-")
-        elemento.dataFormatada = dataSplit[2] + "/" + dataSplit[1]+ "/" + dataSplit[0];
+      elemento.dataFormatada = dataSplit[2] + "/" + dataSplit[1] + "/" + dataSplit[0];
 
       return elemento;
     });
@@ -24,7 +24,7 @@ export class SolturaService {
     return arrayDeSoltura;
   }
 
-  async listByID(idSoltura:string) {
+  async listByID(idSoltura: string) {
     let result = await this.meuAxios.get(this.urlSoltura + '/' + idSoltura);
     return result.data;
   }

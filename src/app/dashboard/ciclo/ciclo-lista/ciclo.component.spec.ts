@@ -8,9 +8,9 @@ describe('CicloComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CicloComponent ]
+      declarations: [CicloComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(CicloComponent);
     component = fixture.componentInstance;

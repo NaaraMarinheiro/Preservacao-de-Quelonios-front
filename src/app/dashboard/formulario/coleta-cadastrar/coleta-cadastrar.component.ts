@@ -37,12 +37,9 @@ export class ColetaCadastrarComponent implements OnInit {
     private router: Router,
   ) { }
 
-
-
   ngOnInit() {
     this.configurarFormularioColeta();
     this.getViagem();
-
   }
 
   async getViagem() {
@@ -69,7 +66,6 @@ export class ColetaCadastrarComponent implements OnInit {
     });
   }
 
-
   async onSubmit() {
     console.log(this.coletaForm);
     if (this.coletaForm.valid) {
@@ -86,15 +82,14 @@ export class ColetaCadastrarComponent implements OnInit {
           this.toastrService.success('Formulário cadastrado!', "Sucesso", {
             timeOut: 8000,
           });
-          this.coletaForm.reset(); //apaga o form para gerar outro
-          //this.router.navigate(['/ciclo/'+ this.idCiclo + "/viagem/" + this.idViagem]);  - redirecionamento 
+          this.coletaForm.reset(); 
         }
       } catch (error) {
         this.toastrService.error('Formulário não cadastrado', "Erro", {
           timeOut: 3000,
         });
       }
-    }else {
+    } else {
       console.log('formulario inválido')
       Object.keys(this.coletaForm.controls).forEach(campo => {
         const controle = this.coletaForm.get(campo);

@@ -5,8 +5,6 @@ import { SolturaService } from 'src/app/service/soltura.service';
 import { ViagemService } from 'src/app/service/viagem.service';
 import { ChartConfiguration, ChartOptions, ChartType } from "chart.js";
 
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -29,7 +27,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private meuHomeService: HomeService, private minhaViagemService: ViagemService, private minhaSolturaService: SolturaService) { }
 
-  ////
   public lineChartData: ChartConfiguration<'line'>['data'] = {
     labels: [
       '2010',
@@ -45,7 +42,7 @@ export class HomeComponent implements OnInit {
     ],
     datasets: [
       {
-        data: [ 677,1268,578,570,645,927,133,2707,4155,5487 ],
+        data: [677, 1268, 578, 570, 645, 927, 133, 2707, 4155, 5487],
         fill: true,
         tension: 0.5,
         borderColor: 'rgb(47, 57, 78)',
@@ -57,13 +54,11 @@ export class HomeComponent implements OnInit {
       }
     ],
   };
-  
+
   public lineChartOptions: ChartOptions<'line'> = {
-    responsive: true    
+    responsive: true
   };
   public lineChartLegend = false;
-  ////
- 
 
   ngOnInit() {
     this.listarViagens();
@@ -79,9 +74,4 @@ export class HomeComponent implements OnInit {
   async getLogDeSoltura() {
     this.logDeSoltura = await this.minhaSolturaService.listAll();
   }
-
- 
- 
- 
-
 }

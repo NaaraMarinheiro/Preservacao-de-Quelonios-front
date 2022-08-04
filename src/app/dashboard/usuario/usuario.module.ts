@@ -6,7 +6,6 @@ import { UsuarioCadastrarComponent } from './usuario-cadastrar/usuario-cadastrar
 import { UsuarioRoutingModule } from './usuario-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     UsuarioComponent,
@@ -16,7 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     UsuarioRoutingModule,
-    ReactiveFormsModule  
+    ReactiveFormsModule
   ]
 })
 export class UsuarioModule { }

@@ -10,6 +10,7 @@ import { Usuario } from '../usuario-interface';
   templateUrl: './usuario-editar.component.html',
   styleUrls: ['./usuario-editar.component.css']
 })
+
 export class UsuarioEditarComponent implements OnInit {
 
   matricula: string;
@@ -26,12 +27,9 @@ export class UsuarioEditarComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private usuarioService: UsuarioService, private toastrService: ToastrService) { }
 
-
   async ngOnInit() {
     this.configurarFormulario();
-
     this.matricula = String(this.route.snapshot.paramMap.get('usuarioId'));
-
     await this.fetchUser(this.matricula);
   }
 
@@ -58,9 +56,7 @@ export class UsuarioEditarComponent implements OnInit {
 
   onSubmit() {
     if (this.signupForm.valid) {
-      // requisicao http put
       this.usuarioService.update(this.documento, this.documento.matricula);
-
       console.log(this.documento);
       this.signupForm.reset();
       this.toastrService.success('Usuário alterado com sucesso!!', "Resultado", {
@@ -73,6 +69,5 @@ export class UsuarioEditarComponent implements OnInit {
         controle?.markAsTouched();
       })
     }
-
   }
 }

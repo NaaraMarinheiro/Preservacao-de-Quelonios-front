@@ -115,8 +115,8 @@ export class ViagemEditarComponent implements OnInit {
     }
   }
 
-  // adaptação enquanto não faz o endpoint do back - 
-  //necessária correção no back para eliminar o ciclo do update de viagem.
+  // Adaptação enquanto não faz o endpoint do back  - 04/08/22
+  // Modificar após correção do update de viagem - 04/08/22
 
   async onSubmit() {
     //ajuste de formato do objeto a ser enviado para o service

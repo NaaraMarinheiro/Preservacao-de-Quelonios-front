@@ -8,9 +8,10 @@ import { CicloService } from 'src/app/service/ciclo.service';
   templateUrl: './ciclo-item.component.html',
   styleUrls: ['./ciclo-item.component.css']
 })
+
 export class CicloItemComponent implements OnInit {
 
-  public resultado:any = {
+  public resultado: any = {
     municipio: {
       nomeMunicipio: ""
     },
@@ -20,25 +21,20 @@ export class CicloItemComponent implements OnInit {
     uf: ""
   };
 
-  constructor(private route: ActivatedRoute, private meuCicloService: CicloService ) { }
+  constructor(private route: ActivatedRoute, private meuCicloService: CicloService) { }
 
   async ngOnInit() {
-    /**
-     * 1. Buscar lista de viagens no backend
-     * 2. Criar os cards com NGfor
-     */
     let id = String(this.route.snapshot.paramMap.get('cicloId'));
     this.getCiclo(id);
     this.listarViagensDoCiclo(id)
-
   }
 
-  async getCiclo(id:string) {
+  async getCiclo(id: string) {
     this.resultado = await this.meuCicloService.listByID(id);
   }
 
-  public arrayDeViagens: any[] = []; 
-  async listarViagensDoCiclo(id:string){
+  public arrayDeViagens: any[] = [];
+  async listarViagensDoCiclo(id: string) {
     this.arrayDeViagens = await this.meuCicloService.listAllByCicle(id);
   }
 }

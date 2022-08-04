@@ -22,25 +22,25 @@ const routes: Routes = [
   { path: 'cadastrar', component: CicloCadastrarComponent },
   { path: 'editar', component: CicloEditarComponent },
   { path: ':cicloId', component: CicloItemComponent },
-  // { path: ':cicloId/viagens', component: ViagemListar },
+
   { path: ':cicloId/viagem/cadastrar', component: ViagemCadastrarComponent },
   { path: ':cicloId/viagem/:viagemId', component: ViagemItemComponent },
   { path: ':cicloId/viagem/:viagemId/editar', component: ViagemEditarComponent },
-  
+
   { path: ':cicloId/viagem/:viagemId/coleta/cadastrar', component: ColetaCadastrarComponent },
   { path: ':cicloId/viagem/:viagemId/coleta/:idColeta', component: ColetaItemComponent },
   { path: ':cicloId/viagem/:viagemId/coleta/:idColeta/editar', component: ColetaEditarComponent },
 
   { path: ':cicloId/viagem/:viagemId/eclosao/cadastrar', component: EclosaoCadastrarComponent },
   { path: ':cicloId/viagem/:viagemId/eclosao/:idEclsao', component: EclosaoItemComponent },
-  { path: ':cicloId/viagem/:viagemId/eclosao/:idEclosao/editar', component: EclosaoEditarComponent},
+  { path: ':cicloId/viagem/:viagemId/eclosao/:idEclosao/editar', component: EclosaoEditarComponent },
 
   { path: ':cicloId/viagem/:viagemId/soltura/cadastrar', component: SolturaCadastrarComponent },
   { path: ':cicloId/viagem/:viagemId/soltura/:idSoltura', component: SolturaItemComponent },
   { path: ':cicloId/viagem/:viagemId/soltura/:idSoltura/editar', component: SolturaEditarComponent },
 
   //{ path: "**", component: CicloComponent} - configurar página not found
-  
+
 ]
 @NgModule({
   imports: [RouterModule.forChild(routes)],

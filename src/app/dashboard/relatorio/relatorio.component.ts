@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { RelatorioService } from 'src/app/service/relatorio.service';
 
 @Component({
@@ -6,16 +7,17 @@ import { RelatorioService } from 'src/app/service/relatorio.service';
   templateUrl: './relatorio.component.html',
   styleUrls: ['./relatorio.component.css']
 })
+
 export class RelatorioComponent implements OnInit {
 
-  constructor(private service: RelatorioService) { }
+  constructor(
+    private service: RelatorioService,
+    private toastrService: ToastrService,) { }
 
-  ngOnInit(){  }
+  ngOnInit() { }
 
- 
-   gerarRelatorioColeta(){
-
-    this.service.gerarPdfColeta().then( resposta =>{
+  gerarRelatorioColeta() {
+    this.service.gerarPdfColeta().then(resposta => {
       let url = window.URL.createObjectURL(resposta);
       let a = document.createElement('a');
       a.href = url;
@@ -23,12 +25,14 @@ export class RelatorioComponent implements OnInit {
       a.click();
       window.URL.revokeObjectURL(url);
       a.remove();
+      this.toastrService.success('O download iniciará em alguns segundos...', "Relatório Gerado!", {
+        timeOut: 5000,
+      })
     })
   }
 
-
-  gerarRelatorioEclosao(){
-    this.service.gerarPdfEclosao().then( resposta =>{
+  gerarRelatorioEclosao() {
+    this.service.gerarPdfEclosao().then(resposta => {
       let url = window.URL.createObjectURL(resposta);
       let a = document.createElement('a');
       a.href = url;
@@ -36,11 +40,14 @@ export class RelatorioComponent implements OnInit {
       a.click();
       window.URL.revokeObjectURL(url);
       a.remove();
+      this.toastrService.success('O download iniciará em alguns segundos...', "Relatório Gerado!", {
+        timeOut: 5000,
+      })
     })
   }
 
-  gerarRelatorioSoltura(){
-    this.service.gerarPdfSoltura().then( resposta =>{
+  gerarRelatorioSoltura() {
+    this.service.gerarPdfSoltura().then(resposta => {
       let url = window.URL.createObjectURL(resposta);
       let a = document.createElement('a');
       a.href = url;
@@ -48,7 +55,9 @@ export class RelatorioComponent implements OnInit {
       a.click();
       window.URL.revokeObjectURL(url);
       a.remove();
+      this.toastrService.success('O download iniciará em alguns segundos...', "Relatório Gerado!", {
+        timeOut: 5000,
+      })
     })
   }
-
 }

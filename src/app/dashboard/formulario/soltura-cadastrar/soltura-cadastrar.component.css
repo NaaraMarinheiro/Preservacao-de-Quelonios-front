@@ -1,9 +1,8 @@
-
 #migalhas {
     padding-top: 1.5rem;
     padding-bottom: 1rem;
-
 }
+
 .conteudo {
     background-color: white;
     padding: 1rem;
@@ -39,8 +38,8 @@ hr {
 
 input.ng-invalid.ng-touched {
     border: 1px solid red
- }
- 
- span {
+}
+
+span {
     color: red
- }
+}

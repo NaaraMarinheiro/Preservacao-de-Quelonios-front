@@ -1,11 +1,12 @@
-.foto{
-    background: url("../../assets/img/quelonioinvertido.png") no-repeat center;    
-    background-size: auto  150% ; 
+.foto {
+    background: url("../../assets/img/quelonioinvertido.png") no-repeat center;
+    background-size: auto 150%;
     width: 100%;
     height: 100%;
     background-position: top;
 }
-.formulario{
+
+.formulario {
     width: 100%;
     height: 100%;
     display: flex;
@@ -13,47 +14,46 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    }
-
-    
-.btn{
-background-color: 
-#63a15f;
-padding: 0.3rem 5.8rem;
-color: whitesmoke;
-font-weight: 500;
 }
 
-.botao{
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-bottom: 3rem;
+.btn {
+    background-color:
+        #63a15f;
+    padding: 0.3rem 5.8rem;
+    color: whitesmoke;
+    font-weight: 500;
 }
 
-.label-inputs{
-font-weight: 500;
+.botao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
 }
 
-.logo img{
-height: 4.3rem;
-margin-bottom: 3rem;
-margin-top: 3rem;
+.label-inputs {
+    font-weight: 500;
 }
 
-input{
-width: 23rem;
+.logo img {
+    height: 4.3rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
 }
 
-.texto{
-display: flex;
-flex-direction: row;
-justify-content: center;
-}
-.texto p{
-width: 25rem;
-color: white;
-margin: 4rem;
-font-size: 2.3rem;
+input {
+    width: 23rem;
 }
 
+.texto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.texto p {
+    width: 25rem;
+    color: white;
+    margin: 4rem;
+    font-size: 2.3rem;
+}

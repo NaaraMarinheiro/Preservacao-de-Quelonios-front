@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Usuario } from '../dashboard/usuario/usuario-interface'; 
+import { Usuario } from '../dashboard/usuario/usuario-interface';
 import { AxiosClient } from '../utils/axios';
 
 @Injectable({
@@ -11,19 +11,11 @@ export class UsuarioService {
 
   constructor(private meuAxios: AxiosClient) { }
 
-
-  // Requisição GET 
   async listAll() {
     let result = await this.meuAxios.get(this.urlUsuario);
     return result.data._embedded.usuarioVOList;
   }
 
-  listCoordenadores() {
-
-  }
-
-
-  // Requisição POST
   async insert(usuarios: Usuario) {
     let body = JSON.stringify(usuarios);
     let result = await this.meuAxios.post(this.urlUsuario, body,
@@ -34,7 +26,6 @@ export class UsuarioService {
   }
 
   async listByID(id: string) {
-
     try {
       let result = await this.meuAxios.get(this.urlUsuario + '/' + id);
       return result.data;
@@ -45,10 +36,8 @@ export class UsuarioService {
         throw err;
       }
     }
-
   }
 
-  // Requisição PUT
   async update(usuarios: Usuario, id: string) {
     let body = JSON.stringify(usuarios);
     let url = `${this.urlUsuario}/${id}`;
@@ -60,16 +49,10 @@ export class UsuarioService {
     return result;
   }
 
-  // Requisicao DELETE
-  // Não está permitindo a deleção
   async del(matricula: string) {
     let url = `${this.urlUsuario}/${matricula}`;
-
     let result = await this.meuAxios.delete(url);
-    console.log("deletou");
     return result;
   }
-
-
 }
 

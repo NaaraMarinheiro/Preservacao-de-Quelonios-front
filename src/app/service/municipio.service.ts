@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'; 
+import { Injectable } from '@angular/core';
 import { AxiosClient } from '../utils/axios';
 
 @Injectable({
@@ -10,7 +10,6 @@ export class MunicipioService {
 
   constructor(private meuAxios: AxiosClient) { }
 
-  //Requisição GET
   async listAll() {
     let result = await this.meuAxios.get(this.urlMunicipio);
     return result.data;

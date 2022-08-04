@@ -5,12 +5,12 @@
         <h2 class="titulo">Editar Viagem</h2>
         <h6>Editar uma viagem existente no sistema</h6>
         <br>
-        <form [formGroup]="viagemForm" (ngSubmit)="onSubmit()"> 
+        <form [formGroup]="viagemForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="inputNome">Nome do Ciclo</label>
-                        <input type="text" class="form-control" [value]="resultado.idCiclo.nomeCiclo" disabled >
+                        <input type="text" class="form-control" [value]="resultado.idCiclo.nomeCiclo" disabled>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -24,13 +24,15 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="text-nowrap" for="inputMunicipio">Município</label>
-                        <input id="inputMunicipio" class="form-control" [value]="resultado.idCiclo.municipio.nomeMunicipio" disabled>
+                        <input id="inputMunicipio" class="form-control"
+                            [value]="resultado.idCiclo.municipio.nomeMunicipio" disabled>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="text-nowrap" for="inputComunidade">Comunidade</label>
-                        <input id="inputComunidade" class="form-control" [value]="resultado.idCiclo.comunidade.nomeComunidade" disabled>
+                        <input id="inputComunidade" class="form-control"
+                            [value]="resultado.idCiclo.comunidade.nomeComunidade" disabled>
                     </div>
                 </div>
             </div>
@@ -40,35 +42,35 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="text-nowrap" for="inputIdViagem">ID viagem</label>
-                        <input id= "idViagem" type="text" class="form-control" [value]="resultado.idViagem" disabled>
+                        <input id="idViagem" type="text" class="form-control" [value]="resultado.idViagem" disabled>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="text-nowrap" for="inputData">Data</label>
-                        <input id="input-data" type="date" class="form-control" formControlName="dataViagem" [value]="resultado.dataViagem" (change)="dateChange($event)">
-                        <span 
-                        *ngIf="!viagemForm?.get('dataViagem')?.valid && viagemForm?.get('dataViagem')?.touched "
-                        class="help-block">Campo obrigatório</span>
+                        <input id="input-data" type="date" class="form-control" formControlName="dataViagem"
+                            [value]="resultado.dataViagem" (change)="dateChange($event)">
+                        <span *ngIf="!viagemForm?.get('dataViagem')?.valid && viagemForm?.get('dataViagem')?.touched "
+                            class="help-block">Campo obrigatório</span>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="form-group">
                         <label id="label-tipo-usuario" class="text-nowrap" for="inputTipoUsuario">Coordenador</label>
-                        <select id="inputTipoUsuario" formControlName="matricula" class="form-control" [(ngModel)]="resultado.matricula">
+                        <select id="inputTipoUsuario" formControlName="matricula" class="form-control"
+                            [(ngModel)]="resultado.matricula">
                             <option selected disabled value="">Selecione</option>
-                            <option [ngValue]="resultado.matricula" *ngFor="let item of arrayDeCoordenadores">{{item.nome}}</option>
+                            <option [ngValue]="resultado.matricula" *ngFor="let item of arrayDeCoordenadores">
+                                {{item.nome}}</option>
                         </select>
-                        
-                        <span *ngIf="!viagemForm?.get('matricula')?.valid && viagemForm?.get('matricula')?.touched " class="help-block">Campo obrigatório</span>
+
+                        <span *ngIf="!viagemForm?.get('matricula')?.valid && viagemForm?.get('matricula')?.touched "
+                            class="help-block">Campo obrigatório</span>
                     </div>
                 </div>
             </div>
-            
-            
-           
             <div class="botao">
                 <button type="submit" class="btn btn-success  ">Salvar</button>
             </div>

@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
 
   constructor(private authService: AuthService, private router: Router) {
-
   }
 
   ngOnInit(): void {
@@ -21,15 +20,13 @@ export class LoginComponent implements OnInit {
       'username': new FormControl(null, Validators.required),
       'password': new FormControl(null, Validators.required),
     })
-
   }
 
-  async onSubmit({value, valid}: {value:any, valid:boolean}) {
+  async onSubmit({ value, valid }: { value: any, valid: boolean }) {
     let result = await this.authService.login(value.username, value.password);
-    console.log (result)
+    console.log(result)
     if (result == 200) {
-      this.router.navigate(["/home"]) 
+      this.router.navigate(["/home"])
     }
-  
   }
 }

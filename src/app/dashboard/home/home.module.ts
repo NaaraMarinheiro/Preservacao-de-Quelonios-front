@@ -9,6 +9,6 @@ import { NgChartsModule } from 'ng2-charts';
   ],
   imports: [
     CommonModule,
-    NgChartsModule,  ]
+    NgChartsModule,]
 })
 export class HomeModule { }
