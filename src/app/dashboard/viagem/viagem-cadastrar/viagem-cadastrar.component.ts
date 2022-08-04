@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CicloService } from 'src/app/service/ciclo.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
@@ -31,7 +31,8 @@ export class ViagemCadastrarComponent implements OnInit {
     private meuCicloService: CicloService,
     private minhaViagemService: ViagemService,
     private meuUsuarioService: UsuarioService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private router: Router,
   ) { }
 
   signupForm: FormGroup = new FormGroup({});
@@ -86,6 +87,7 @@ export class ViagemCadastrarComponent implements OnInit {
       this.toastrService.success('Viagem inserida com sucesso!!',"Resultado", {
         timeOut: 3000,
       });
+      this.router.navigate(['/ciclo/' + this.idCiclo]);
     }else {
         console.log('formulário inválido')
         Object.keys(this.signupForm.controls).forEach(campo => {
@@ -112,7 +114,6 @@ export class ViagemCadastrarComponent implements OnInit {
     this.signupForm = new FormGroup({
       dataViagem: new FormControl(null, Validators.required),
       coordenador: new FormControl('', Validators.required),
-      voluntario: new FormControl('', Validators.required),
     })
   }
 

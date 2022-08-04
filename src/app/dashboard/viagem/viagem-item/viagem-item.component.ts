@@ -69,7 +69,6 @@ export class ViagemItemComponent implements OnInit {
   
   async getViagem() {
     this.resultado = await this.minhaViagemService.listById2(this.idViagem);
-    console.log(this.resultado);
 
     if(this.resultado.length > 0){
       this.detalhesDaViagem.nomeDoCiclo = this.resultado[0].idCiclo.nomeCiclo;
@@ -80,7 +79,6 @@ export class ViagemItemComponent implements OnInit {
       this.detalhesDaViagem.nomeCoordenador = this.resultado[0].coordenador.nome;
       this.detalhesDaViagem.dataFormatada = this.resultado[0].dataFormatada;
     }
-    console.log(this.detalhesDaViagem);
   }
 
 
@@ -111,8 +109,6 @@ export class ViagemItemComponent implements OnInit {
       return element
     })
     this.arrayDeFormularios.push(...coletas);
-
-    console.log(this.arrayDeFormularios);
   }
 
 

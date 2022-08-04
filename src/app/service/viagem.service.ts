@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Viagem } from '../dashboard/viagem/viagem-interface';
-import axios from '../utils/axios';
+import { Viagem } from '../dashboard/viagem/viagem-interface'; 
+import { AxiosClient } from '../utils/axios';
 
 @Injectable({
   providedIn: 'root'
@@ -9,26 +9,26 @@ export class ViagemService {
 
   private urlViagem = "http://localhost:8080/api/viagem"
 
-  constructor() { }
+  constructor(private meuAxios: AxiosClient) { }
 
   async listAll() {
-    let result = await axios.get(this.urlViagem);
+    let result = await this.meuAxios.get(this.urlViagem);
     return result.data._embedded.viagemVOList;
   }
 
   async insert(novaViagem: any) {
-    let result = await axios.post(this.urlViagem, novaViagem);
+    let result = await this.meuAxios.post(this.urlViagem, novaViagem);
     return result.data;
   }
 
   async listByID(idViagem: string) {
-    let result = await axios.get(this.urlViagem + '/' + idViagem);
+    let result = await this.meuAxios.get(this.urlViagem + '/' + idViagem);
     return result.data;
   }
 
   async update(idViagem: any, viagemAtualizada: any) {
     let endpoint = this.urlViagem + '/' + idViagem;
-    let result = await axios.put(endpoint, viagemAtualizada);
+    let result = await this.meuAxios.put(endpoint, viagemAtualizada);
     return result.status;
   }
 
@@ -36,14 +36,14 @@ export class ViagemService {
     let body =JSON.stringify(viagens);
     let url=`${this.urlViagem}/${id}`;
 
-    let result = await axios.put(url, body, 
+    let result = await this.meuAxios.put(url, body, 
       {headers: {'content-type': 'application/json' }});
   } 
 
   delete() { }
 
   async listById2(idViagem:string){
-    let result = await axios.get(this.urlViagem);
+    let result = await this.meuAxios.get(this.urlViagem);
     let filteredResult = result.data._embedded.viagemVOList.filter((elemento: any) => {
       return (elemento.idViagem == idViagem)
     });
@@ -66,7 +66,7 @@ export class ViagemService {
 
   // Find all Viagens com classificação entre agendada e iniciada
   async listAllViagensClassificadas() {
-    let resultadoDaRequisicao = await axios.get(this.urlViagem);
+    let resultadoDaRequisicao = await this.meuAxios.get(this.urlViagem);
     let arrayDeViagens = resultadoDaRequisicao.data._embedded.viagemVOList;
 
     let viagensClassificadas = arrayDeViagens.map((elemento: any) => {

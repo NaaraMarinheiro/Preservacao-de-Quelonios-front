@@ -8,6 +8,7 @@ import { UsuarioModule } from './usuario/usuario.module';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, children: [
+    { path: '', redirectTo: 'home',  pathMatch: 'full' },
     { path: 'home', component: HomeComponent},
     { path: 'ciclo', loadChildren: ()=> CicloModule},
     { path: 'usuario', loadChildren: ()=> UsuarioModule},

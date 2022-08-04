@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
+import { AxiosClient } from '../utils/axios';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +9,11 @@ export class EclosaoService {
 
   private urlEclosao = "http://localhost:8080/api/eclosao"
 
-  constructor() { }
+  constructor(private meuAxios: AxiosClient) { }
 
   async listAll() { 
 
-    let result = await axios.get(this.urlEclosao);
+    let result = await this.meuAxios.get(this.urlEclosao);
     let arrayDeEclosao = result.data._embedded.eclosaoVOList;
 
     arrayDeEclosao = arrayDeEclosao.map((elemento: any)=>{
@@ -25,12 +26,12 @@ export class EclosaoService {
   }
 
   async listByIDEclosao(idCiclo:string, idViagem:string, idEclosao:string) {
-    let result = await axios.get(this.urlEclosao + '/' + idEclosao);
+    let result = await this.meuAxios.get(this.urlEclosao + '/' + idEclosao);
     return result.data;
   }
 
   async insert(novaEclosao: any) {
-    let result = await axios.post(this.urlEclosao, novaEclosao);
+    let result = await this.meuAxios.post(this.urlEclosao, novaEclosao);
     return result.status;
   }
 }

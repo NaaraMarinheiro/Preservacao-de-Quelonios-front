@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Ciclo } from '../ciclo-interface';
-import axios from "../../../utils/axios"
 import { CicloService } from 'src/app/service/ciclo.service';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';

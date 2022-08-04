@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import axios from 'axios';
+import { Injectable } from '@angular/core'; 
+import { AxiosClient } from '../utils/axios';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +8,10 @@ export class SolturaService {
 
   private urlSoltura = "http://localhost:8080/api/soltura"
 
-  constructor() { }
+  constructor(private meuAxios: AxiosClient) { }
 
   async listAll() { 
-    let result = await axios.get(this.urlSoltura);
+    let result = await this.meuAxios.get(this.urlSoltura);
     let arrayDeSoltura = result.data._embedded.solturaVOList;
 
     arrayDeSoltura = arrayDeSoltura.map((elemento: any)=>{
@@ -25,12 +25,12 @@ export class SolturaService {
   }
 
   async listByID(idSoltura:string) {
-    let result = await axios.get(this.urlSoltura + '/' + idSoltura);
+    let result = await this.meuAxios.get(this.urlSoltura + '/' + idSoltura);
     return result.data;
   }
 
   async insert(novaSoltura: any) {
-    let result = await axios.post(this.urlSoltura, novaSoltura);
+    let result = await this.meuAxios.post(this.urlSoltura, novaSoltura);
     return result.status;
   }
 }

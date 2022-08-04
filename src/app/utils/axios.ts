@@ -1,36 +1,103 @@
+import { Injectable } from "@angular/core";
 import { Router } from "@angular/router"
-import axios from "axios"
+import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios"
+import axios from "axios";
 
-let router: any = Router;
+export interface Params {
+  [key: string]: any;
+}
 
-// Do something before request is sent
-axios.interceptors.request.use((config) => {
-  if (config.url && config.url.includes("/auth/signin"))
-    return config
-  else {
-    let usuarioAtual = localStorage.getItem("usuarioAtual") || "";
-    if (JSON.parse(usuarioAtual)) {
-      let tokenAtual = JSON.parse(usuarioAtual).token;
-      if (config && config.headers) config.headers['Authorization'] = "Bearer " + tokenAtual;
+interface GetOptions {
+  url: string;
+  params?: Params;
+}
+
+@Injectable()
+export class AxiosClient {
+
+  private axiosInstance: AxiosInstance;
+
+  constructor(private router: Router) {
+    this.createAxiosInstance();
+    this.configureInterceptorRequest();
+    this.configureInterceptorResponse(router);
+  }
+
+  createAxiosInstance() {
+    this.axiosInstance = axios.create();
+  }
+
+  configureInterceptorRequest() {
+    this.axiosInstance.interceptors.request.use(function (config) {
+
+      let usuarioAtual = localStorage.getItem("usuarioAtual") || "";
+      if (JSON.parse(usuarioAtual)) {
+        let tokenAtual = JSON.parse(usuarioAtual).token;
+        if (config && config.headers) config.headers['Authorization'] = "Bearer " + tokenAtual;
+      }
+
+      return config;
+    }, function (error) {
+      return Promise.reject(error);
+    });
+  }
+
+  configureInterceptorResponse(router: Router) {
+    this.axiosInstance.interceptors.response.use((response) => {
+      return response;
+    },
+      (error) => {
+        //Mudar para erro 401 (Unauthorized) no backend
+        // if (error.response.status === 500) { // erro na autenticação
+          localStorage.removeItem("usuarioAtual");
+          router.navigate(['/login']);
+        // }
+        return Promise.reject(error);
+      });
+  }
+
+  getInstance() {
+    return this.axiosInstance;
+  }
+
+  public get(url: string, config?: AxiosRequestConfig): any {
+    try {
+      return this.axiosInstance.get(url, config);
+    } catch (error) {
+      return error;
     }
-    return config;
   }
-}, function (error) {
-  // Do something with request error
-  return Promise.reject(error);
-});
 
-// Add a response interceptor
-axios.interceptors.response.use((response) => {
-  // Any status code that lie within the range of 2xx cause this function trigger
-  return response;
-}, (error) => {
-  // Any status codes that falls outside the range of 2xx cause this function to trigger
-  if (error.response.status === 401) { // erro na autenticação
-    localStorage.removeItem("usuarioAtual");
-    router.navigate(['/login']);
+  public post(url: string, data?: any, config?: AxiosRequestConfig): any {
+    try {
+      return this.axiosInstance.post(url, data, config);
+    } catch (error) {
+      return error;
+    }
   }
-  return Promise.reject(error);
-});
 
-export default axios;
+  public put(url: string, data?: any, config?: AxiosRequestConfig): any {
+    try {
+      return this.axiosInstance.put(url, data, config);
+    } catch (error) {
+      return error;
+    }
+  }
+
+  public patch(url: string, data?: any, config?: AxiosRequestConfig): any {
+    try {
+      return this.axiosInstance.patch(url, data, config);
+    } catch (error) {
+      return error;
+    }
+  }
+
+  public delete(url: string, config?: AxiosRequestConfig): any {
+    try {
+      return this.axiosInstance.delete(url, config);
+    } catch (error) {
+      return error;
+    }
+  }
+
+}

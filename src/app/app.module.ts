@@ -9,6 +9,7 @@ import { AuthService } from './service/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgChartsModule } from 'ng2-charts';
+import { AxiosClient } from './utils/axios';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { NgChartsModule } from 'ng2-charts';
     ToastrModule.forRoot(),
     NgChartsModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, AxiosClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
