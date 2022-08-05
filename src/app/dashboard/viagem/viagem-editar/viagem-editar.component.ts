@@ -77,7 +77,7 @@ export class ViagemEditarComponent implements OnInit {
     this.resultado.matricula = this.resultado.coordenador.matricula;
   }
 
-  configurarData(){ 
+  configurarData() {
     let dataViagem = this.viagemForm.get('dataViagem');
     if (dataViagem) {
       dataViagem.setValue(this.resultado.dataViagem);
@@ -104,7 +104,7 @@ export class ViagemEditarComponent implements OnInit {
 
     let matricula = this.viagemForm.get('matricula');
     if (matricula) {
-      matricula.setValue(this.resultado.matricula); 
+      matricula.setValue(this.resultado.matricula);
     }
   }
 
@@ -140,6 +140,10 @@ export class ViagemEditarComponent implements OnInit {
             timeOut: 3000,
           });
           this.router.navigate(['/ciclo/' + this.idCiclo]);
+        } else {
+          this.toastrService.error('Viagem não alterada', "Erro", {
+            timeOut: 5000,
+          });
         }
       }
     } catch (error) {

@@ -30,17 +30,16 @@ export class ViagemCadastrarComponent implements OnInit {
     private minhaViagemService: ViagemService,
     private meuUsuarioService: UsuarioService,
     private toastrService: ToastrService,
-    private router: Router,
+    private router: Router
   ) { }
 
-  signupForm: FormGroup = new FormGroup({});
+  viagemCadastrarForm: FormGroup = new FormGroup({});
   private idCiclo: string;
 
   async ngOnInit() {
     this.configurarFormulario();
     this.getCiclo();
     this.configurarSelectCoordenador();
-
   }
 
   async getCiclo() {
@@ -49,7 +48,7 @@ export class ViagemCadastrarComponent implements OnInit {
   }
 
   get f() {
-    return this.signupForm.controls;
+    return this.viagemCadastrarForm.controls;
   }
 
   public arrayDeCoordenadores: any[] = [];
@@ -60,9 +59,10 @@ export class ViagemCadastrarComponent implements OnInit {
     })
   }
 
-  onSubmit() {
-    if (this.signupForm.valid) {
-      let novaViagem = this.signupForm.value;
+  async onSubmit() {
+    console.log(this.viagemCadastrarForm)
+    if (this.viagemCadastrarForm.valid) {
+      let novaViagem = this.viagemCadastrarForm.value;
 
       novaViagem.idCiclo = {
         idCiclo: this.idCiclo
@@ -71,26 +71,32 @@ export class ViagemCadastrarComponent implements OnInit {
         matricula: parseInt(novaViagem.coordenador, 10)
       };
 
-      this.minhaViagemService.insert(novaViagem);
-      this.toastrService.success('Viagem inserida com sucesso!!', "Resultado", {
-        timeOut: 3000,
-      });
-      this.router.navigate(['/ciclo/' + this.idCiclo]);
+      try {
+        await this.minhaViagemService.insert(novaViagem);
+        this.toastrService.success('Viagem inserida com sucesso!!', "Resultado", {
+          timeOut: 3000,
+        });
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+          this.router.navigate(['/ciclo/' + novaViagem.idCiclo.idCiclo]));
+      } catch (e) {
+        this.toastrService.error('Erro ao inserir a viagem!', "Erro", {
+          timeOut: 5000,
+        });
+      }
 
     } else {
       console.log('formulário inválido')
-      Object.keys(this.signupForm.controls).forEach(campo => {
-        const controle = this.signupForm.get(campo);
+      Object.keys(this.viagemCadastrarForm.controls).forEach(campo => {
+        const controle = this.viagemCadastrarForm.get(campo);
         controle?.markAsTouched();
       })
     }
   }
 
   configurarFormulario() {
-    this.signupForm = new FormGroup({
+    this.viagemCadastrarForm = new FormGroup({
       dataViagem: new FormControl(null, Validators.required),
-      coordenador: new FormControl('', Validators.required),
+      coordenador: new FormControl('', Validators.required)
     })
   }
-
 }
