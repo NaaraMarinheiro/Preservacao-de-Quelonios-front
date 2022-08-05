@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { Usuario } from '../usuario-interface';
@@ -24,7 +24,11 @@ export class UsuarioEditarComponent implements OnInit {
     enabled: true
   }
 
-  constructor(private route: ActivatedRoute, private usuarioService: UsuarioService, private toastrService: ToastrService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private usuarioService: UsuarioService,
+    private toastrService: ToastrService,
+    private router: Router) { }
 
 
   async ngOnInit() {
@@ -66,6 +70,8 @@ export class UsuarioEditarComponent implements OnInit {
       this.toastrService.success('Usuário alterado com sucesso!!', "Resultado", {
         timeOut: 3000,
       });
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+        this.router.navigate(['/usuario']));
     } else {
       console.log('formulário inválido')
       Object.keys(this.signupForm.controls).forEach(campo => {
