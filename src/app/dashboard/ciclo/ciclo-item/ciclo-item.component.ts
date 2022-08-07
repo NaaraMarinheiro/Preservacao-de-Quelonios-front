@@ -37,4 +37,15 @@ export class CicloItemComponent implements OnInit {
   async listarViagensDoCiclo(id: string) {
     this.arrayDeViagens = await this.meuCicloService.listAllByCicle(id);
   }
+
+  getTipoUsuario() {
+    let usuarioAtual = localStorage.getItem ("usuarioAtual");
+
+    if (usuarioAtual) {
+      return JSON.parse(usuarioAtual).tipo;
+    } else {
+      return ''
+    }
+  }
+
 }

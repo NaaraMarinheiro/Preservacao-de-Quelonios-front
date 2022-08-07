@@ -12,7 +12,7 @@
             <img class="sidebar-icon" src="../../../assets/img/bar-chart.svg" routerLinkActive="active-img"> Relatórios
         </a>
 
-        <a class="sidebar-item" routerLink="/usuario" routerLinkActive="active-style">
+        <a *ngIf= "getTipoUsuario() == 'ADMIN' || getTipoUsuario() == 'COORDENADOR'" class ="sidebar-item" routerLink="/usuario" routerLinkActive="active-style">
             <img class="sidebar-icon" src="../../../assets/img/user.svg" routerLinkActive="active-img">Usuários </a>
     </div>
     <div id="side-content">

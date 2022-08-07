@@ -57,5 +57,15 @@ export class CicloComponent implements OnInit {
     }
   }
 
+  getTipoUsuario() {
+    let usuarioAtual = localStorage.getItem ("usuarioAtual");
+
+    if (usuarioAtual) {
+      return JSON.parse(usuarioAtual).tipo;
+    } else {
+      return ''
+    }
+  }
+
 }
 

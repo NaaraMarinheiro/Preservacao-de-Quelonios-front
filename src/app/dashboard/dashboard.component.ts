@@ -41,4 +41,14 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  getTipoUsuario() {
+    let usuarioAtual = localStorage.getItem ("usuarioAtual");
+
+    if (usuarioAtual) {
+      return JSON.parse(usuarioAtual).tipo;
+    } else {
+      return ''
+    }
+  }
+
 }

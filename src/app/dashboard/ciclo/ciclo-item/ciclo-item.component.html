@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="botao">
-                    <button type="button" class="btn btn-success" routerLink="viagem/cadastrar"
+                    <button *ngIf= "getTipoUsuario() == 'ADMIN' || getTipoUsuario() == 'COORDENADOR'" type="button" class="btn btn-success" routerLink="viagem/cadastrar"
                         routerLinkActive="active-style">+ Nova Viagem
                     </button>
                 </div>

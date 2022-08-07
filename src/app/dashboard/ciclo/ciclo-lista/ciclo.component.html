@@ -5,10 +5,9 @@
     <div class="conteudo">
 
         <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-            <!-- card de pesquisar usuario -->
             <div class="row">
                 <div class="">
-                    <!-- primeira linha de inputs -->
+
                     <div class="row">
                         <!-- input id ciclo -->
                         <div class="col-md-6 ">
@@ -67,7 +66,7 @@
                 <h3>Ciclos</h3>
                 <div class="tabela-titulo">
                     Lista de ciclos reprodutivos anuais identificados por município e ano.
-                    <button type="button" class="btn btn-success" routerLink="cadastrar"
+                    <button *ngIf= "getTipoUsuario() == 'ADMIN' || getTipoUsuario() == 'COORDENADOR'" type="button" class="btn btn-success" routerLink="cadastrar"
                         routerLinkActive="active-style"> + Novo
                         ciclo</button>
                 </div>
