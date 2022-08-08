@@ -3,7 +3,7 @@
 
 <h1 align ="center" >Preservação de Quelônios - Quelofy🐢</h1>
 
-<p align ="center"><img src ="logo-quelofy.png" width="700" ></p>
+<p align ="center"><img src ="img/logo-quelofy.png" width="700" ></p>
 
 
 
@@ -28,7 +28,7 @@ Projeto Integrador - Squad Amazonas - Digital House Brasil - Programação Full 
 **Geração de relatórios** - gerar relatórios em pdf, com os dados de cada fase do projeto, facilitando assim, a manipulação individual das informações relevantes de cada etapa.
 
 ## 📊 Diagrama de classe
-<p align ="center"><img src = "diagrama-de-classe.png"  ></p>
+<p align ="center"><img src = "img/diagrama-de-classe.png"  ></p>
 
 ## 📋 Pré-requisitos
 Para executar o projeto, será necessário instalar os seguintes programas:
