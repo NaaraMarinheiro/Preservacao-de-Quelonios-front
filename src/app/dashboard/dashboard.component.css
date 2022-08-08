@@ -6,6 +6,14 @@
     display: flex;
 }
 
+#btn-mobile{
+    display:none
+}
+
+#btn-mobile{
+    display:none;
+}
+
 #navbar {
     display: flex;
     justify-content: flex-end;
@@ -81,6 +89,17 @@
     color: #1F8B24;
 }
 
+@media(max-width:600px){
+
+    #btn-mobile{
+        display:block;
+
+    }
+    #sidebar{
+        display:none;
+    }
+}
+
 .active-style {
     color: #1F8B24;
     font-weight: 600;
@@ -116,3 +135,4 @@ footer div:last-child {
 footer>div {
     color: white
 }
+
