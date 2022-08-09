@@ -41,4 +41,13 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+    toggleMenu() {
+    let nav = document.getElementById('nav');
+    nav!.classList.toggle('active');
+    console.log('teste');
+  
+  }
+
+
+
 }

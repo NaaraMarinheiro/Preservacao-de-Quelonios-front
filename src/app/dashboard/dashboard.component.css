@@ -6,14 +6,6 @@
     display: flex;
 }
 
-#btn-mobile{
-    display:none
-}
-
-#btn-mobile{
-    display:none;
-}
-
 #navbar {
     display: flex;
     justify-content: flex-end;
@@ -89,6 +81,10 @@
     color: #1F8B24;
 }
 
+#btn-mobile{
+    display:none
+}
+
 @media(max-width:600px){
 
     #btn-mobile{
@@ -96,9 +92,15 @@
 
     }
     #sidebar{
-        display:none;
+        display:none; 
+        position:absolute;
+        right: -50px;
     }
-}
+
+    #nav.active #sidebar {
+        display:flex;
+    }
+} 
 
 .active-style {
     color: #1F8B24;

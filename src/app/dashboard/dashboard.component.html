@@ -1,24 +1,32 @@
+<html>
+<body> 
 <div id="main-container">
-    <nav id="nav">
+    <nav id="nav" class="navbar">    
 
-        <label>&#9776;</label>
+        <!-- <button id="btn-mobile">Menu</button> -->
 
-    <div id="sidebar">   
+        <button id="btn-mobile" class="navbar-toggler" type="button"(click)="toggleMenu()" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
+       
 
-        <a routerLink="/home"><img src="../../../assets/img/logo-v2-300h.png" height="80" alt="logo"></a>
+    <div id="sidebar" class="collapse navbar-collapse">   
+        <ul>
+        <li><a routerLink="/home"><img src="../../../assets/img/logo-v2-300h.png" height="80" alt="logo"></a></li>
 
-        <a class="sidebar-item" routerLink="/home" routerLinkActive="active-style">
-            <img class="sidebar-icon" src="../../../assets/img/home.svg" routerLinkActive="active-img"> Home </a>
+        <li><a class="sidebar-item" routerLink="/home" routerLinkActive="active-style">
+            <img class="sidebar-icon" src="../../../assets/img/home.svg" routerLinkActive="active-img"> Home </a></li>
 
-        <a class="sidebar-item" routerLink="/ciclo" routerLinkActive="active-style">
-            <img class="sidebar-icon" src="../../../assets/img/cicle.svg" routerLinkActive="active-img"> Ciclos </a>
+        <li><a class="sidebar-item" routerLink="/ciclo" routerLinkActive="active-style">
+            <img class="sidebar-icon" src="../../../assets/img/cicle.svg" routerLinkActive="active-img"> Ciclos </a></li>
 
-        <a class="sidebar-item" routerLink="/relatorio" routerLinkActive="active-style">
+        <li><a class="sidebar-item" routerLink="/relatorio" routerLinkActive="active-style">
             <img class="sidebar-icon" src="../../../assets/img/bar-chart.svg" routerLinkActive="active-img"> Relatórios
-        </a>
+        </a></li>
 
-        <a class="sidebar-item" routerLink="/usuario" routerLinkActive="active-style">
-            <img class="sidebar-icon" src="../../../assets/img/user.svg" routerLinkActive="active-img">Usuários </a>
+        <li><a class="sidebar-item" routerLink="/usuario" routerLinkActive="active-style">
+            <img class="sidebar-icon" src="../../../assets/img/user.svg" routerLinkActive="active-img">Usuários </a></li>
+    
+        </ul>           
+    
     </div>
 
 </nav>
@@ -56,3 +64,22 @@
     <div><img src="../../../assets/img/logo-v1-400h-white.png" height="38" alt="logo"></div>
     <div>Sobre as desenvolvedoras</div>
 </footer>
+
+
+
+
+<script>
+    console.log('teste');
+    const btnMobile = document.getElementById('btn-mobile');
+
+function toggleMenu() {
+  const nav = document.getElementById('nav');
+  nav.classList.toggle('active');
+  console.log('teste');
+
+}
+  btnMobile.addEventListener('click', toggleMenu);
+</script>
+
+</body>   
+</html>
