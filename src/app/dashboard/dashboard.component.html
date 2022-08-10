@@ -12,30 +12,55 @@
             <img class="sidebar-icon" src="../../../assets/img/bar-chart.svg" routerLinkActive="active-img"> Relatórios
         </a>
 
-        <a *ngIf= "getTipoUsuario() == 'ADMIN' || getTipoUsuario() == 'COORDENADOR'" class ="sidebar-item" routerLink="/usuario" routerLinkActive="active-style">
+        <a *ngIf="getTipoUsuario() == 'ADMIN' || getTipoUsuario() == 'COORDENADOR'" class="sidebar-item"
+            routerLink="/usuario" routerLinkActive="active-style">
             <img class="sidebar-icon" src="../../../assets/img/user.svg" routerLinkActive="active-img">Usuários </a>
     </div>
+
     <div id="side-content">
+        <div id="navbar-responsivo">
+            <div id="navbar">
+                <img src="../../../assets/img/logo-v3-300h.png" height="40" alt="logo">
 
-        <div id="navbar">
-            <ul id="navbar-ul">
-                <li id="li-data">{{dataFinal}}</li>
-                <li id="li-nome"> {{getNome()}} </li>
-                <li id="li-dropdow">
-                    <div class="dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <img src="../../../assets/img/user.svg" height="28">
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <button type="button" class="dropdown-item" (click)="deslogar()">Sair</button>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                <ul id="navbar-ul">
+                    <li id="li-data">{{dataFinal}}</li>
+                    <li id="li-nome"> {{getNome()}} </li>
+                    <li id="li-dropdow">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <img src="../../../assets/img/user.svg" height="28">
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <button type="button" class="dropdown-item" (click)="deslogar()">Sair</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
 
-            </ul>
+                </ul>
+            </div>
+
+            <div id="hamburguer-menu">
+                <a class="sidebar-item" routerLink="/home" routerLinkActive="active-style">
+                    <img class="sidebar-icon" src="../../../assets/img/home.svg" routerLinkActive="active-img"> Home
+                </a>
+
+                <a class="sidebar-item" routerLink="/ciclo" routerLinkActive="active-style">
+                    <img class="sidebar-icon" src="../../../assets/img/cicle.svg" routerLinkActive="active-img"> Ciclos
+                </a>
+
+                <a class="sidebar-item" routerLink="/relatorio" routerLinkActive="active-style">
+                    <img class="sidebar-icon" src="../../../assets/img/bar-chart.svg" routerLinkActive="active-img">
+                    Relatórios
+                </a>
+
+                <a *ngIf="getTipoUsuario() == 'ADMIN' || getTipoUsuario() == 'COORDENADOR'" class="sidebar-item"
+                    routerLink="/usuario" routerLinkActive="active-style">
+                    <img class="sidebar-icon" src="../../../assets/img/user.svg" routerLinkActive="active-img">Usuários
+                </a>
+            </div>
         </div>
 
         <div id="content">

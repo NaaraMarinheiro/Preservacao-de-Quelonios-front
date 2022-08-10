@@ -20,11 +20,10 @@
 }
 
 .card-form {
-    width: 17.5rem;
-    height: 22.5rem;
-    float: left;
-    padding: 0.9375rem;
     justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .img-format {
@@ -34,14 +33,9 @@
     width: 100%;
 }
 
-.img-format {
-    margin: 2% 2% 2% 2%;
-}
-
 .button-img-form {
     position: relative;
     margin-top: -14rem;
-    margin-left: 1%;
     left: 0rem;
     height: 16rem;
     display: flex;
@@ -52,6 +46,5 @@
 }
 
 #botao-pdf {
-    margin-left: 22%;
     border-radius: 6px;
 }

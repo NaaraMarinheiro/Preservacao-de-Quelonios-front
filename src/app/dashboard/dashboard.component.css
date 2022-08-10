@@ -15,7 +15,7 @@
 #side-content {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: calc(100% - 9rem);
 }
 
 #navbar-ul {
@@ -115,4 +115,71 @@ footer div:last-child {
 
 footer>div {
     color: white
+}
+
+#hamburguer-menu {
+    display: flex;
+    justify-content: space-around;
+    
+    background-color: white;
+}
+
+#navbar-responsivo {
+    box-shadow: 0.3125rem 0rem 1.875rem 0.3125rem rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 601px){
+    #hamburguer {
+        display: none;
+    }
+
+    #hamburguer-menu {
+        display: none;
+    }
+
+    #navbar-responsivo{
+        box-shadow: none;
+    }
+
+    #logo-responsiva{
+        display: none;  
+    }
+
+    #navbar > img {
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+    #sidebar {
+        display: none;
+    }
+
+    .sidebar-item{
+        width: 25%;
+        align-items: center;
+        text-decoration: none;
+        padding: .3rem 0rem;
+    }
+
+    #side-content {
+        width: 100%;
+    }
+
+    #navbar {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #navbar > img {
+        padding-left: 1rem;
+    }
+
+    #hamburguer {
+        display: block;
+    }
+
+    .active-style{
+        border-radius: unset;
+    }
 }
