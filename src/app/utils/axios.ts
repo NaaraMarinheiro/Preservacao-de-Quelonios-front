@@ -20,7 +20,7 @@ export class AxiosClient {
   constructor(private router: Router) {
     this.createAxiosInstance();
     this.configureInterceptorRequest();
-    this.configureInterceptorResponse(router);
+   // this.configureInterceptorResponse(router);
   }
 
   createAxiosInstance() {
@@ -41,19 +41,19 @@ export class AxiosClient {
     });
   }
 
-  configureInterceptorResponse(router: Router) {
-    this.axiosInstance.interceptors.response.use((response) => {
-      return response;
-    },
-      (error) => {
-        //Mudar para erro 401 (Unauthorized) no backend  - 04/08/22
-        // if (error.response.status === 500) { // erro na autenticação
-        localStorage.removeItem("usuarioAtual");
-        router.navigate(['/login']);
-        // }
-        return Promise.reject(error);
-      });
-  }
+  // configureInterceptorResponse(router: Router) {
+  //   this.axiosInstance.interceptors.response.use((response) => {
+  //     return response;
+  //   },
+  //     (error) => {
+  //       //Mudar para erro 401 (Unauthorized) no backend  - 04/08/22
+  //       // if (error.response.status === 500) { // erro na autenticação
+  //       localStorage.removeItem("usuarioAtual");
+  //       router.navigate(['/login']);
+  //       // }
+  //       return Promise.reject(error);
+  //     });
+  // }
 
   getInstance() {
     return this.axiosInstance;
