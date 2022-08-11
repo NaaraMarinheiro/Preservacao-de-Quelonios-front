@@ -37,7 +37,7 @@
                         <label for="inputMunicipio">Município</label>
                         <select class="form-select" id="inputMunicipio" name="municipio" formControlName="municipio"
                             [(ngModel)]="documento.municipio.idMunicipio">
-                            <option selected disabled [ngValue]="null">Selecione</option>
+                            <option selected disabled [ngValue]="null" value="">Selecione</option>
                             <option *ngFor="let item of arrayMunicipios; index as i;" [ngValue]="item.idMunicipio">
                                 {{item.nomeMunicipio}}</option>
 
@@ -51,7 +51,7 @@
                         <label for="inputComunidade">Comunidade</label>
                         <select class="form-select" id="inputComunidade" name="comunidade" formControlName="comunidade"
                             [(ngModel)]="documento.comunidade.idComunidade">
-                            <option selected disabled [ngValue]="null">Selecione</option>
+                            <option selected disabled [ngValue]="null" value="">Selecione</option>
                             <option *ngFor="let item of arrayComunidades; index as i;" [ngValue]="item.idComunidade">
                                 {{item.nomeComunidade}}</option>
 

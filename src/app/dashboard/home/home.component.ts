@@ -39,10 +39,11 @@ export class HomeComponent implements OnInit {
       '2017',
       '2018',
       '2019',
+      '2020'
     ],
     datasets: [
       {
-        data: [677, 1268, 578, 570, 645, 927, 133, 2707, 4155, 5487],
+        data: [677, 1268, 578, 570, 645, 927, 133, 2707, 4155, 5487, 7700],
         fill: true,
         tension: 0.5,
         borderColor: 'rgb(47, 57, 78)',

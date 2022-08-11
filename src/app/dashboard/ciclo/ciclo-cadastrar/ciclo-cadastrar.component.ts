@@ -24,7 +24,7 @@ export class CicloCadastrarComponent implements OnInit {
       idMunicipio: ''
     },
     comunidade: {
-      idComunidade: ' '
+      idComunidade: ''
     }
   }
 
